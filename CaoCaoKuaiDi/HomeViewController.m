@@ -15,9 +15,11 @@
 #import "CourierCollectionViewController.h"
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
+#import <BaiduMapAPI_Location/BMKLocationService.h>
+#import <BaiduMapAPI_Search/BMKSearchBase.h>
 
 
-@interface HomeViewController () <UINavigationBarDelegate,UIActionSheetDelegate>
+@interface HomeViewController () <UINavigationBarDelegate,UIActionSheetDelegate,BMKLocationServiceDelegate,BMKMapViewDelegate,BMKGeoCodeSearchDelegate>
 
 @property (nonatomic,strong) NSMutableArray *items;
 
@@ -27,7 +29,24 @@
 
 @property (nonatomic,strong) BMKMapView *BDMapView;
 
+@property (nonatomic,strong) BMKLocationService *locationService;
+
+@property (nonatomic,strong) BMKSearchBase *BDSearchBase;
+
+@property (nonatomic,strong) CLLocation *currentLocation;
+
+@property (nonatomic,strong) UIView *chooseExpressMaskView;
+
+@property (nonatomic,strong) UIButton *choooseExpressTypeButton;
+
+@property (nonatomic,strong) NSMutableArray *expressInfoArray;
+
+@property (nonatomic,strong) BMKGeoCodeSearch *geoSearch;
+
+@property (nonatomic,strong)BMKUserLocation *userLocationDetail;
+
 @end
+
 
 @implementation HomeViewController
 
@@ -55,23 +74,86 @@
     return _items;
 }
 
+/**
+ *  地图设置
+ *
+ *  @return 返回基础地图类
+ */
 - (BMKMapView *)BDMapView
 {
     if (!_BDMapView) {
         _BDMapView = [[BMKMapView alloc] initWithFrame:self.view.bounds];
         _BDMapView.zoomLevel = 19;
         _BDMapView.showMapScaleBar = YES;
-        
+        _BDMapView.showsUserLocation = NO;
+        _BDMapView.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
+        _BDMapView.showsUserLocation = YES;
+        _BDMapView.delegate = self;
     }
     return _BDMapView;
 }
+/**
+ *  快递名字数组
+ *
+ *  @return 返回数组内容
+ */
+-(NSMutableArray *)expressInfoArray {
+    if (!_expressInfoArray) {
+        _expressInfoArray = [NSMutableArray array];
+        _expressInfoArray = [@[
+                               @"顺丰",
+                               @"韵达",
+                               @"申通",
+                               @"EMS",
+                               @"中通",
+                               @"德邦",
+                               
+                               ] mutableCopy];
+    }
+    return _expressInfoArray;
+}
 
+-(BMKGeoCodeSearch *)geoSearch {
+    if (!_geoSearch) {
+        _geoSearch = [[BMKGeoCodeSearch alloc]init];
+        _geoSearch.delegate = self;
+    }
+    return _geoSearch;
+}
+-(UIView *)chooseExpressMaskView {
+    if (!_chooseExpressMaskView) {
+        _chooseExpressMaskView = [[UIView alloc]initWithFrame:CGRectMake(0, SCRE_HEIGHT - 70, SCRE_WIDTH, 70)];
+        _chooseExpressMaskView.backgroundColor = [UIColor redColor];
+    }
+    return _chooseExpressMaskView;
+}
+
+-(BMKUserLocation *)userLocationDetail {
+    if (!_userLocationDetail) {
+        _userLocationDetail = [[BMKUserLocation alloc]init];
+    }
+    return _userLocationDetail;
+}
+#pragma mark -系统加载项
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor redColor];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self initNavigationBar];
-    [self.view addSubview:self.BDMapView];
+    self.locationService = [[BMKLocationService alloc]init];
+    _locationService.delegate = self;
+    [_locationService startUserLocationService];
+     [self.view addSubview:self.BDMapView];
+    [self.view addSubview:self.chooseExpressMaskView];
+    [self initBottomView];
+    [self initChoooseExpressTypeButton];
+    [self reGeoAction];
     
+}
+
+-(void)viewWillDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    _BDMapView.delegate = nil;
+    _locationService.delegate = nil;
 }
 
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
@@ -81,7 +163,10 @@
         self.navigationController.navigationBar.alpha =1;
     }
 }
-
+#pragma mark 初始化- init
+/**
+ *  初始化navigationBar
+ */
 -(void)initNavigationBar {
     self.title = @"曹操快递";
     UIButton *personalCenter = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 40)];
@@ -95,6 +180,44 @@
     [rightItemButton addTarget:self action:@selector(rightBarButtonItemAction) forControlEvents:UIControlEventTouchDown];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightItemButton];
 }
+
+//初始化底部Button
+- (void)initBottomView {
+    UIView *bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, SCRE_HEIGHT - 40, SCRE_WIDTH, 40)];
+    bottomView.backgroundColor = [UIColor greenColor];
+    [self.view addSubview:bottomView];
+    UIButton *callCourierButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 5, SCRE_WIDTH - 40, 30)];
+    [callCourierButton setTitle:@"呼叫快递" forState:UIControlStateNormal];
+    [callCourierButton setBackgroundColor:[UIColor redColor]];
+    [callCourierButton addTarget:self action:@selector(callCourierAction) forControlEvents:UIControlEventTouchDown];
+    [bottomView addSubview:callCourierButton];
+    
+}
+//初始化底部快递按钮
+- (void)initChoooseExpressTypeButton {
+    
+    for (int i = 0; i < 5; i++) {
+        self.choooseExpressTypeButton = [[UIButton alloc]init];
+        _choooseExpressTypeButton.frame = CGRectMake( 30 * (i + 1) + i * (SCRE_WIDTH - 180)/5, 5, (SCRE_WIDTH - 180)/5, 20);
+        _choooseExpressTypeButton.backgroundColor = [UIColor yellowColor];
+        _choooseExpressTypeButton.tag = 10 + i;
+        [_choooseExpressTypeButton addTarget:self action:@selector(chooseExpressAction:) forControlEvents:UIControlEventTouchDown];
+        [_chooseExpressMaskView addSubview:_choooseExpressTypeButton];
+    }
+    
+}
+
+#pragma mark function自定义方法
+//发起搜索请求
+- (void)reGeoAction {
+    if (_currentLocation)
+    {
+        BMKReverseGeoCodeOption *geoRequest = [[BMKReverseGeoCodeOption alloc] init];
+        geoRequest.reverseGeoPoint = _currentLocation.coordinate;
+        [self.geoSearch reverseGeoCode:geoRequest];
+    }
+}
+
 
 #pragma mark --action
 //左按钮navigationitem点击
@@ -116,7 +239,7 @@
     }
 }
 
-
+//左抽屉动画
 -(void)pushPerCenter {
     self.leftWindow = [[UIWindow alloc]initWithFrame:CGRectMake(-SCRE_WIDTH, 0, SCRE_WIDTH * 4/5, SCRE_HEIGHT)];
     
@@ -132,5 +255,86 @@
     [_leftWindow makeKeyAndVisible];
     
 }
+
+//呼叫快递action
+- (void)callCourierAction {
+    
+}
+
+//chooseExpressAction 查询附近的快递点。并在地图上显示
+- (void)chooseExpressAction:(UIButton *)sender {
+    NSLog(@"%ld",sender.tag);
+    
+}
+
+#pragma mark BMKLocationServiceDelegate
+
+- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
+{
+    if (self.userLocationDetail.subtitle) {
+        userLocation.title = _userLocationDetail.title;
+        userLocation.subtitle = _userLocationDetail.subtitle;
+    }
+    [_BDMapView updateLocationData:userLocation];
+    
+}
+//处理位置坐标更新
+- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
+{
+    
+    self.BDMapView.centerCoordinate = userLocation.location.coordinate;
+    _currentLocation = userLocation.location;
+    if (self.userLocationDetail.subtitle) {
+        userLocation.title = _userLocationDetail.title;
+        userLocation.subtitle = _userLocationDetail.subtitle;
+        [_BDMapView updateLocationData:userLocation];
+    }
+    NSLog(@"++++++++++%@",self.userLocationDetail.subtitle );
+    
+}
+
+#pragma mark  BMKMapViewDelegate
+-(BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation {
+    if ([annotation isKindOfClass:[BMKPointAnnotation class]])
+    {
+        static NSString *pointReuseIndentifier = @"pointReuseIndentifier";
+        BMKAnnotationView *annotationView = (BMKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndentifier];
+        if (annotationView == nil)
+        {
+            annotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndentifier];
+        }
+        annotationView.image = [UIImage imageNamed:@"restaurant"];
+        // 设置中心点偏移，使得标注底部中间点成为经纬度对应点
+        annotationView.centerOffset = CGPointMake(0, -18);
+        annotationView.canShowCallout= NO;       //设置气泡可以弹出，默认为NO
+        annotationView.draggable = YES;        //设置标注可以拖动，默认为NO
+        return annotationView;
+    }
+    return nil;
+}
+
+-(void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view {
+    
+    
+//    if([view.annotation isKindOfClass:[BMKUserLocation class]]) {
+        [self reGeoAction];
+//    }
+    
+}
+
+
+
+- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
+{
+    if (result) {
+        NSLog(@"%@ - %@", result.address, result.addressDetail.streetNumber);
+        self.userLocationDetail.title = result.addressDetail.city;
+        self.userLocationDetail.subtitle = result.address;
+    }else{
+    
+    }
+    NSLog(@"%@",self.userLocationDetail.subtitle);
+}
+
 
 @end
