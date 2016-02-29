@@ -13,6 +13,8 @@
 #import "ScanBarCodeViewController.h"
 #import "RecentOrdersViewController.h"
 #import "CourierCollectionViewController.h"
+#import <BaiduMapAPI_Map/BMKMapComponent.h>
+#import <BaiduMapAPI_Search/BMKSearchComponent.h>
 
 
 @interface HomeViewController () <UINavigationBarDelegate,UIActionSheetDelegate>
@@ -22,6 +24,8 @@
 @property (nonatomic,strong) UIWindow *leftWindow;
 
 @property (nonatomic,strong) UIView *leftView;
+
+@property (nonatomic,strong) BMKMapView *BDMapView;
 
 @end
 
@@ -51,10 +55,22 @@
     return _items;
 }
 
+- (BMKMapView *)BDMapView
+{
+    if (!_BDMapView) {
+        _BDMapView = [[BMKMapView alloc] initWithFrame:self.view.bounds];
+        _BDMapView.zoomLevel = 19;
+        _BDMapView.showMapScaleBar = YES;
+        
+    }
+    return _BDMapView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor redColor];
     [self initNavigationBar];
+    [self.view addSubview:self.BDMapView];
     
 }
 
