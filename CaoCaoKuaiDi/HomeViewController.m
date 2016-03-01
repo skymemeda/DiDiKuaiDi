@@ -13,6 +13,7 @@
 #import "ScanBarCodeViewController.h"
 #import "RecentOrdersViewController.h"
 #import "CourierCollectionViewController.h"
+#import "SearchExpressViewController.h"
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationService.h>
@@ -229,7 +230,7 @@
         [YCXMenu showMenuInView:self.view fromRect:CGRectMake(self.view.frame.size.width - 50, 64, 50, 0) menuItems:self.items selected:^(NSInteger index, YCXMenuItem *item) {
             if (item.tag == 100) {
                 
-                [self.navigationController pushViewController:[[ScanBarCodeViewController alloc]init] animated:YES];
+                [self.navigationController pushViewController:[[SearchExpressViewController alloc]init] animated:YES];
             } else if(item.tag == 101) {
                 [self.navigationController pushViewController:[[RecentOrdersViewController alloc]init] animated:YES];
             } else if (item.tag == 102) {
@@ -263,7 +264,7 @@
 
 //chooseExpressAction 查询附近的快递点。并在地图上显示
 - (void)chooseExpressAction:(UIButton *)sender {
-    NSLog(@"%ld",sender.tag);
+    NSLog(@"%ld",(long)sender.tag);
     
 }
 

@@ -18,4 +18,6 @@
 
 #define MOVE_X SCRE_WIDTH-SCRE_WIDTH/5
 
+#import <Foundation/Foundation.h>
+
 #endif /* PrefixHeader_pch */
