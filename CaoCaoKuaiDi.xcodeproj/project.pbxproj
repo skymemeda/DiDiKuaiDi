@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FC0EC8521C8543A400C3B666 /* UIScanTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0EC8511C8543A400C3B666 /* UIScanTextField.m */; };
-		FC0EC8561C85446100C3B666 /* UIImage+GFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0EC8551C85446100C3B666 /* UIImage+GFImage.m */; };
+		FC0EC9371C85B00A00C3B666 /* UIImage+GFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0EC9361C85B00A00C3B666 /* UIImage+GFImage.m */; };
 		FC591E7D1C852CEE001FEDE3 /* ZXAztecDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591C971C852CEE001FEDE3 /* ZXAztecDecoder.m */; };
 		FC591E7E1C852CEE001FEDE3 /* ZXAztecDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591C9A1C852CEE001FEDE3 /* ZXAztecDetector.m */; };
 		FC591E7F1C852CEE001FEDE3 /* ZXAztecBinaryShiftToken.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591C9D1C852CEE001FEDE3 /* ZXAztecBinaryShiftToken.m */; };
@@ -305,8 +305,8 @@
 /* Begin PBXFileReference section */
 		FC0EC8501C8543A400C3B666 /* UIScanTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIScanTextField.h; sourceTree = "<group>"; };
 		FC0EC8511C8543A400C3B666 /* UIScanTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIScanTextField.m; sourceTree = "<group>"; };
-		FC0EC8541C85446100C3B666 /* UIImage+GFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GFImage.h"; sourceTree = "<group>"; };
-		FC0EC8551C85446100C3B666 /* UIImage+GFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GFImage.m"; sourceTree = "<group>"; };
+		FC0EC9351C85B00A00C3B666 /* UIImage+GFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GFImage.h"; sourceTree = "<group>"; };
+		FC0EC9361C85B00A00C3B666 /* UIImage+GFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GFImage.m"; sourceTree = "<group>"; };
 		FC591C961C852CEE001FEDE3 /* ZXAztecDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAztecDecoder.h; sourceTree = "<group>"; };
 		FC591C971C852CEE001FEDE3 /* ZXAztecDecoder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAztecDecoder.m; sourceTree = "<group>"; };
 		FC591C991C852CEE001FEDE3 /* ZXAztecDetector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAztecDetector.h; sourceTree = "<group>"; };
@@ -901,11 +901,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		FC0EC8531C85444D00C3B666 /* Extension */ = {
+		FC0EC9341C85B00A00C3B666 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				FC0EC8541C85446100C3B666 /* UIImage+GFImage.h */,
-				FC0EC8551C85446100C3B666 /* UIImage+GFImage.m */,
+				FC0EC9351C85B00A00C3B666 /* UIImage+GFImage.h */,
+				FC0EC9361C85B00A00C3B666 /* UIImage+GFImage.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -913,7 +913,7 @@
 		FC591C921C852CB5001FEDE3 /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
-				FC0EC8531C85444D00C3B666 /* Extension */,
+				FC0EC9341C85B00A00C3B666 /* Extension */,
 				FC591C931C852CEE001FEDE3 /* ZXingObjC */,
 			);
 			path = FrameWork;
@@ -2514,7 +2514,7 @@
 				FC591E9F1C852CEE001FEDE3 /* ZXSMSTOMMSTOResultParser.m in Sources */,
 				FC591EBF1C852CEE001FEDE3 /* ZXDetectorResult.m in Sources */,
 				FC591E971C852CEE001FEDE3 /* ZXISBNParsedResult.m in Sources */,
-				FC0EC8561C85446100C3B666 /* UIImage+GFImage.m in Sources */,
+				FC0EC9371C85B00A00C3B666 /* UIImage+GFImage.m in Sources */,
 				FC591F0C1C852CEE001FEDE3 /* ZXCode128Reader.m in Sources */,
 				FC7953B21C816C5C007F55F5 /* MyWalletViewController.m in Sources */,
 				FC591F3B1C852CEE001FEDE3 /* ZXPDF417ResultMetadata.m in Sources */,
