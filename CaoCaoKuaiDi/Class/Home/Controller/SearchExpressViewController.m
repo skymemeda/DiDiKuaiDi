@@ -17,6 +17,8 @@
 
 @property (nonatomic,strong)UIScanTextField *expressNumberTextField;
 
+@property (nonatomic,strong)UITextField *chooseExpressType;
+
 @end
 
 @implementation SearchExpressViewController
@@ -30,6 +32,15 @@
         _expressNumberTextField.backgroundColor = [UIColor yellowColor];
     }
     return _expressNumberTextField;
+}
+
+-(UITextField *)chooseExpressType {
+    if (!_chooseExpressType) {
+        _chooseExpressType = [[UITextField alloc]init];
+        _chooseExpressType.frame = CGRectMake(50, 170, SCRE_WIDTH - 100, 40);
+        _chooseExpressType.placeholder = @"请选择快递公司";
+    }
+    return _chooseExpressType;
 }
 
 #pragma mark 系统加载项
@@ -54,6 +65,7 @@
     if (_strScan) {
         _expressNumberTextField.text = _strScan;
     }
+    [self.view addSubview:self.chooseExpressType];
 }
 
 

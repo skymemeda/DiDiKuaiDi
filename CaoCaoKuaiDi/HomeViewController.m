@@ -168,15 +168,16 @@
 /**
  *  初始化navigationBar
  */
+//初始化NAVIGATION BAR
 -(void)initNavigationBar {
     self.title = @"曹操快递";
-    UIButton *personalCenter = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 80, 40)];
-    [personalCenter setTitle:@"个人中心" forState:UIControlStateNormal];
+    UIButton *personalCenter = [[UIButton alloc]initWithFrame:CGRectMake(20, 0, 30, 40)];
+    [personalCenter setImage:[UIImage imageNamed:@"home_navigation_left"] forState:UIControlStateNormal];
     [personalCenter addTarget:self action:@selector(pushPerCenter) forControlEvents:UIControlEventTouchDown];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:personalCenter];
     
-    UIButton *rightItemButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
-    [rightItemButton setTitle:@"测试" forState:UIControlStateNormal];
+    UIButton *rightItemButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 0, 20, 40)];
+    [rightItemButton setImage:[UIImage imageNamed:@"home_navigation_right"] forState:UIControlStateNormal];
     rightItemButton.titleLabel.textAlignment = NSTextAlignmentRight;
     [rightItemButton addTarget:self action:@selector(rightBarButtonItemAction) forControlEvents:UIControlEventTouchDown];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightItemButton];
