@@ -253,7 +253,7 @@
 		FC7953511C816800007F55F5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC79534F1C816800007F55F5 /* LaunchScreen.storyboard */; };
 		FC79535C1C816800007F55F5 /* CaoCaoKuaiDiTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC79535B1C816800007F55F5 /* CaoCaoKuaiDiTests.m */; };
 		FC7953671C816800007F55F5 /* CaoCaoKuaiDiUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953661C816800007F55F5 /* CaoCaoKuaiDiUITests.m */; };
-		FC7953761C816846007F55F5 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953751C816846007F55F5 /* HomeViewController.m */; };
+		FC7953761C816846007F55F5 /* HomeViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC7953751C816846007F55F5 /* HomeViewController.mm */; };
 		FC7953AE1C816A4D007F55F5 /* LeftHomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953AD1C816A4D007F55F5 /* LeftHomeController.m */; };
 		FC7953B21C816C5C007F55F5 /* MyWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953B11C816C5C007F55F5 /* MyWalletViewController.m */; };
 		FC7953B51C816C73007F55F5 /* MyOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953B41C816C73007F55F5 /* MyOrdersViewController.m */; };
@@ -815,7 +815,7 @@
 		FC7953661C816800007F55F5 /* CaoCaoKuaiDiUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CaoCaoKuaiDiUITests.m; sourceTree = "<group>"; };
 		FC7953681C816800007F55F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC7953741C816846007F55F5 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeViewController.h; path = ../../../HomeViewController.h; sourceTree = "<group>"; };
-		FC7953751C816846007F55F5 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeViewController.m; path = ../../../HomeViewController.m; sourceTree = "<group>"; };
+		FC7953751C816846007F55F5 /* HomeViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = HomeViewController.mm; path = ../../../HomeViewController.mm; sourceTree = "<group>"; };
 		FC7953AC1C816A4D007F55F5 /* LeftHomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeftHomeController.h; sourceTree = "<group>"; };
 		FC7953AD1C816A4D007F55F5 /* LeftHomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeftHomeController.m; sourceTree = "<group>"; };
 		FC7953AF1C816AF9007F55F5 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -1853,7 +1853,7 @@
 				FC591F961C8537D9001FEDE3 /* MyQRViewController.h */,
 				FC591F971C8537D9001FEDE3 /* MyQRViewController.m */,
 				FC7953741C816846007F55F5 /* HomeViewController.h */,
-				FC7953751C816846007F55F5 /* HomeViewController.m */,
+				FC7953751C816846007F55F5 /* HomeViewController.mm */,
 				FC7953D61C816E14007F55F5 /* CourierCollectionViewController.h */,
 				FC7953D71C816E14007F55F5 /* CourierCollectionViewController.m */,
 				FC7953D81C816E14007F55F5 /* RecentOrdersViewController.h */,
@@ -2428,7 +2428,7 @@
 				FC591F191C852CEE001FEDE3 /* ZXMultiFormatUPCEANReader.m in Sources */,
 				FC591F491C852CEE001FEDE3 /* ZXQRCodeDetector.m in Sources */,
 				FC591EED1C852CEE001FEDE3 /* ZXAbstractExpandedDecoder.m in Sources */,
-				FC7953761C816846007F55F5 /* HomeViewController.m in Sources */,
+				FC7953761C816846007F55F5 /* HomeViewController.mm in Sources */,
 				FC591F551C852CEE001FEDE3 /* ZXQRCodeReader.m in Sources */,
 				FC591E9A1C852CEE001FEDE3 /* ZXProductParsedResult.m in Sources */,
 				FC591EDF1C852CEE001FEDE3 /* ZXDataMatrixErrorCorrection.m in Sources */,

@@ -28,8 +28,6 @@
 
 @property (nonatomic,strong) UIView *leftView;
 
-@property (nonatomic,strong) BMKMapView *BDMapView;
-
 @property (nonatomic,strong) BMKLocationService *locationService;
 
 @property (nonatomic,strong) BMKSearchBase *BDSearchBase;
@@ -46,6 +44,7 @@
 
 @property (nonatomic,strong)BMKUserLocation *userLocationDetail;
 
+@property (nonatomic,strong) BMKMapView *BDMapView;
 @end
 
 
@@ -80,19 +79,7 @@
  *
  *  @return 返回基础地图类
  */
-- (BMKMapView *)BDMapView
-{
-    if (!_BDMapView) {
-        _BDMapView = [[BMKMapView alloc] initWithFrame:self.view.bounds];
-        _BDMapView.zoomLevel = 19;
-        _BDMapView.showMapScaleBar = YES;
-        _BDMapView.showsUserLocation = NO;
-        _BDMapView.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
-        _BDMapView.showsUserLocation = YES;
-        _BDMapView.delegate = self;
-    }
-    return _BDMapView;
-}
+
 /**
  *  快递名字数组
  *
@@ -117,7 +104,6 @@
 -(BMKGeoCodeSearch *)geoSearch {
     if (!_geoSearch) {
         _geoSearch = [[BMKGeoCodeSearch alloc]init];
-        _geoSearch.delegate = self;
     }
     return _geoSearch;
 }
@@ -135,6 +121,18 @@
     }
     return _userLocationDetail;
 }
+
+- (BMKMapView *)BDMapView
+{
+    if (!_BDMapView) {
+        _BDMapView = [[BMKMapView alloc] initWithFrame:self.view.bounds];
+        _BDMapView.zoomLevel = 19;
+        _BDMapView.showMapScaleBar = YES;
+        [self.view addSubview:_BDMapView];
+    }
+    return _BDMapView;
+}
+
 #pragma mark -系统加载项
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -143,7 +141,12 @@
     self.locationService = [[BMKLocationService alloc]init];
     _locationService.delegate = self;
     [_locationService startUserLocationService];
-     [self.view addSubview:self.BDMapView];
+    
+    self.BDMapView.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
+    _BDMapView.showsUserLocation = YES;
+    _BDMapView.delegate = self;
+    
+    
     [self.view addSubview:self.chooseExpressMaskView];
     [self initBottomView];
     [self initChoooseExpressTypeButton];
@@ -151,11 +154,28 @@
     
 }
 
--(void)viewWillDisappear:(BOOL)animated {
-    [super viewDidDisappear:animated];
-    _BDMapView.delegate = nil;
-    _locationService.delegate = nil;
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    self.BDMapView.delegate = self;
+    self.geoSearch.delegate = self;
 }
+
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    self.BDMapView.delegate = nil;
+    self.geoSearch.delegate = nil;
+    NSLog(@"___________%s",__func__);
+
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
 
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (viewController == self) {
@@ -284,7 +304,7 @@
 - (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
 {
     
-    self.BDMapView.centerCoordinate = userLocation.location.coordinate;
+    _BDMapView.centerCoordinate = userLocation.location.coordinate;
     _currentLocation = userLocation.location;
     if (self.userLocationDetail.subtitle) {
         userLocation.title = _userLocationDetail.title;
@@ -315,6 +335,7 @@
     return nil;
 }
 
+#warning @"wait slove with this"
 -(void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view {
     
     
