@@ -7,15 +7,24 @@
 //
 
 #import "MyOrdersViewController.h"
+#import "OrdersTableViewCell.h"
 
-@interface MyOrdersViewController ()
+@interface MyOrdersViewController ()<UITableViewDataSource,UITableViewDelegate>
+
+@property (nonatomic,strong) UITableView *myOrdersTableView;
+
+
 
 @end
 
 @implementation MyOrdersViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self initView];
     // Do any additional setup after loading the view.
 }
 
@@ -24,14 +33,57 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+#pragma mark --init
+- (void)initView {
+    self.title = @"我的订单";
+    self.myOrdersTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCRE_WIDTH, SCRE_HEIGHT)];
+    _myOrdersTableView.delegate = self;
+    _myOrdersTableView.dataSource = self;
+    [self.view addSubview:_myOrdersTableView];
+    
+    UIButton *rightButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
+    [rightButton setTitle:@"编辑" forState:UIControlStateNormal];
+    [rightButton addTarget:self action:@selector(rightButtonAction) forControlEvents:UIControlEventTouchDown];
+    [rightButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:rightButton];
 }
-*/
 
+
+#pragma mark -action
+
+- (void)rightButtonAction {
+    
+}
+
+#pragma mark UITableViewDataSource,UITableViewDelegate 
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 1;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 20;
+}
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *CellIdentifier = @"Cell";
+    BOOL nibsRegistered = NO;
+    if (!nibsRegistered) {
+        UINib *nib = [UINib nibWithNibName:NSStringFromClass([OrdersTableViewCell class]) bundle:nil];
+        [tableView registerNib:nib forCellReuseIdentifier:CellIdentifier];
+        nibsRegistered = YES;
+    }
+    OrdersTableViewCell *cell = (OrdersTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    return cell;}
+
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 100;
+}
 @end
