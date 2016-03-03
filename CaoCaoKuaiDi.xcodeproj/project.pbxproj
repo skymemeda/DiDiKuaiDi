@@ -266,6 +266,9 @@
 		FC7953DD1C816E14007F55F5 /* RecentOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953D91C816E14007F55F5 /* RecentOrdersViewController.m */; };
 		FC7953DE1C816E14007F55F5 /* ScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953DB1C816E14007F55F5 /* ScanBarCodeViewController.m */; };
 		FC7953EC1C8171B3007F55F5 /* OftenAdressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953EB1C8171B3007F55F5 /* OftenAdressViewController.m */; };
+		FCA168E11C87C4230007588D /* LoginHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E01C87C4230007588D /* LoginHomeViewController.m */; };
+		FCA168E41C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E31C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.m */; };
+		FCA168E71C87D7260007588D /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E61C87D7260007588D /* UIView+Extend.m */; };
 		FCB9ACC81C83D4F000FBEF9A /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACC11C83D4F000FBEF9A /* BaiduMapAPI_Base.framework */; };
 		FCB9ACC91C83D4F100FBEF9A /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACC21C83D4F000FBEF9A /* BaiduMapAPI_Cloud.framework */; };
 		FCB9ACCA1C83D4F100FBEF9A /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACC31C83D4F000FBEF9A /* BaiduMapAPI_Location.framework */; };
@@ -841,6 +844,12 @@
 		FC7953DB1C816E14007F55F5 /* ScanBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanBarCodeViewController.m; sourceTree = "<group>"; };
 		FC7953EA1C8171B3007F55F5 /* OftenAdressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OftenAdressViewController.h; sourceTree = "<group>"; };
 		FC7953EB1C8171B3007F55F5 /* OftenAdressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OftenAdressViewController.m; sourceTree = "<group>"; };
+		FCA168DF1C87C4230007588D /* LoginHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHomeViewController.h; sourceTree = "<group>"; };
+		FCA168E01C87C4230007588D /* LoginHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHomeViewController.m; sourceTree = "<group>"; };
+		FCA168E21C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GFBarButtonItem.h"; sourceTree = "<group>"; };
+		FCA168E31C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+GFBarButtonItem.m"; sourceTree = "<group>"; };
+		FCA168E51C87D7260007588D /* UIView+Extend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Extend.h"; sourceTree = "<group>"; };
+		FCA168E61C87D7260007588D /* UIView+Extend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Extend.m"; sourceTree = "<group>"; };
 		FCB9ACC11C83D4F000FBEF9A /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
 		FCB9ACC21C83D4F000FBEF9A /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
 		FCB9ACC31C83D4F000FBEF9A /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
@@ -904,6 +913,10 @@
 		FC0EC9341C85B00A00C3B666 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FCA168E51C87D7260007588D /* UIView+Extend.h */,
+				FCA168E61C87D7260007588D /* UIView+Extend.m */,
+				FCA168E21C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.h */,
+				FCA168E31C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.m */,
 				FC0EC9351C85B00A00C3B666 /* UIImage+GFImage.h */,
 				FC0EC9361C85B00A00C3B666 /* UIImage+GFImage.m */,
 			);
@@ -1936,6 +1949,8 @@
 		FC7953871C816992007F55F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FCA168DF1C87C4230007588D /* LoginHomeViewController.h */,
+				FCA168E01C87C4230007588D /* LoginHomeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2497,6 +2512,7 @@
 				FC591EDE1C852CEE001FEDE3 /* ZXDataMatrixEncoderContext.m in Sources */,
 				FC591F3E1C852CEE001FEDE3 /* ZXQRCodeDataBlock.m in Sources */,
 				FC591F441C852CEE001FEDE3 /* ZXQRCodeFormatInformation.m in Sources */,
+				FCA168E11C87C4230007588D /* LoginHomeViewController.m in Sources */,
 				FC591F091C852CEE001FEDE3 /* ZXRSSUtils.m in Sources */,
 				FC591F0F1C852CEE001FEDE3 /* ZXCode39Writer.m in Sources */,
 				FC591F061C852CEE001FEDE3 /* ZXRSSDataCharacter.m in Sources */,
@@ -2506,6 +2522,7 @@
 				FC591F261C852CEE001FEDE3 /* ZXPDF417ECErrorCorrection.m in Sources */,
 				FC591F4A1C852CEE001FEDE3 /* ZXQRCodeFinderPattern.m in Sources */,
 				FC591EF91C852CEE001FEDE3 /* ZXRSSExpandedCurrentParsingState.m in Sources */,
+				FCA168E41C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.m in Sources */,
 				FC7953DC1C816E14007F55F5 /* CourierCollectionViewController.m in Sources */,
 				FC591F361C852CEE001FEDE3 /* ZXPDF417Dimensions.m in Sources */,
 				FC591ED91C852CEE001FEDE3 /* ZXDataMatrixASCIIEncoder.m in Sources */,
@@ -2545,6 +2562,7 @@
 				FC591ED51C852CEE001FEDE3 /* ZXDataMatrixDecodedBitStreamParser.m in Sources */,
 				FC591F101C852CEE001FEDE3 /* ZXCode93Reader.m in Sources */,
 				FC591F041C852CEE001FEDE3 /* ZXAbstractRSSReader.m in Sources */,
+				FCA168E71C87D7260007588D /* UIView+Extend.m in Sources */,
 				FC591ED61C852CEE001FEDE3 /* ZXDataMatrixDecoder.m in Sources */,
 				FC591F0D1C852CEE001FEDE3 /* ZXCode128Writer.m in Sources */,
 				FC591F311C852CEE001FEDE3 /* ZXPDF417Detector.m in Sources */,

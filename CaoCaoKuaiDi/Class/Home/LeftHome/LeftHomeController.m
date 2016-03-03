@@ -16,6 +16,7 @@
 #import "MessageViewController.h"
 #import "MyOrdersViewController.h"
 #import "OftenAdressViewController.h"
+#import "UIView+Extend.h"
 
 @interface LeftHomeController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -28,6 +29,12 @@
 @property (nonatomic,strong) NSArray *controllArr;
 
 @property (nonatomic,strong) UIWindow *window;
+
+@property (nonatomic,strong) UIImageView *userImageView;
+
+@property (nonatomic,strong) UILabel *userNameLabel;
+
+@property (nonatomic,strong) UILabel *userPhoneNumberLabel;
 
 @end
 
@@ -51,39 +58,39 @@
 - (UIView *)headView
 {
     if (!_headView) {
-        _headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MOVE_X, 220)];
+        _headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MOVE_X, 140)];
         
         
         
-        UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(SCRE_WIDTH/8, 35, SCRE_WIDTH/2, SCRE_WIDTH/2)];
+        UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 35, SCRE_WIDTH * 4/5, 100)];
         [_headView addSubview:imageView];
         UITapGestureRecognizer *headTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headTapClick)];
         [imageView addGestureRecognizer:headTap];
+
+        self.userImageView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, 80, 80)];
+        _userImageView.image = [UIImage imageNamed:@"touxiang"];
+        _userImageView.layer.cornerRadius = _userImageView.width/2;
+        _userImageView.layer.borderWidth = 5;
+        _userImageView.layer.borderColor = [[UIColor whiteColor] CGColor];
+        _userImageView.layer.masksToBounds = YES;
+        [imageView addSubview:_userImageView];
+        
+        self.userNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMaxX(_userImageView.frame) + 10, CGRectGetMinY(_userImageView.frame) + 15, SCRE_WIDTH/2, 20)];
+        _userNameLabel.text = @"Goofyy";
+        _userNameLabel.font = [UIFont systemFontOfSize:13];
+        _userNameLabel.textAlignment = NSTextAlignmentLeft;
+        [imageView addSubview:_userNameLabel];
         
         
-        UIImageView *aicon = [[UIImageView alloc] initWithFrame:CGRectMake(SCRE_WIDTH/4-SCRE_WIDTH/3/2, 0, SCRE_WIDTH/3, SCRE_WIDTH/3)];
-        aicon.image = [UIImage imageNamed:@"touxiang"];
-        aicon.layer.cornerRadius = SCRE_WIDTH/6;
-        aicon.layer.masksToBounds = YES;
-        [imageView addSubview:aicon];
+        self.userPhoneNumberLabel = [[UILabel alloc] initWithFrame:CGRectMake(CGRectGetMinX(_userNameLabel.frame), CGRectGetMaxY(_userNameLabel.frame) + 5, 100, 20)];
+        _userPhoneNumberLabel.text = @"188****4180";
+        _userPhoneNumberLabel.font = [UIFont systemFontOfSize:13];
+        _userPhoneNumberLabel.textAlignment = NSTextAlignmentLeft;
+        [imageView addSubview:_userPhoneNumberLabel];
         
-        UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, SCRE_WIDTH/3+5, SCRE_WIDTH/2, 20)];
-        nameLabel.text = @"Goofyy";
-        nameLabel.textAlignment = NSTextAlignmentCenter;
-        [imageView addSubview:nameLabel];
-        
-        for (int i = 0; i<5; i++) {
-            UIButton *btnStar = [[UIButton alloc] initWithFrame:CGRectMake(i*20+10, SCRE_WIDTH/3+30, 15, 15)];
-            [btnStar setBackgroundImage:[UIImage imageNamed:@"5_msyc_evaluate"] forState:UIControlStateNormal];
-            [imageView addSubview:btnStar];
-        }
-        
-        UILabel *gradeLabel = [[UILabel alloc] initWithFrame:CGRectMake(imageView.frame.size.width-50, SCRE_WIDTH/3+30, 50, 20)];
-        gradeLabel.text = @"5.0分";
-        gradeLabel.textAlignment = NSTextAlignmentRight;
-        [imageView addSubview:gradeLabel];
-        
-        
+        UIImageView *imageViewMak = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetWidth(imageView.frame) - 40, 20, 10, 20)];
+        imageViewMak.image = [UIImage imageNamed:@"header_view_right"];
+        [imageView addSubview:imageViewMak];
     }
     return _headView;
 }

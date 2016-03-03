@@ -14,6 +14,7 @@
 #import "RecentOrdersViewController.h"
 #import "CourierCollectionViewController.h"
 #import "SearchExpressViewController.h"
+#import "LoginHomeViewController.h"
 #import <BaiduMapAPI_Map/BMKMapComponent.h>
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationService.h>
@@ -263,6 +264,11 @@
 
 //左抽屉动画
 -(void)pushPerCenter {
+    
+//    LoginHomeViewController *loginHome = [[LoginHomeViewController alloc]init];
+//    
+//    [self.navigationController pushViewController:loginHome animated:YES];
+    
     self.leftWindow = [[UIWindow alloc]initWithFrame:CGRectMake(-SCRE_WIDTH, 0, SCRE_WIDTH * 4/5, SCRE_HEIGHT)];
     
     _leftWindow.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
