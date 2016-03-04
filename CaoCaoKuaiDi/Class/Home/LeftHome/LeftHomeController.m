@@ -10,9 +10,9 @@
 #import "HomeViewController.h"
 #import "GlobalNavigationController.h"
 #import "MyWalletViewController.h"
-#import "PersonalnfoViewController.h"
+#import "PersonalnfoTabViewController.h"
 #import "RecommendViewController.h"
-#import "SettingViewController.h"
+#import "SettingTabViewController.h"
 #import "MessageViewController.h"
 #import "MyOrdersViewController.h"
 #import "OftenAdressViewController.h"
@@ -49,7 +49,7 @@
                           [[MessageViewController alloc]init],
                           [[RecommendViewController alloc]init],
                           [[OftenAdressViewController alloc]init],
-                          [[SettingViewController alloc]init],
+                          [[SettingTabViewController alloc]init],
                           ];
     }
     return _controllArr;
@@ -118,7 +118,7 @@
 #pragma mark 事件响应
 
 -(void)headTapClick {
-    PersonalnfoViewController *persinalInfo = [[PersonalnfoViewController alloc]init];
+    PersonalnfoTabViewController *persinalInfo = [[PersonalnfoTabViewController alloc]init];
     self.window = [[UIWindow alloc]initWithFrame:CGRectMake(0, 0, SCRE_WIDTH, SCRE_HEIGHT)];
     _window.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
     HomeViewController *homeVC = [[HomeViewController alloc]init];

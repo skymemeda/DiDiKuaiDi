@@ -79,7 +79,8 @@
         nibsRegistered = YES;
     }
     OrdersTableViewCell *cell = (OrdersTableViewCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-    return cell;}
+    return cell;
+}
 
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

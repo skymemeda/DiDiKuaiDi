@@ -48,7 +48,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfont-kuaidi" translatesAutoresizingMaskIntoConstraints="NO" id="4ec-KF-DVa">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconfont-kuaidi_highted" translatesAutoresizingMaskIntoConstraints="NO" id="4ec-KF-DVa">
                         <rect key="frame" x="8" y="50" width="20" height="15"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="lov-dM-q4N"/>
@@ -115,7 +115,7 @@
     </objects>
     <resources>
         <image name="iconfont-gengduo" width="6" height="11"/>
-        <image name="iconfont-kuaidi" width="16" height="12"/>
+        <image name="iconfont-kuaidi_highted" width="16" height="12"/>
         <image name="myOrders_location_image" width="10" height="13"/>
     </resources>
 </document>

@@ -8,7 +8,6 @@
 
 #import "ScanBarCodeViewController.h"
 #import "MyQRViewController.h"
-#import "ScanResultViewController.h"
 #import "LBXScanResult.h"
 #import "LBXScanWrapper.h"
 #import "SearchExpressViewController.h"

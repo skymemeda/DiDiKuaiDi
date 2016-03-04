@@ -25,8 +25,12 @@
         self.cameraScanButton = [[UIButton alloc]init];
         _cameraScanButton.frame = CGRectMake(0, 0, 30, 25);
         _cameraScanButton.contentMode = UIViewContentModeCenter;
-        _cameraScanButton.backgroundColor = [UIColor grayColor];
-//        [_cameraScanButton addTarget:self action:@selector(cameraScanAction) forControlEvents:UIControlEventTouchDown];
+        [_cameraScanButton setImage:[UIImage imageNamed:@"iconfont-xiangji"] forState:UIControlStateNormal];
+        UIView *expressTextLeftView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 40, 40)];
+        expressTextLeftView.backgroundColor = [UIColor clearColor];
+        self.leftViewMode = UITextFieldViewModeAlways;
+        self.leftView = expressTextLeftView;
+        
         self.rightView = _cameraScanButton;
         self.rightViewMode = UITextFieldViewModeAlways;
     }

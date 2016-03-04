@@ -1,5 +1,5 @@
 //
-//  PersonalnfoViewController.h
+//  SettingViewController.h
 //  CaoCaoKuaiDi
 //
 //  Created by goofygao on 16/2/27.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PersonalnfoViewController : UIViewController
+@interface SettingTabViewController : UITableViewController
 
 @end

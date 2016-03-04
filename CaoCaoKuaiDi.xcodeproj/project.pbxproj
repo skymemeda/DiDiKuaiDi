@@ -258,9 +258,9 @@
 		FC7953B21C816C5C007F55F5 /* MyWalletViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953B11C816C5C007F55F5 /* MyWalletViewController.m */; };
 		FC7953B51C816C73007F55F5 /* MyOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953B41C816C73007F55F5 /* MyOrdersViewController.m */; };
 		FC7953B81C816C84007F55F5 /* MessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953B71C816C84007F55F5 /* MessageViewController.m */; };
-		FC7953BE1C816CAD007F55F5 /* PersonalnfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953BD1C816CAD007F55F5 /* PersonalnfoViewController.m */; };
+		FC7953BE1C816CAD007F55F5 /* PersonalnfoTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953BD1C816CAD007F55F5 /* PersonalnfoTabViewController.m */; };
 		FC7953C11C816CBC007F55F5 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953C01C816CBC007F55F5 /* RecommendViewController.m */; };
-		FC7953C41C816CC6007F55F5 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953C31C816CC6007F55F5 /* SettingViewController.m */; };
+		FC7953C41C816CC6007F55F5 /* SettingTabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953C31C816CC6007F55F5 /* SettingTabViewController.m */; };
 		FC7953C71C816CF7007F55F5 /* GlobalNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953C61C816CF7007F55F5 /* GlobalNavigationController.m */; };
 		FC7953DC1C816E14007F55F5 /* CourierCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953D71C816E14007F55F5 /* CourierCollectionViewController.m */; };
 		FC7953DD1C816E14007F55F5 /* RecentOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953D91C816E14007F55F5 /* RecentOrdersViewController.m */; };
@@ -271,6 +271,10 @@
 		FCA168E71C87D7260007588D /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E61C87D7260007588D /* UIView+Extend.m */; };
 		FCA168F01C880C580007588D /* OrdersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168EE1C880C580007588D /* OrdersTableViewCell.m */; };
 		FCA168F11C880C580007588D /* OrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA168EF1C880C580007588D /* OrdersTableViewCell.xib */; };
+		FCA7E9E11C8977DE002D613E /* ChooseFactoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA7E9E01C8977DE002D613E /* ChooseFactoryTableViewController.m */; };
+		FCA7E9EC1C898DBA002D613E /* MyCouponCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA7E9EB1C898DBA002D613E /* MyCouponCollectionViewController.m */; };
+		FCA7E9F01C899654002D613E /* CouponCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA7E9EE1C899654002D613E /* CouponCollectionViewCell.m */; };
+		FCA7E9F11C899654002D613E /* CouponCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCA7E9EF1C899654002D613E /* CouponCollectionViewCell.xib */; };
 		FCB9ACC81C83D4F000FBEF9A /* BaiduMapAPI_Base.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACC11C83D4F000FBEF9A /* BaiduMapAPI_Base.framework */; };
 		FCB9ACC91C83D4F100FBEF9A /* BaiduMapAPI_Cloud.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACC21C83D4F000FBEF9A /* BaiduMapAPI_Cloud.framework */; };
 		FCB9ACCA1C83D4F100FBEF9A /* BaiduMapAPI_Location.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACC31C83D4F000FBEF9A /* BaiduMapAPI_Location.framework */; };
@@ -830,12 +834,12 @@
 		FC7953B41C816C73007F55F5 /* MyOrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyOrdersViewController.m; sourceTree = "<group>"; };
 		FC7953B61C816C84007F55F5 /* MessageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageViewController.h; sourceTree = "<group>"; };
 		FC7953B71C816C84007F55F5 /* MessageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageViewController.m; sourceTree = "<group>"; };
-		FC7953BC1C816CAD007F55F5 /* PersonalnfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalnfoViewController.h; sourceTree = "<group>"; };
-		FC7953BD1C816CAD007F55F5 /* PersonalnfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalnfoViewController.m; sourceTree = "<group>"; };
+		FC7953BC1C816CAD007F55F5 /* PersonalnfoTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonalnfoTabViewController.h; sourceTree = "<group>"; };
+		FC7953BD1C816CAD007F55F5 /* PersonalnfoTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonalnfoTabViewController.m; sourceTree = "<group>"; };
 		FC7953BF1C816CBC007F55F5 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		FC7953C01C816CBC007F55F5 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
-		FC7953C21C816CC6007F55F5 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		FC7953C31C816CC6007F55F5 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		FC7953C21C816CC6007F55F5 /* SettingTabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingTabViewController.h; sourceTree = "<group>"; };
+		FC7953C31C816CC6007F55F5 /* SettingTabViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingTabViewController.m; sourceTree = "<group>"; };
 		FC7953C51C816CF7007F55F5 /* GlobalNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalNavigationController.h; sourceTree = "<group>"; };
 		FC7953C61C816CF7007F55F5 /* GlobalNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalNavigationController.m; sourceTree = "<group>"; };
 		FC7953D61C816E14007F55F5 /* CourierCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CourierCollectionViewController.h; sourceTree = "<group>"; };
@@ -855,6 +859,13 @@
 		FCA168ED1C880C580007588D /* OrdersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersTableViewCell.h; sourceTree = "<group>"; };
 		FCA168EE1C880C580007588D /* OrdersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersTableViewCell.m; sourceTree = "<group>"; };
 		FCA168EF1C880C580007588D /* OrdersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OrdersTableViewCell.xib; sourceTree = "<group>"; };
+		FCA7E9DF1C8977DE002D613E /* ChooseFactoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseFactoryTableViewController.h; sourceTree = "<group>"; };
+		FCA7E9E01C8977DE002D613E /* ChooseFactoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseFactoryTableViewController.m; sourceTree = "<group>"; };
+		FCA7E9EA1C898DBA002D613E /* MyCouponCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCouponCollectionViewController.h; sourceTree = "<group>"; };
+		FCA7E9EB1C898DBA002D613E /* MyCouponCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCouponCollectionViewController.m; sourceTree = "<group>"; };
+		FCA7E9ED1C899654002D613E /* CouponCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouponCollectionViewCell.h; sourceTree = "<group>"; };
+		FCA7E9EE1C899654002D613E /* CouponCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouponCollectionViewCell.m; sourceTree = "<group>"; };
+		FCA7E9EF1C899654002D613E /* CouponCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouponCollectionViewCell.xib; sourceTree = "<group>"; };
 		FCB9ACC11C83D4F000FBEF9A /* BaiduMapAPI_Base.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Base.framework; sourceTree = "<group>"; };
 		FCB9ACC21C83D4F000FBEF9A /* BaiduMapAPI_Cloud.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Cloud.framework; sourceTree = "<group>"; };
 		FCB9ACC31C83D4F000FBEF9A /* BaiduMapAPI_Location.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMapAPI_Location.framework; sourceTree = "<group>"; };
@@ -1880,6 +1891,8 @@
 				FC7953DB1C816E14007F55F5 /* ScanBarCodeViewController.m */,
 				FC591F731C852EF8001FEDE3 /* SearchExpressViewController.h */,
 				FC591F741C852EF8001FEDE3 /* SearchExpressViewController.m */,
+				FCA7E9DF1C8977DE002D613E /* ChooseFactoryTableViewController.h */,
+				FCA7E9E01C8977DE002D613E /* ChooseFactoryTableViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2103,6 +2116,8 @@
 			children = (
 				FC7953B01C816C5C007F55F5 /* MyWalletViewController.h */,
 				FC7953B11C816C5C007F55F5 /* MyWalletViewController.m */,
+				FCA7E9EA1C898DBA002D613E /* MyCouponCollectionViewController.h */,
+				FCA7E9EB1C898DBA002D613E /* MyCouponCollectionViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2117,6 +2132,9 @@
 		FC79539F1C816A2D007F55F5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FCA7E9ED1C899654002D613E /* CouponCollectionViewCell.h */,
+				FCA7E9EE1C899654002D613E /* CouponCollectionViewCell.m */,
+				FCA7E9EF1C899654002D613E /* CouponCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2134,8 +2152,8 @@
 		FC7953A11C816A2D007F55F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FC7953BC1C816CAD007F55F5 /* PersonalnfoViewController.h */,
-				FC7953BD1C816CAD007F55F5 /* PersonalnfoViewController.m */,
+				FC7953BC1C816CAD007F55F5 /* PersonalnfoTabViewController.h */,
+				FC7953BD1C816CAD007F55F5 /* PersonalnfoTabViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2200,8 +2218,8 @@
 		FC7953A91C816A2D007F55F5 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				FC7953C21C816CC6007F55F5 /* SettingViewController.h */,
-				FC7953C31C816CC6007F55F5 /* SettingViewController.m */,
+				FC7953C21C816CC6007F55F5 /* SettingTabViewController.h */,
+				FC7953C31C816CC6007F55F5 /* SettingTabViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2360,6 +2378,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FCB9ACE21C83D6C800FBEF9A /* mapapi.bundle in Resources */,
+				FCA7E9F11C899654002D613E /* CouponCollectionViewCell.xib in Resources */,
 				FC7953511C816800007F55F5 /* LaunchScreen.storyboard in Resources */,
 				FCA168F11C880C580007588D /* OrdersTableViewCell.xib in Resources */,
 				FC79534E1C816800007F55F5 /* Assets.xcassets in Resources */,
@@ -2468,7 +2487,7 @@
 				FC591E7F1C852CEE001FEDE3 /* ZXAztecBinaryShiftToken.m in Sources */,
 				FC591E841C852CEE001FEDE3 /* ZXAztecState.m in Sources */,
 				FC591EE61C852CEE001FEDE3 /* ZXDataMatrixWriter.m in Sources */,
-				FC7953BE1C816CAD007F55F5 /* PersonalnfoViewController.m in Sources */,
+				FC7953BE1C816CAD007F55F5 /* PersonalnfoTabViewController.m in Sources */,
 				FC591EA81C852CEE001FEDE3 /* ZXVEventResultParser.m in Sources */,
 				FC591EB11C852CEE001FEDE3 /* ZXMonochromeRectangleDetector.m in Sources */,
 				FC591F981C8537D9001FEDE3 /* MyQRViewController.m in Sources */,
@@ -2491,6 +2510,7 @@
 				FC591F121C852CEE001FEDE3 /* ZXEAN13Writer.m in Sources */,
 				FC591F571C852CEE001FEDE3 /* ZXMultiFormatReader.m in Sources */,
 				FC591F3F1C852CEE001FEDE3 /* ZXQRCodeDataMask.m in Sources */,
+				FCA7E9F01C899654002D613E /* CouponCollectionViewCell.m in Sources */,
 				FC591F581C852CEE001FEDE3 /* ZXMultiFormatWriter.m in Sources */,
 				FC591EF31C852CEE001FEDE3 /* ZXAI013x0xDecoder.m in Sources */,
 				FC591F681C852E4A001FEDE3 /* YCXMenuItem.m in Sources */,
@@ -2592,6 +2612,7 @@
 				FC591EE21C852CEE001FEDE3 /* ZXDataMatrixSymbolInfo144.m in Sources */,
 				FC591ECA1C852CEE001FEDE3 /* ZXDimension.m in Sources */,
 				FC591F751C852EF8001FEDE3 /* SearchExpressViewController.m in Sources */,
+				FCA7E9E11C8977DE002D613E /* ChooseFactoryTableViewController.m in Sources */,
 				FC591F221C852CEE001FEDE3 /* ZXUPCEANWriter.m in Sources */,
 				FC7953EC1C8171B3007F55F5 /* OftenAdressViewController.m in Sources */,
 				FC591F341C852CEE001FEDE3 /* ZXPDF417BarcodeMatrix.m in Sources */,
@@ -2626,7 +2647,7 @@
 				FC591EDC1C852CEE001FEDE3 /* ZXDataMatrixDefaultPlacement.m in Sources */,
 				FC591F3D1C852CEE001FEDE3 /* ZXQRCodeBitMatrixParser.m in Sources */,
 				FC591EAE1C852CEE001FEDE3 /* ZXCGImageLuminanceSource.m in Sources */,
-				FC7953C41C816CC6007F55F5 /* SettingViewController.m in Sources */,
+				FC7953C41C816CC6007F55F5 /* SettingTabViewController.m in Sources */,
 				FC591F941C85355A001FEDE3 /* LBXZXCapture.m in Sources */,
 				FC591EEC1C852CEE001FEDE3 /* ZXGenericMultipleBarcodeReader.m in Sources */,
 				FC591E7D1C852CEE001FEDE3 /* ZXAztecDecoder.m in Sources */,
@@ -2646,6 +2667,7 @@
 				FC591EC51C852CEE001FEDE3 /* ZXStringUtils.m in Sources */,
 				FC591F561C852CEE001FEDE3 /* ZXQRCodeWriter.m in Sources */,
 				FC591EAA1C852CEE001FEDE3 /* ZXVINResultParser.m in Sources */,
+				FCA7E9EC1C898DBA002D613E /* MyCouponCollectionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
