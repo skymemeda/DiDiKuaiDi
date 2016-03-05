@@ -23,7 +23,7 @@
 #pragma mark initView
 - (void)initView {
     self.title = @"设置";
-    self.view.backgroundColor = [UIColor colorWithRed:5/255 green:11/255 blue:16/255 alpha:1];
+    self.view.backgroundColor = [UIColor colorWithRed:250.0/255.0 green:244.0/255.0 blue:239.0/255.0 alpha:1];
 }
 
 

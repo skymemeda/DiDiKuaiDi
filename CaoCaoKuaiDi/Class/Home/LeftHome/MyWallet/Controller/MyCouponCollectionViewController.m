@@ -32,8 +32,7 @@ static NSString * const reuseIdentifier = @"Cell";
     // Uncomment the following line to preserve selection between presentations
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Register cell classes
-    [self.collectionView registerClass:[CouponCollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    // Register cell classe
     
     // Do any additional setup after loading the view.
 }
@@ -46,11 +45,17 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (void)initView {
     self.title = @"我的优惠劵";
-    self.collectionView.backgroundColor = [UIColor colorWithRed:249.0/255.0 green:241.0/255.0 blue:235.0/255.0 alpha:1];
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([CouponCollectionViewCell class]) bundle:nil];
+    [self.collectionView registerNib:nib forCellWithReuseIdentifier:reuseIdentifier];
     
-    self.collectionView.alwaysBounceHorizontal = YES;
+    
+    self.collectionView.backgroundColor = [UIColor colorWithRed:249.0/255.0 green:241.0/255.0 blue:235.0/255.0 alpha:1];
+    self.collectionView.bounces = YES;
+    self.collectionView.bouncesZoom = YES;
+    self.collectionView.alwaysBounceVertical = YES;
+    self.collectionView.pagingEnabled = NO;
     self.collectionView.showsVerticalScrollIndicator = NO;
-}
+           }
 
 
 /*
@@ -73,17 +78,11 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 
-    return 10;
+    return 20;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CouponCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
-    BOOL nibsRegistered = NO;
-    if (!nibsRegistered) {
-        UINib *nib = [UINib nibWithNibName:NSStringFromClass([CouponCollectionViewCell class]) bundle:nil];
-        [collectionView registerNib:nib forCellWithReuseIdentifier:reuseIdentifier];
-        nibsRegistered = YES;
-    }
     
     return cell;
 }
