@@ -24,8 +24,17 @@
 - (void)initView {
     self.title = @"设置";
     self.view.backgroundColor = [UIColor colorWithRed:250.0/255.0 green:244.0/255.0 blue:239.0/255.0 alpha:1];
+    [self.tableView setScrollEnabled:YES];
+    [self setExtraCellLineHidden:self.tableView];
 }
 
+
+-(void)setExtraCellLineHidden: (UITableView *)tableView
+{
+    UIView *view = [UIView new];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+}
 
 #pragma mark tableviewdelegate
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

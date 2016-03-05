@@ -19,6 +19,8 @@
 #import <BaiduMapAPI_Search/BMKSearchComponent.h>
 #import <BaiduMapAPI_Location/BMKLocationService.h>
 #import <BaiduMapAPI_Search/BMKSearchBase.h>
+#import <QuartzCore/QuartzCore.h>
+#import "UIView+Extend.h"
 
 
 @interface HomeViewController () <UINavigationBarDelegate,UIActionSheetDelegate,BMKLocationServiceDelegate,BMKMapViewDelegate,BMKGeoCodeSearchDelegate>
@@ -46,6 +48,8 @@
 @property (nonatomic,strong)BMKUserLocation *userLocationDetail;
 
 @property (nonatomic,strong) BMKMapView *BDMapView;
+
+@property (nonatomic,strong) UIButton *expressMoreButton;
 @end
 
 
@@ -57,16 +61,16 @@
     if(!_items) {
         _items = [NSMutableArray array];
         _items = [@[
-                    [YCXMenuItem menuItem:@"扫一扫"
-                                    image:nil
+                    [YCXMenuItem menuItem:@" 扫一扫"
+                                    image:[UIImage imageNamed:@"home_iconfont-saoyisao"]
                                       tag:100
                                  userInfo:@{@"title":@"Menu"}],
-                    [YCXMenuItem menuItem:@"最近订单"
-                                    image:nil
+                    [YCXMenuItem menuItem:@" 最近订单"
+                                    image:[UIImage imageNamed:@"home_iconfont-dingdan"]
                                       tag:101
                                  userInfo:@{@"title":@"Menu"}],
-                    [YCXMenuItem menuItem:@"收藏快递员"
-                                    image:nil
+                    [YCXMenuItem menuItem:@" 收藏快递员"
+                                    image:[UIImage imageNamed:@"home_iconfont-shoucang"]
                                       tag:102
                                  userInfo:@{@"title":@"Menu"}]
                     
@@ -110,8 +114,8 @@
 }
 -(UIView *)chooseExpressMaskView {
     if (!_chooseExpressMaskView) {
-        _chooseExpressMaskView = [[UIView alloc]initWithFrame:CGRectMake(0, SCRE_HEIGHT - 70, SCRE_WIDTH, 70)];
-        _chooseExpressMaskView.backgroundColor = [UIColor redColor];
+        _chooseExpressMaskView = [[UIView alloc]initWithFrame:CGRectMake(0, SCRE_HEIGHT - 90, SCRE_WIDTH * 2, 40)];
+        _chooseExpressMaskView.backgroundColor = [UIColor whiteColor];
     }
     return _chooseExpressMaskView;
 }
@@ -206,13 +210,28 @@
 
 //初始化底部Button
 - (void)initBottomView {
-    UIView *bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, SCRE_HEIGHT - 40, SCRE_WIDTH, 40)];
-    bottomView.backgroundColor = [UIColor greenColor];
+    UIView *bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, SCRE_HEIGHT - 50, SCRE_WIDTH, 50)];
     [self.view addSubview:bottomView];
-    UIButton *callCourierButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 5, SCRE_WIDTH - 40, 30)];
+    //画线
+    UIBezierPath *straightLineBe = [UIBezierPath bezierPath];
+    [straightLineBe moveToPoint:CGPointMake(0, 0)];
+    [straightLineBe addLineToPoint:CGPointMake(SCRE_WIDTH, 0)];
+    
+    CAShapeLayer *shaperLayer = [[CAShapeLayer alloc]init];
+    shaperLayer.strokeColor = [[UIColor blackColor]CGColor];
+    shaperLayer.lineWidth = 0.2f;
+    shaperLayer.path = straightLineBe.CGPath;
+    [bottomView.layer addSublayer:shaperLayer];
+    
+    
+    UIButton *callCourierButton = [[UIButton alloc]initWithFrame:CGRectMake(20, 5, SCRE_WIDTH - 40, 40)];
     [callCourierButton setTitle:@"呼叫快递" forState:UIControlStateNormal];
-    [callCourierButton setBackgroundColor:[UIColor redColor]];
+    [callCourierButton setBackgroundColor:[UIColor colorWithRed:253.0/255.0 green:139.0/255.0 blue:23.0/255 alpha:1]];
+    callCourierButton.layer.cornerRadius = 5.0;
+    callCourierButton.layer.masksToBounds = YES;
+    [callCourierButton setTintColor:[UIColor whiteColor]];
     [callCourierButton addTarget:self action:@selector(callCourierAction) forControlEvents:UIControlEventTouchDown];
+    bottomView.backgroundColor = [UIColor whiteColor];
     [bottomView addSubview:callCourierButton];
     
 }
@@ -221,12 +240,44 @@
     
     for (int i = 0; i < 5; i++) {
         self.choooseExpressTypeButton = [[UIButton alloc]init];
-        _choooseExpressTypeButton.frame = CGRectMake( 30 * (i + 1) + i * (SCRE_WIDTH - 180)/5, 5, (SCRE_WIDTH - 180)/5, 20);
-        _choooseExpressTypeButton.backgroundColor = [UIColor yellowColor];
+        _choooseExpressTypeButton.frame = CGRectMake( 15 * (i + 1) + i * (SCRE_WIDTH - 120)/5, 10, (SCRE_WIDTH - 120)/5, 20);
+        _choooseExpressTypeButton.backgroundColor = [UIColor whiteColor];
+        _choooseExpressTypeButton.layer.cornerRadius = 5;
+        _choooseExpressTypeButton.layer.masksToBounds = YES;
+        _choooseExpressTypeButton.layer.borderWidth = 0.5;
+        _choooseExpressTypeButton.layer.borderColor = [[UIColor colorWithWhite:0.3 alpha:0.8]CGColor];
         _choooseExpressTypeButton.tag = 10 + i;
+        _choooseExpressTypeButton.titleLabel.font = [UIFont systemFontOfSize:12];
+        [_choooseExpressTypeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+
+        [_choooseExpressTypeButton setTitle:self.expressInfoArray[i] forState:UIControlStateNormal];
         [_choooseExpressTypeButton addTarget:self action:@selector(chooseExpressAction:) forControlEvents:UIControlEventTouchDown];
+        _chooseExpressMaskView.backgroundColor = [UIColor greenColor];
         [_chooseExpressMaskView addSubview:_choooseExpressTypeButton];
     }
+    self.expressMoreButton = [[UIButton alloc]initWithFrame:CGRectMake(SCRE_WIDTH - 30, 10, 20, 20)];
+    _expressMoreButton.backgroundColor = [UIColor redColor];
+    [_expressMoreButton addTarget:self action:@selector(expressMoreAction) forControlEvents:UIControlEventTouchDown];
+    [_chooseExpressMaskView addSubview:_expressMoreButton];
+    
+    for (int i = 0; i < 5; i++) {
+       
+        _choooseExpressTypeButton.frame = CGRectMake( 15 * (i + 1) + i * (SCRE_WIDTH - 120)/5 + SCRE_WIDTH, 10, (SCRE_WIDTH - 120)/5, 20);
+        _choooseExpressTypeButton.backgroundColor = [UIColor whiteColor];
+        _choooseExpressTypeButton.layer.cornerRadius = 5;
+        _choooseExpressTypeButton.layer.masksToBounds = YES;
+        _choooseExpressTypeButton.layer.borderWidth = 0.5;
+        _choooseExpressTypeButton.layer.borderColor = [[UIColor colorWithWhite:0.3 alpha:0.8]CGColor];
+        _choooseExpressTypeButton.tag = 20 + i;
+        _choooseExpressTypeButton.titleLabel.font = [UIFont systemFontOfSize:12];
+        [_choooseExpressTypeButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        
+        [_choooseExpressTypeButton setTitle:self.expressInfoArray[i] forState:UIControlStateNormal];
+        [_choooseExpressTypeButton addTarget:self action:@selector(chooseExpressAction:) forControlEvents:UIControlEventTouchDown];
+        _chooseExpressMaskView.backgroundColor = [UIColor greenColor];
+        [_chooseExpressMaskView addSubview:_choooseExpressTypeButton];
+    }
+
     
 }
 
@@ -245,7 +296,7 @@
 #pragma mark --action
 //左按钮navigationitem点击
 -(void)rightBarButtonItemAction {
-    [YCXMenu setTintColor:[UIColor colorWithRed:0.118 green:0.573 blue:0.820 alpha:1]];
+    [YCXMenu setTintColor:[UIColor whiteColor]];
     if ([YCXMenu isShow]){
         [YCXMenu dismissMenu];
     } else {
@@ -293,6 +344,13 @@
 - (void)chooseExpressAction:(UIButton *)sender {
     NSLog(@"%ld",(long)sender.tag);
     
+}
+
+//更多快递
+- (void)expressMoreAction {
+    [UIView animateWithDuration:0.7 animations:^{
+        _chooseExpressMaskView.x -= SCRE_WIDTH;
+    }];
 }
 
 #pragma mark BMKLocationServiceDelegate

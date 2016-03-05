@@ -247,6 +247,9 @@
 		FC591F951C85355A001FEDE3 /* ZXingWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591F8B1C85355A001FEDE3 /* ZXingWrapper.m */; };
 		FC591F981C8537D9001FEDE3 /* MyQRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591F971C8537D9001FEDE3 /* MyQRViewController.m */; };
 		FC591F9C1C8537F6001FEDE3 /* ScanResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591F9A1C8537F6001FEDE3 /* ScanResultViewController.m */; };
+		FC7898B71C8ABB2500309DDF /* GFCollectionViewFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7898B61C8ABB2500309DDF /* GFCollectionViewFlowLayout.m */; };
+		FC7898BB1C8ABBCB00309DDF /* CouierCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7898B91C8ABBCB00309DDF /* CouierCollectionViewCell.m */; };
+		FC7898BC1C8ABBCB00309DDF /* CouierCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC7898BA1C8ABBCB00309DDF /* CouierCollectionViewCell.xib */; };
 		FC7953431C816800007F55F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953421C816800007F55F5 /* main.m */; };
 		FC7953461C816800007F55F5 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = FC7953451C816800007F55F5 /* AppDelegate.mm */; };
 		FC79534E1C816800007F55F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC79534D1C816800007F55F5 /* Assets.xcassets */; };
@@ -810,6 +813,11 @@
 		FC591F971C8537D9001FEDE3 /* MyQRViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyQRViewController.m; sourceTree = "<group>"; };
 		FC591F991C8537F6001FEDE3 /* ScanResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanResultViewController.h; sourceTree = "<group>"; };
 		FC591F9A1C8537F6001FEDE3 /* ScanResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanResultViewController.m; sourceTree = "<group>"; };
+		FC7898B51C8ABB2500309DDF /* GFCollectionViewFlowLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFCollectionViewFlowLayout.h; sourceTree = "<group>"; };
+		FC7898B61C8ABB2500309DDF /* GFCollectionViewFlowLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFCollectionViewFlowLayout.m; sourceTree = "<group>"; };
+		FC7898B81C8ABBCB00309DDF /* CouierCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouierCollectionViewCell.h; sourceTree = "<group>"; };
+		FC7898B91C8ABBCB00309DDF /* CouierCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouierCollectionViewCell.m; sourceTree = "<group>"; };
+		FC7898BA1C8ABBCB00309DDF /* CouierCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouierCollectionViewCell.xib; sourceTree = "<group>"; };
 		FC79533E1C816800007F55F5 /* CaoCaoKuaiDi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CaoCaoKuaiDi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC7953421C816800007F55F5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FC7953441C816800007F55F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1678,13 +1686,18 @@
 		FC591F611C852E20001FEDE3 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				FC591F761C85355A001FEDE3 /* LBXScan */,
-				FC591F691C852E89001FEDE3 /* Class */,
+				FC7898B51C8ABB2500309DDF /* GFCollectionViewFlowLayout.h */,
+				FC7898B61C8ABB2500309DDF /* GFCollectionViewFlowLayout.m */,
 				FC591F6E1C852E89001FEDE3 /* LBXAlertAction.h */,
 				FC591F6F1C852E89001FEDE3 /* LBXAlertAction.m */,
-				FC591F621C852E4A001FEDE3 /* YCXMenu */,
 				FC0EC8501C8543A400C3B666 /* UIScanTextField.h */,
 				FC0EC8511C8543A400C3B666 /* UIScanTextField.m */,
+				FC7898B81C8ABBCB00309DDF /* CouierCollectionViewCell.h */,
+				FC7898B91C8ABBCB00309DDF /* CouierCollectionViewCell.m */,
+				FC7898BA1C8ABBCB00309DDF /* CouierCollectionViewCell.xib */,
+				FC591F761C85355A001FEDE3 /* LBXScan */,
+				FC591F691C852E89001FEDE3 /* Class */,
+				FC591F621C852E4A001FEDE3 /* YCXMenu */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2382,6 +2395,7 @@
 				FC7953511C816800007F55F5 /* LaunchScreen.storyboard in Resources */,
 				FCA168F11C880C580007588D /* OrdersTableViewCell.xib in Resources */,
 				FC79534E1C816800007F55F5 /* Assets.xcassets in Resources */,
+				FC7898BC1C8ABBCB00309DDF /* CouierCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2419,6 +2433,7 @@
 				FC7953461C816800007F55F5 /* AppDelegate.mm in Sources */,
 				FC591F2A1C852CEE001FEDE3 /* ZXPDF417Codeword.m in Sources */,
 				FC591EA31C852CEE001FEDE3 /* ZXTextParsedResult.m in Sources */,
+				FC7898B71C8ABB2500309DDF /* GFCollectionViewFlowLayout.m in Sources */,
 				FC591F481C852CEE001FEDE3 /* ZXQRCodeAlignmentPatternFinder.m in Sources */,
 				FC591EF61C852CEE001FEDE3 /* ZXAI01weightDecoder.m in Sources */,
 				FC591E931C852CEE001FEDE3 /* ZXExpandedProductParsedResult.m in Sources */,
@@ -2448,6 +2463,7 @@
 				FC591EE51C852CEE001FEDE3 /* ZXDataMatrixReader.m in Sources */,
 				FC591E9E1C852CEE001FEDE3 /* ZXSMSParsedResult.m in Sources */,
 				FC591F391C852CEE001FEDE3 /* ZXPDF417Common.m in Sources */,
+				FC7898BB1C8ABBCB00309DDF /* CouierCollectionViewCell.m in Sources */,
 				FC591EFF1C852CEE001FEDE3 /* ZXRSSExpandedGeneralAppIdDecoder.m in Sources */,
 				FC591F011C852CEE001FEDE3 /* ZXRSSExpandedPair.m in Sources */,
 				FC591EE11C852CEE001FEDE3 /* ZXDataMatrixSymbolInfo.m in Sources */,
