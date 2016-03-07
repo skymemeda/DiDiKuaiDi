@@ -15,15 +15,15 @@
 #import "CourierCollectionViewController.h"
 #import "SearchExpressViewController.h"
 #import "LoginHomeViewController.h"
-#import <BaiduMapAPI_Map/BMKMapComponent.h>
-#import <BaiduMapAPI_Search/BMKSearchComponent.h>
-#import <BaiduMapAPI_Location/BMKLocationService.h>
-#import <BaiduMapAPI_Search/BMKSearchBase.h>
 #import <QuartzCore/QuartzCore.h>
 #import "UIView+Extend.h"
+#import <MAMapKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
+#import <AMapSearchKit/AMapSearchAPI.h>
+#import "CustomAnnotationView.h"
 
 
-@interface HomeViewController () <UINavigationBarDelegate,UIActionSheetDelegate,BMKLocationServiceDelegate,BMKMapViewDelegate,BMKGeoCodeSearchDelegate>
+@interface HomeViewController () <UINavigationBarDelegate,UIActionSheetDelegate,CLLocationManagerDelegate,AMapSearchDelegate,MAMapViewDelegate>
 
 @property (nonatomic,strong) NSMutableArray *items;
 
@@ -31,25 +31,20 @@
 
 @property (nonatomic,strong) UIView *leftView;
 
-@property (nonatomic,strong) BMKLocationService *locationService;
-
-@property (nonatomic,strong) BMKSearchBase *BDSearchBase;
-
-@property (nonatomic,strong) CLLocation *currentLocation;
-
 @property (nonatomic,strong) UIView *chooseExpressMaskView;
 
 @property (nonatomic,strong) UIButton *choooseExpressTypeButton;
 
 @property (nonatomic,strong) NSMutableArray *expressInfoArray;
 
-@property (nonatomic,strong) BMKGeoCodeSearch *geoSearch;
-
-@property (nonatomic,strong)BMKUserLocation *userLocationDetail;
-
-@property (nonatomic,strong) BMKMapView *BDMapView;
-
 @property (nonatomic,strong) UIButton *expressMoreButton;
+
+@property (nonatomic,strong) MAMapView *mapView;
+
+@property (nonatomic,strong) AMapSearchAPI *aMapSearch;
+
+@property (nonatomic,strong) CLLocation *currentLocation;
+
 @end
 
 
@@ -106,12 +101,6 @@
     return _expressInfoArray;
 }
 
--(BMKGeoCodeSearch *)geoSearch {
-    if (!_geoSearch) {
-        _geoSearch = [[BMKGeoCodeSearch alloc]init];
-    }
-    return _geoSearch;
-}
 -(UIView *)chooseExpressMaskView {
     if (!_chooseExpressMaskView) {
         _chooseExpressMaskView = [[UIView alloc]initWithFrame:CGRectMake(0, SCRE_HEIGHT - 90, SCRE_WIDTH * 2, 40)];
@@ -120,22 +109,16 @@
     return _chooseExpressMaskView;
 }
 
--(BMKUserLocation *)userLocationDetail {
-    if (!_userLocationDetail) {
-        _userLocationDetail = [[BMKUserLocation alloc]init];
+-(MAMapView *)mapView {
+    if (!_mapView) {
+        _mapView = [[MAMapView alloc]initWithFrame:CGRectMake(0, 64, SCRE_WIDTH, SCRE_HEIGHT - 64)];
+        _mapView.delegate = self;
+        _mapView.mapType = MAMapTypeStandard;
+        _mapView.showsUserLocation = YES;
+        _mapView.userTrackingMode = MAUserTrackingModeFollow;
+        
     }
-    return _userLocationDetail;
-}
-
-- (BMKMapView *)BDMapView
-{
-    if (!_BDMapView) {
-        _BDMapView = [[BMKMapView alloc] initWithFrame:self.view.bounds];
-        _BDMapView.zoomLevel = 19;
-        _BDMapView.showMapScaleBar = YES;
-        [self.view addSubview:_BDMapView];
-    }
-    return _BDMapView;
+    return _mapView;
 }
 
 #pragma mark -系统加载项
@@ -143,37 +126,26 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initNavigationBar];
-    self.locationService = [[BMKLocationService alloc]init];
-    _locationService.delegate = self;
-    [_locationService startUserLocationService];
-    
-    self.BDMapView.userTrackingMode = BMKUserTrackingModeFollowWithHeading;
-    _BDMapView.showsUserLocation = YES;
-    _BDMapView.delegate = self;
-    
+    [self.view addSubview:self.mapView];
     
     [self.view addSubview:self.chooseExpressMaskView];
     [self initBottomView];
     [self initChoooseExpressTypeButton];
-    [self reGeoAction];
+    _aMapSearch = [[AMapSearchAPI alloc]init];
+    self.aMapSearch.delegate = self;
     
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    self.BDMapView.delegate = self;
-    self.geoSearch.delegate = self;
+
 }
 
 
 - (void)viewWillDisappear:(BOOL)animated
 {
     [super viewWillDisappear:animated];
-    self.BDMapView.delegate = nil;
-    self.geoSearch.delegate = nil;
-    NSLog(@"___________%s",__func__);
-
 }
 
 - (void)didReceiveMemoryWarning {
@@ -281,17 +253,6 @@
     
 }
 
-#pragma mark function自定义方法
-//发起搜索请求
-- (void)reGeoAction {
-    if (_currentLocation)
-    {
-        BMKReverseGeoCodeOption *geoRequest = [[BMKReverseGeoCodeOption alloc] init];
-        geoRequest.reverseGeoPoint = _currentLocation.coordinate;
-        [self.geoSearch reverseGeoCode:geoRequest];
-    }
-}
-
 
 #pragma mark --action
 //左按钮navigationitem点击
@@ -353,41 +314,33 @@
     }];
 }
 
-#pragma mark BMKLocationServiceDelegate
 
-- (void)didUpdateUserHeading:(BMKUserLocation *)userLocation
-{
-    if (self.userLocationDetail.subtitle) {
-        userLocation.title = _userLocationDetail.title;
-        userLocation.subtitle = _userLocationDetail.subtitle;
+
+
+//发起搜索请求
+- (void)reGeoAction {
+    if (_currentLocation)
+    {
+        AMapReGeocodeSearchRequest *request = [[AMapReGeocodeSearchRequest alloc] init];
+        request.location = [AMapGeoPoint locationWithLatitude:_currentLocation.coordinate.latitude
+                                                    longitude:_currentLocation.coordinate.longitude];
+        [_aMapSearch AMapReGoecodeSearch:request];
     }
-    [_BDMapView updateLocationData:userLocation];
-    
-}
-//处理位置坐标更新
-- (void)didUpdateBMKUserLocation:(BMKUserLocation *)userLocation
-{
-    
-    _BDMapView.centerCoordinate = userLocation.location.coordinate;
-    _currentLocation = userLocation.location;
-    if (self.userLocationDetail.subtitle) {
-        userLocation.title = _userLocationDetail.title;
-        userLocation.subtitle = _userLocationDetail.subtitle;
-        [_BDMapView updateLocationData:userLocation];
-    }
-    NSLog(@"++++++++++%@",self.userLocationDetail.subtitle );
-    
 }
 
-#pragma mark  BMKMapViewDelegate
--(BMKAnnotationView *)mapView:(BMKMapView *)mapView viewForAnnotation:(id<BMKAnnotation>)annotation {
-    if ([annotation isKindOfClass:[BMKPointAnnotation class]])
+#pragma mark 调用系统定位
+
+
+#pragma mark 高德地图回调delegate
+-(MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation {
+    
+    if ([annotation isKindOfClass:[MAPointAnnotation class]])
     {
         static NSString *pointReuseIndentifier = @"pointReuseIndentifier";
-        BMKAnnotationView *annotationView = (BMKAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndentifier];
+        CustomAnnotationView *annotationView = (CustomAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndentifier];
         if (annotationView == nil)
         {
-            annotationView = [[BMKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndentifier];
+            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndentifier];
         }
         annotationView.image = [UIImage imageNamed:@"restaurant"];
         // 设置中心点偏移，使得标注底部中间点成为经纬度对应点
@@ -399,29 +352,56 @@
     return nil;
 }
 
-#warning @"wait slove with this"
--(void)mapView:(BMKMapView *)mapView didSelectAnnotationView:(BMKAnnotationView *)view {
+-(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation {
+    NSLog(@"%f,%f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+    _currentLocation = [userLocation.location copy];
+}
+
+-(void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view {
     
     
-//    if([view.annotation isKindOfClass:[BMKUserLocation class]]) {
+    if([view.annotation isKindOfClass:[MAUserLocation class]]) {
         [self reGeoAction];
-//    }
-    
-}
-
-
-
-- (void)onGetReverseGeoCodeResult:(BMKGeoCodeSearch *)searcher result:(BMKReverseGeoCodeResult *)result errorCode:(BMKSearchErrorCode)error
-{
-    if (result) {
-        NSLog(@"%@ - %@", result.address, result.addressDetail.streetNumber);
-        self.userLocationDetail.title = result.addressDetail.city;
-        self.userLocationDetail.subtitle = result.address;
-    }else{
-    
     }
-    NSLog(@"%@",self.userLocationDetail.subtitle);
 }
 
+- (void)mapView:(MAMapView *)mapView didAnnotationViewCalloutTapped:(MAAnnotationView *)view {
+ 
+}
+
+#pragma mark 高德地图搜索代理
+- (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:
+(AMapReGeocodeSearchResponse *)response
+{
+    NSLog(@"response :%@", response);
+    NSString *title = response.regeocode.addressComponent.city;
+    if (title.length == 0)
+    {
+        title = response.regeocode.addressComponent.province;
+    }
+    _mapView.userLocation.title = @"单击完善详细地址";
+    _mapView.userLocation.subtitle = response.regeocode.formattedAddress;
+}
+
+
+- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error {
+    NSLog(@"response :%@", error);
+}
+
+//获取附近POI搜索的结果
+- (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response {
+    if (response.pois.count > 0)
+    {
+        AMapPOI *poi = response.pois[0];
+        NSLog(@"%@",poi.name);
+        MAPointAnnotation *annotation = [[MAPointAnnotation alloc] init];
+        annotation.coordinate = CLLocationCoordinate2DMake(poi.location.latitude, poi.location.longitude);
+        annotation.title = poi.name;
+        annotation.subtitle = poi.address;
+        [_mapView addAnnotation:annotation];
+    }
+    
+    
+}
 
 @end

@@ -9,12 +9,11 @@
 #import "AppDelegate.h"
 #import "GlobalNavigationController.h"
 #import "HomeViewController.h"
-#import <BaiduMapAPI_Base/BMKMapManager.h>
+#import <MAMapKit/MAMapKit.h>
+#import <AMapSearchKit/AMapSearchKit.h>
 
 
 @interface AppDelegate ()
-
-@property (nonatomic,strong) BMKMapManager *mapManager;
 
 @end
 
@@ -23,13 +22,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
     
-    self.mapManager = [[BMKMapManager alloc]init];
+    [MAMapServices sharedServices].apiKey = @"d9408b814a25ea04565dc15434813c2a";
     
-    BOOL ret = [_mapManager start:@"b1sPXS3Gl6UVKnwAyRxZLh5Q"  generalDelegate:nil];
-    if (!ret) {
-        NSLog(@"manager start failed!");
-    }
+    [AMapSearchServices sharedServices].apiKey = @"d9408b814a25ea04565dc15434813c2a";
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
