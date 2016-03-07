@@ -2,15 +2,16 @@
 //  CustomAnnotationView.h
 //  CaoCaoKuaiDi
 //
-//  Created by goofygao on 16/2/28.
+//  Created by goofygao on 16/3/1.
 //  Copyright © 2016年 goofyy. All rights reserved.
 //
 
+
 #import <MAMapKit/MAMapKit.h>
-#import "CustomMapCalloutView.h"
+#import "CustomCalloutView.h"
 
 @interface CustomAnnotationView : MAAnnotationView
 
-@property (nonatomic, readonly) CustomMapCalloutView *calloutView;
+@property (nonatomic, strong) CustomCalloutView *calloutView;
 
 @end

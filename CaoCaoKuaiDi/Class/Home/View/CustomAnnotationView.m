@@ -1,24 +1,21 @@
 //
 //  CustomAnnotationView.m
-//  CaoCaoKuaiDi
+//  HelloAmap
 //
-//  Created by goofygao on 16/2/28.
-//  Copyright © 2016年 goofyy. All rights reserved.
+//  Created by xiaoming han on 14-10-21.
+//  Copyright (c) 2014年 AutoNavi. All rights reserved.
 //
 
 #import "CustomAnnotationView.h"
 
-#define kCalloutWidth       200.0
-#define kCalloutHeight      70.0
+#define kCalloutWidth       250.0
+#define kCalloutHeight      50.0
 
 @interface CustomAnnotationView ()
-
-@property (nonatomic, strong, readwrite) CustomMapCalloutView *calloutView;
 
 @end
 
 @implementation CustomAnnotationView
-@synthesize calloutView = _calloutView;
 
 #pragma mark - Override
 
@@ -36,16 +33,13 @@
     
     if (selected)
     {
+        NSLog(@"___________%s,%@",__func__,self.calloutView);
         if (self.calloutView == nil)
         {
-            self.calloutView = [[CustomMapCalloutView alloc] initWithFrame:CGRectMake(0, 0, kCalloutWidth, kCalloutHeight)];
-            self.calloutView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f + self.calloutOffset.x,
+            self.calloutView = [[CustomCalloutView alloc] initWithFrame:CGRectMake(0, 0, kCalloutWidth, kCalloutHeight)];
+            _calloutView.center = CGPointMake(CGRectGetWidth(self.bounds) / 2.f + self.calloutOffset.x,
                                                   -CGRectGetHeight(self.calloutView.bounds) / 2.f + self.calloutOffset.y);
         }
-        
-        self.calloutView.image = [UIImage imageNamed:@"building"];
-        self.calloutView.title = self.annotation.title;
-        self.calloutView.subtitle = self.annotation.subtitle;
         
         [self addSubview:self.calloutView];
     }
@@ -53,7 +47,7 @@
     {
         [self.calloutView removeFromSuperview];
     }
-    
+
     [super setSelected:selected animated:animated];
 }
 
@@ -71,3 +65,4 @@
 }
 
 @end
+

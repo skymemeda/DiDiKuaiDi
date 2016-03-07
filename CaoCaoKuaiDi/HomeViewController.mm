@@ -21,6 +21,7 @@
 #import <AMapSearchKit/AMapSearchKit.h>
 #import <AMapSearchKit/AMapSearchAPI.h>
 #import "CustomAnnotationView.h"
+#import "AddNewAddressViewController.h"
 
 
 @interface HomeViewController () <UINavigationBarDelegate,UIActionSheetDelegate,CLLocationManagerDelegate,AMapSearchDelegate,MAMapViewDelegate>
@@ -44,6 +45,8 @@
 @property (nonatomic,strong) AMapSearchAPI *aMapSearch;
 
 @property (nonatomic,strong) CLLocation *currentLocation;
+
+@property (nonatomic,strong) CustomAnnotationView *annotationView;
 
 @end
 
@@ -109,6 +112,13 @@
     return _chooseExpressMaskView;
 }
 
+-(CustomAnnotationView *)annotationView {
+    if (!_annotationView) {
+        _annotationView = [[CustomAnnotationView alloc]init];
+    }
+    return _annotationView;
+}
+
 -(MAMapView *)mapView {
     if (!_mapView) {
         _mapView = [[MAMapView alloc]initWithFrame:CGRectMake(0, 64, SCRE_WIDTH, SCRE_HEIGHT - 64)];
@@ -116,6 +126,8 @@
         _mapView.mapType = MAMapTypeStandard;
         _mapView.showsUserLocation = YES;
         _mapView.userTrackingMode = MAUserTrackingModeFollow;
+        _mapView.showsCompass = NO;
+        _mapView.showsScale = NO;
         
     }
     return _mapView;
@@ -134,6 +146,7 @@
     _aMapSearch = [[AMapSearchAPI alloc]init];
     self.aMapSearch.delegate = self;
     
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -141,18 +154,6 @@
     [super viewWillAppear:animated];
 
 }
-
-
-- (void)viewWillDisappear:(BOOL)animated
-{
-    [super viewWillDisappear:animated];
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 -(void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
     if (viewController == self) {
@@ -252,7 +253,11 @@
 
     
 }
-
+//完善地址 和 团“快增加响应事件
+- (void) initCompleteORtuanEvent {
+    [self.annotationView.calloutView.completeAdressBtn addTarget:self action:@selector(completeAdressAction) forControlEvents:UIControlEventTouchDown];
+    [self.annotationView.calloutView.tuanORkuanBtn addTarget:self action:@selector(tuanORkuanIntrol) forControlEvents:UIControlEventTouchDown];
+}
 
 #pragma mark --action
 //左按钮navigationitem点击
@@ -314,8 +319,16 @@
     }];
 }
 
+//完善地址
+- (void)completeAdressAction {
+    
+    [self.navigationController pushViewController:[[AddNewAddressViewController alloc]init] animated:YES];
+}
 
-
+//关于团和快的介绍
+- (void)tuanORkuanIntrol {
+    
+}
 
 //发起搜索请求
 - (void)reGeoAction {
@@ -334,26 +347,22 @@
 #pragma mark 高德地图回调delegate
 -(MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation {
     
-    if ([annotation isKindOfClass:[MAPointAnnotation class]])
-    {
-        static NSString *pointReuseIndentifier = @"pointReuseIndentifier";
-        CustomAnnotationView *annotationView = (CustomAnnotationView*)[mapView dequeueReusableAnnotationViewWithIdentifier:pointReuseIndentifier];
-        if (annotationView == nil)
+        static NSString *reuseIndetifier = @"annotationReuseIndetifier";
+        self.annotationView = (CustomAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseIndetifier];
+        if (_annotationView == nil)
         {
-            annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:pointReuseIndentifier];
+            self.annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIndetifier];
         }
-        annotationView.image = [UIImage imageNamed:@"restaurant"];
-        // 设置中心点偏移，使得标注底部中间点成为经纬度对应点
-        annotationView.centerOffset = CGPointMake(0, -18);
-        annotationView.canShowCallout= NO;       //设置气泡可以弹出，默认为NO
-        annotationView.draggable = YES;        //设置标注可以拖动，默认为NO
-        return annotationView;
-    }
-    return nil;
+        _annotationView.image = [UIImage imageNamed:@"restaurant"];
+        _annotationView.canShowCallout = NO;
+        _annotationView.centerOffset = CGPointMake(0, -18);
+    [_annotationView setSelected:YES];
+    return _annotationView;
 }
 
 -(void)mapView:(MAMapView *)mapView didUpdateUserLocation:(MAUserLocation *)userLocation updatingLocation:(BOOL)updatingLocation {
     NSLog(@"%f,%f",userLocation.coordinate.latitude,userLocation.coordinate.longitude);
+    
     _currentLocation = [userLocation.location copy];
 }
 
@@ -363,6 +372,8 @@
     if([view.annotation isKindOfClass:[MAUserLocation class]]) {
         [self reGeoAction];
     }
+    [_annotationView.calloutView.completeAdressBtn addTarget:self action:@selector(completeAdressAction) forControlEvents:UIControlEventTouchDown];
+    [_annotationView.calloutView.tuanORkuanBtn addTarget:self action:@selector(tuanORkuanIntrol) forControlEvents:UIControlEventTouchDown];
 }
 
 - (void)mapView:(MAMapView *)mapView didAnnotationViewCalloutTapped:(MAAnnotationView *)view {
@@ -373,19 +384,18 @@
 - (void)onReGeocodeSearchDone:(AMapReGeocodeSearchRequest *)request response:
 (AMapReGeocodeSearchResponse *)response
 {
-    NSLog(@"response :%@", response);
+
     NSString *title = response.regeocode.addressComponent.city;
     if (title.length == 0)
     {
         title = response.regeocode.addressComponent.province;
     }
-    _mapView.userLocation.title = @"单击完善详细地址";
-    _mapView.userLocation.subtitle = response.regeocode.formattedAddress;
 }
 
 
 - (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error {
-    NSLog(@"response :%@", error);
+  
+    
 }
 
 //获取附近POI搜索的结果
@@ -393,7 +403,6 @@
     if (response.pois.count > 0)
     {
         AMapPOI *poi = response.pois[0];
-        NSLog(@"%@",poi.name);
         MAPointAnnotation *annotation = [[MAPointAnnotation alloc] init];
         annotation.coordinate = CLLocationCoordinate2DMake(poi.location.latitude, poi.location.longitude);
         annotation.title = poi.name;
