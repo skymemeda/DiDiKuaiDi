@@ -1,18 +1,18 @@
 //
-//  AddNewAddressViewController.m
+//  UpTheDoorIngViewController.m
 //  CaoCaoKuaiDi
 //
-//  Created by goofygao on 16/3/7.
+//  Created by goofygao on 16/3/8.
 //  Copyright © 2016年 goofyy. All rights reserved.
 //
 
-#import "AddNewAddressViewController.h"
+#import "UpTheDoorIngViewController.h"
 
-@interface AddNewAddressViewController ()
+@interface UpTheDoorIngViewController ()
 
 @end
 
-@implementation AddNewAddressViewController
+@implementation UpTheDoorIngViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,10 +25,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark initView
 - (void)initView {
-    self.title = @"新增地址";
-    self.view.backgroundColor = [UIColor colorWithRed:249.0/255.0 green:241.0/255.0 blue:235.0/255.0 alpha:1];
+    self.title = @"上门中";
+    self.view.backgroundColor = [UIColor whiteColor];
 }
-
 @end

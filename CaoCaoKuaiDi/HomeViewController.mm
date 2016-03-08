@@ -22,6 +22,7 @@
 #import <AMapSearchKit/AMapSearchAPI.h>
 #import "CustomAnnotationView.h"
 #import "AddNewAddressViewController.h"
+#import "SystemWorksheetProcessViewController.h"
 
 
 @interface HomeViewController () <UINavigationBarDelegate,UIActionSheetDelegate,CLLocationManagerDelegate,AMapSearchDelegate,MAMapViewDelegate>
@@ -253,11 +254,6 @@
 
     
 }
-//完善地址 和 团“快增加响应事件
-- (void) initCompleteORtuanEvent {
-    [self.annotationView.calloutView.completeAdressBtn addTarget:self action:@selector(completeAdressAction) forControlEvents:UIControlEventTouchDown];
-    [self.annotationView.calloutView.tuanORkuanBtn addTarget:self action:@selector(tuanORkuanIntrol) forControlEvents:UIControlEventTouchDown];
-}
 
 #pragma mark --action
 //左按钮navigationitem点击
@@ -304,6 +300,7 @@
 //呼叫快递action
 - (void)callCourierAction {
     
+    [self.navigationController pushViewController:[[SystemWorksheetProcessViewController alloc]init] animated:YES];
 }
 
 //chooseExpressAction 查询附近的快递点。并在地图上显示
@@ -347,16 +344,15 @@
 #pragma mark 高德地图回调delegate
 -(MAAnnotationView *)mapView:(MAMapView *)mapView viewForAnnotation:(id<MAAnnotation>)annotation {
     
-        static NSString *reuseIndetifier = @"annotationReuseIndetifier";
-        self.annotationView = (CustomAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseIndetifier];
-        if (_annotationView == nil)
-        {
-            self.annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIndetifier];
-        }
-        _annotationView.image = [UIImage imageNamed:@"restaurant"];
-        _annotationView.canShowCallout = NO;
-        _annotationView.centerOffset = CGPointMake(0, -18);
-    [_annotationView setSelected:YES];
+    static NSString *reuseIndetifier = @"annotationReuseIndetifier";
+    self.annotationView = (CustomAnnotationView *)[mapView dequeueReusableAnnotationViewWithIdentifier:reuseIndetifier];
+    if (_annotationView == nil)
+    {
+        self.annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIndetifier];
+    }
+    _annotationView.image = [UIImage imageNamed:@"restaurant"];
+    _annotationView.canShowCallout = NO;
+    _annotationView.centerOffset = CGPointMake(0, -18);
     return _annotationView;
 }
 
@@ -367,17 +363,13 @@
 }
 
 -(void)mapView:(MAMapView *)mapView didSelectAnnotationView:(MAAnnotationView *)view {
-    
-    
+
     if([view.annotation isKindOfClass:[MAUserLocation class]]) {
         [self reGeoAction];
     }
     [_annotationView.calloutView.completeAdressBtn addTarget:self action:@selector(completeAdressAction) forControlEvents:UIControlEventTouchDown];
     [_annotationView.calloutView.tuanORkuanBtn addTarget:self action:@selector(tuanORkuanIntrol) forControlEvents:UIControlEventTouchDown];
-}
-
-- (void)mapView:(MAMapView *)mapView didAnnotationViewCalloutTapped:(MAAnnotationView *)view {
- 
+    
 }
 
 #pragma mark 高德地图搜索代理
@@ -392,11 +384,6 @@
     }
 }
 
-
-- (void)AMapSearchRequest:(id)request didFailWithError:(NSError *)error {
-  
-    
-}
 
 //获取附近POI搜索的结果
 - (void)onPOISearchDone:(AMapPOISearchBaseRequest *)request response:(AMapPOISearchResponse *)response {
