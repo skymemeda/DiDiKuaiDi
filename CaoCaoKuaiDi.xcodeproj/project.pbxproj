@@ -289,7 +289,6 @@
 		FC7953DE1C816E14007F55F5 /* ScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953DB1C816E14007F55F5 /* ScanBarCodeViewController.m */; };
 		FC7953EC1C8171B3007F55F5 /* OftenAdressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953EB1C8171B3007F55F5 /* OftenAdressViewController.m */; };
 		FC9448071C900D2E00E6E30D /* CostTotalView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9448061C900D2E00E6E30D /* CostTotalView.m */; };
-		FC9448091C900D4200E6E30D /* CostTotalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9448081C900D4200E6E30D /* CostTotalView.xib */; };
 		FC94480B1C900E8000E6E30D /* CostTotalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC94480A1C900E8000E6E30D /* CostTotalView.xib */; };
 		FC94480F1C9023A300E6E30D /* ExpressSimpleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC94480D1C9023A300E6E30D /* ExpressSimpleTableViewCell.m */; };
 		FC9448101C9023A300E6E30D /* ExpressSimpleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC94480E1C9023A300E6E30D /* ExpressSimpleTableViewCell.xib */; };
@@ -902,7 +901,6 @@
 		FC7953EB1C8171B3007F55F5 /* OftenAdressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OftenAdressViewController.m; sourceTree = "<group>"; };
 		FC9448051C900D2E00E6E30D /* CostTotalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostTotalView.h; sourceTree = "<group>"; };
 		FC9448061C900D2E00E6E30D /* CostTotalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CostTotalView.m; sourceTree = "<group>"; };
-		FC9448081C900D4200E6E30D /* CostTotalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CostTotalView.xib; sourceTree = "<group>"; };
 		FC94480A1C900E8000E6E30D /* CostTotalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CostTotalView.xib; sourceTree = "<group>"; };
 		FC94480C1C9023A300E6E30D /* ExpressSimpleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressSimpleTableViewCell.h; sourceTree = "<group>"; };
 		FC94480D1C9023A300E6E30D /* ExpressSimpleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressSimpleTableViewCell.m; sourceTree = "<group>"; };
@@ -1807,7 +1805,6 @@
 		FC7953351C816800007F55F5 = {
 			isa = PBXGroup;
 			children = (
-				FC9448081C900D4200E6E30D /* CostTotalView.xib */,
 				FC00E8FE1C8D1150007240AB /* AMap.bundle */,
 				FC00E8FA1C8D0F49007240AB /* libz.tbd */,
 				FC00E8F81C8D0CFA007240AB /* Foundation.framework */,
@@ -2457,7 +2454,6 @@
 				FC00E93C1C8D6F3C007240AB /* search@2x.png in Resources */,
 				FC00E8FF1C8D1150007240AB /* AMap.bundle in Resources */,
 				FC00E93B1C8D6F3C007240AB /* restaurant.png in Resources */,
-				FC9448091C900D4200E6E30D /* CostTotalView.xib in Resources */,
 				FC00E93A1C8D6F3C007240AB /* location_yes@2x.png in Resources */,
 				FCA7E9F11C899654002D613E /* CouponCollectionViewCell.xib in Resources */,
 				FC9448101C9023A300E6E30D /* ExpressSimpleTableViewCell.xib in Resources */,

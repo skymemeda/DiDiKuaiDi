@@ -113,7 +113,18 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="424" y="217.5"/>
+            <connections>
+                <outlet property="callCouierBtn" destination="WNN-cV-d8B" id="MhK-WI-pDX"/>
+                <outlet property="couierAuthenticationImageView" destination="uR9-hj-LhO" id="lHZ-tf-ydT"/>
+                <outlet property="couierHistoryNumber" destination="HIa-8v-APe" id="JCi-QW-1Gw"/>
+                <outlet property="couierStarLevelView" destination="Lib-rs-KbW" id="LuV-yD-T4C"/>
+                <outlet property="epressAvaterImageView" destination="QvC-J0-Uoo" id="eiB-73-ux4"/>
+                <outlet property="expresNameLabel" destination="ZXa-2F-V9u" id="tWl-kk-HDa"/>
+                <outlet property="expressScore" destination="4B7-an-ATy" id="THJ-C6-LjN"/>
+                <outlet property="expressTypeImageView" destination="chY-ap-K9i" id="5qt-y0-FCY"/>
+                <outlet property="expressTypeLabel" destination="hr9-je-3yc" id="kGJ-gD-xb8"/>
+            </connections>
+            <point key="canvasLocation" x="110" y="158.5"/>
         </view>
     </objects>
     <resources>
