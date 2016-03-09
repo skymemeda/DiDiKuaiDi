@@ -350,7 +350,7 @@
     {
         self.annotationView = [[CustomAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:reuseIndetifier];
     }
-    _annotationView.image = [UIImage imageNamed:@"restaurant"];
+    _annotationView.image = [UIImage imageNamed:@"up_door_pin_image"];
     _annotationView.canShowCallout = NO;
     _annotationView.centerOffset = CGPointMake(0, -18);
     return _annotationView;

@@ -10,6 +10,7 @@
 #import "UpTheDoorIngViewController.h"
 #import "ExpressOfUpDoorView.h"
 #import "UIView+Extend.h"
+#import "PayPageViewController.h"
 #import <MAMapKit/MAMapKit.h>
 
 @interface SystemWorksheetProcessViewController ()<MAMapViewDelegate,UITextFieldDelegate>
@@ -269,10 +270,11 @@
     [UIView animateWithDuration:0.7 animations:^{
         _remarksView.y -= 140;
     }];
+    [self.navigationController pushViewController:[PayPageViewController new] animated:YES];
 }
 
 
-#pragma UITextFieldDelegate
+#pragma mark UITextFieldDelegate
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     [textField setBackground:[UIImage imageNamed:@"ver_phone_phone_text_hight"]];
     return YES;

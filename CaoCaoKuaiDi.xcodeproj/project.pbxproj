@@ -25,6 +25,7 @@
 		FC0EC8521C8543A400C3B666 /* UIScanTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0EC8511C8543A400C3B666 /* UIScanTextField.m */; };
 		FC0EC9371C85B00A00C3B666 /* UIImage+GFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0EC9361C85B00A00C3B666 /* UIImage+GFImage.m */; };
 		FC199B071C8E9E3E00E572DA /* ExpressOfUpDoorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC199B061C8E9E3E00E572DA /* ExpressOfUpDoorView.xib */; };
+		FC199B0A1C8EEE3F00E572DA /* PayPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC199B091C8EEE3F00E572DA /* PayPageViewController.m */; };
 		FC48E52E1C8E97E10027BECE /* UpTheDoorIngViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC48E52D1C8E97E10027BECE /* UpTheDoorIngViewController.m */; };
 		FC48E5311C8E9A2D0027BECE /* ExpressOfUpDoorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC48E5301C8E9A2D0027BECE /* ExpressOfUpDoorView.m */; };
 		FC591E7D1C852CEE001FEDE3 /* ZXAztecDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591C971C852CEE001FEDE3 /* ZXAztecDecoder.m */; };
@@ -287,6 +288,11 @@
 		FC7953DD1C816E14007F55F5 /* RecentOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953D91C816E14007F55F5 /* RecentOrdersViewController.m */; };
 		FC7953DE1C816E14007F55F5 /* ScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953DB1C816E14007F55F5 /* ScanBarCodeViewController.m */; };
 		FC7953EC1C8171B3007F55F5 /* OftenAdressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953EB1C8171B3007F55F5 /* OftenAdressViewController.m */; };
+		FC9448071C900D2E00E6E30D /* CostTotalView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9448061C900D2E00E6E30D /* CostTotalView.m */; };
+		FC9448091C900D4200E6E30D /* CostTotalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9448081C900D4200E6E30D /* CostTotalView.xib */; };
+		FC94480B1C900E8000E6E30D /* CostTotalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC94480A1C900E8000E6E30D /* CostTotalView.xib */; };
+		FC94480F1C9023A300E6E30D /* ExpressSimpleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC94480D1C9023A300E6E30D /* ExpressSimpleTableViewCell.m */; };
+		FC9448101C9023A300E6E30D /* ExpressSimpleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC94480E1C9023A300E6E30D /* ExpressSimpleTableViewCell.xib */; };
 		FCA168E11C87C4230007588D /* LoginHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E01C87C4230007588D /* LoginHomeViewController.m */; };
 		FCA168E41C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E31C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.m */; };
 		FCA168E71C87D7260007588D /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E61C87D7260007588D /* UIView+Extend.m */; };
@@ -349,6 +355,8 @@
 		FC0EC9351C85B00A00C3B666 /* UIImage+GFImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+GFImage.h"; sourceTree = "<group>"; };
 		FC0EC9361C85B00A00C3B666 /* UIImage+GFImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+GFImage.m"; sourceTree = "<group>"; };
 		FC199B061C8E9E3E00E572DA /* ExpressOfUpDoorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpressOfUpDoorView.xib; sourceTree = "<group>"; };
+		FC199B081C8EEE3F00E572DA /* PayPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPageViewController.h; sourceTree = "<group>"; };
+		FC199B091C8EEE3F00E572DA /* PayPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPageViewController.m; sourceTree = "<group>"; };
 		FC48E52C1C8E97E10027BECE /* UpTheDoorIngViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpTheDoorIngViewController.h; sourceTree = "<group>"; };
 		FC48E52D1C8E97E10027BECE /* UpTheDoorIngViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpTheDoorIngViewController.m; sourceTree = "<group>"; };
 		FC48E52F1C8E9A2D0027BECE /* ExpressOfUpDoorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressOfUpDoorView.h; sourceTree = "<group>"; };
@@ -892,6 +900,13 @@
 		FC7953DB1C816E14007F55F5 /* ScanBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanBarCodeViewController.m; sourceTree = "<group>"; };
 		FC7953EA1C8171B3007F55F5 /* OftenAdressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OftenAdressViewController.h; sourceTree = "<group>"; };
 		FC7953EB1C8171B3007F55F5 /* OftenAdressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OftenAdressViewController.m; sourceTree = "<group>"; };
+		FC9448051C900D2E00E6E30D /* CostTotalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostTotalView.h; sourceTree = "<group>"; };
+		FC9448061C900D2E00E6E30D /* CostTotalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CostTotalView.m; sourceTree = "<group>"; };
+		FC9448081C900D4200E6E30D /* CostTotalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CostTotalView.xib; sourceTree = "<group>"; };
+		FC94480A1C900E8000E6E30D /* CostTotalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CostTotalView.xib; sourceTree = "<group>"; };
+		FC94480C1C9023A300E6E30D /* ExpressSimpleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressSimpleTableViewCell.h; sourceTree = "<group>"; };
+		FC94480D1C9023A300E6E30D /* ExpressSimpleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressSimpleTableViewCell.m; sourceTree = "<group>"; };
+		FC94480E1C9023A300E6E30D /* ExpressSimpleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpressSimpleTableViewCell.xib; sourceTree = "<group>"; };
 		FCA168DF1C87C4230007588D /* LoginHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHomeViewController.h; sourceTree = "<group>"; };
 		FCA168E01C87C4230007588D /* LoginHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHomeViewController.m; sourceTree = "<group>"; };
 		FCA168E21C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GFBarButtonItem.h"; sourceTree = "<group>"; };
@@ -1726,6 +1741,12 @@
 				FC48E52F1C8E9A2D0027BECE /* ExpressOfUpDoorView.h */,
 				FC48E5301C8E9A2D0027BECE /* ExpressOfUpDoorView.m */,
 				FC199B061C8E9E3E00E572DA /* ExpressOfUpDoorView.xib */,
+				FC9448051C900D2E00E6E30D /* CostTotalView.h */,
+				FC9448061C900D2E00E6E30D /* CostTotalView.m */,
+				FC94480A1C900E8000E6E30D /* CostTotalView.xib */,
+				FC94480C1C9023A300E6E30D /* ExpressSimpleTableViewCell.h */,
+				FC94480D1C9023A300E6E30D /* ExpressSimpleTableViewCell.m */,
+				FC94480E1C9023A300E6E30D /* ExpressSimpleTableViewCell.xib */,
 				FC591F761C85355A001FEDE3 /* LBXScan */,
 				FC591F691C852E89001FEDE3 /* Class */,
 				FC591F621C852E4A001FEDE3 /* YCXMenu */,
@@ -1786,6 +1807,7 @@
 		FC7953351C816800007F55F5 = {
 			isa = PBXGroup;
 			children = (
+				FC9448081C900D4200E6E30D /* CostTotalView.xib */,
 				FC00E8FE1C8D1150007240AB /* AMap.bundle */,
 				FC00E8FA1C8D0F49007240AB /* libz.tbd */,
 				FC00E8F81C8D0CFA007240AB /* Foundation.framework */,
@@ -1946,6 +1968,8 @@
 				FC00E9411C8D8DF1007240AB /* SystemWorksheetProcessViewController.m */,
 				FC48E52C1C8E97E10027BECE /* UpTheDoorIngViewController.h */,
 				FC48E52D1C8E97E10027BECE /* UpTheDoorIngViewController.m */,
+				FC199B081C8EEE3F00E572DA /* PayPageViewController.h */,
+				FC199B091C8EEE3F00E572DA /* PayPageViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2433,8 +2457,11 @@
 				FC00E93C1C8D6F3C007240AB /* search@2x.png in Resources */,
 				FC00E8FF1C8D1150007240AB /* AMap.bundle in Resources */,
 				FC00E93B1C8D6F3C007240AB /* restaurant.png in Resources */,
+				FC9448091C900D4200E6E30D /* CostTotalView.xib in Resources */,
 				FC00E93A1C8D6F3C007240AB /* location_yes@2x.png in Resources */,
 				FCA7E9F11C899654002D613E /* CouponCollectionViewCell.xib in Resources */,
+				FC9448101C9023A300E6E30D /* ExpressSimpleTableViewCell.xib in Resources */,
+				FC94480B1C900E8000E6E30D /* CostTotalView.xib in Resources */,
 				FC7953511C816800007F55F5 /* LaunchScreen.storyboard in Resources */,
 				FCA168F11C880C580007588D /* OrdersTableViewCell.xib in Resources */,
 				FC199B071C8E9E3E00E572DA /* ExpressOfUpDoorView.xib in Resources */,
@@ -2467,6 +2494,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC591EF11C852CEE001FEDE3 /* ZXAI01393xDecoder.m in Sources */,
+				FC199B0A1C8EEE3F00E572DA /* PayPageViewController.m in Sources */,
 				FC591EF71C852CEE001FEDE3 /* ZXAnyAIDecoder.m in Sources */,
 				FC7953C11C816CBC007F55F5 /* RecommendViewController.m in Sources */,
 				FC591F4D1C852CEE001FEDE3 /* ZXQRCode.m in Sources */,
@@ -2612,6 +2640,7 @@
 				FC591EA71C852CEE001FEDE3 /* ZXVCardResultParser.m in Sources */,
 				FC591ED01C852CEE001FEDE3 /* ZXResult.m in Sources */,
 				FCA168F01C880C580007588D /* OrdersTableViewCell.m in Sources */,
+				FC94480F1C9023A300E6E30D /* ExpressSimpleTableViewCell.m in Sources */,
 				FC591E861C852CEE001FEDE3 /* ZXAztecDetectorResult.m in Sources */,
 				FC591F261C852CEE001FEDE3 /* ZXPDF417ECErrorCorrection.m in Sources */,
 				FC591F4A1C852CEE001FEDE3 /* ZXQRCodeFinderPattern.m in Sources */,
@@ -2707,6 +2736,7 @@
 				FC591E9D1C852CEE001FEDE3 /* ZXSMSMMSResultParser.m in Sources */,
 				FC591EFD1C852CEE001FEDE3 /* ZXRSSExpandedDecodedObject.m in Sources */,
 				FC591EAC1C852CEE001FEDE3 /* ZXWifiResultParser.m in Sources */,
+				FC9448071C900D2E00E6E30D /* CostTotalView.m in Sources */,
 				FC591F251C852CEE001FEDE3 /* ZXModulusPoly.m in Sources */,
 				FC591F461C852CEE001FEDE3 /* ZXQRCodeVersion.m in Sources */,
 				FC591F511C852CEE001FEDE3 /* ZXQRCodeMatrixUtil.m in Sources */,
