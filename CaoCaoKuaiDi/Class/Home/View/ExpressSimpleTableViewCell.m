@@ -17,7 +17,7 @@
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
-self.expressNumberLabel.text = self.expressNumberString;
+    self.expressNumberLabel.text = self.expressNumberString;
     // Configure the view for the selected state
 }
 

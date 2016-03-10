@@ -10,8 +10,9 @@
 #import "ExpressOfUpDoorView.h"
 #import "CostTotalView.h"
 #import "ExpressSimpleTableViewCell.h"
+#import "CouiserDetailViewController.h"
 
-@interface PayPageViewController () <UITableViewDataSource,UITableViewDelegate>
+@interface PayPageViewController () <UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 /**
  *  快递上门view
  */
@@ -51,6 +52,8 @@
         _expressOfUpDoorView.frame = CGRectMake(5, 68, SCRE_WIDTH - 10, 65);
         _expressOfUpDoorView.layer.cornerRadius = 5;
         _expressOfUpDoorView.layer.masksToBounds = YES;
+        [_expressOfUpDoorView.callCouierBtn addTarget:self action:@selector(callCouierAction) forControlEvents:UIControlEventTouchDown];
+        [_expressOfUpDoorView.couierHistoryOrders addTarget:self action:@selector(couierHistoryOrdersAction) forControlEvents:UIControlEventTouchDown];
     }
     return _expressOfUpDoorView;
 }
@@ -155,6 +158,16 @@
     
 }
 
+- (void)callCouierAction {
+    
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"是否要打电话给\n18814184180" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+    [alertView show];
+}
+
+- (void)couierHistoryOrdersAction {
+    [self.navigationController pushViewController:[CouiserDetailViewController new] animated:YES];
+}
+
 #pragma mark UITableViewDataSource,UITableViewDelegate
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -181,4 +194,13 @@
     return 30.0;
 }
 
+
+#pragma mark UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://18814184180"]];
+    } else {
+        
+    }
+}
 @end

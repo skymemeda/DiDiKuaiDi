@@ -7,13 +7,13 @@
 //
 
 #import "SystemWorksheetProcessViewController.h"
-#import "UpTheDoorIngViewController.h"
 #import "ExpressOfUpDoorView.h"
 #import "UIView+Extend.h"
 #import "PayPageViewController.h"
+#import "CouiserDetailViewController.h"
 #import <MAMapKit/MAMapKit.h>
 
-@interface SystemWorksheetProcessViewController ()<MAMapViewDelegate,UITextFieldDelegate>
+@interface SystemWorksheetProcessViewController ()<MAMapViewDelegate,UITextFieldDelegate,UIAlertViewDelegate>
 
 @property (nonatomic,strong) MAMapView *mapView;
 
@@ -74,6 +74,8 @@
         [_reminderButton addTarget:self action:@selector(reminderAction:) forControlEvents:UIControlEventTouchDown];
         [remarkAndReminMarkView addSubview:_reminderButton];
         
+        [_expressOfUpDoorView.callCouierBtn addTarget:self action:@selector(callCouierAction) forControlEvents:UIControlEventTouchDown];
+         [_expressOfUpDoorView.couierHistoryOrders addTarget:self action:@selector(couierHistoryOrdersAction) forControlEvents:UIControlEventTouchDown];
         self.remarksView.frame = CGRectMake(0, -40, SCRE_WIDTH, 100);
         [self.view addSubview:_remarksView];
         [self initRemarksView];
@@ -122,6 +124,7 @@
         
         [[UITextField appearance]setTintColor:[UIColor orangeColor]];
         _supplementRemarksTextField.font  = [UIFont systemFontOfSize:14];
+        
         
     }
     return _supplementRemarksTextField;
@@ -219,6 +222,13 @@
     
 }
 
+
+- (void)callCouierAction {
+
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"是否要打电话给\n18814184180" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定",nil];
+    [alertView show];
+}
+
 //点击催单时
 - (void)reminderAction:(UIButton *)sender {
     sender.selected = YES;
@@ -272,7 +282,10 @@
     }];
     [self.navigationController pushViewController:[PayPageViewController new] animated:YES];
 }
-
+//进入快递员首页
+- (void)couierHistoryOrdersAction {
+    [self.navigationController pushViewController:[CouiserDetailViewController new] animated:YES];
+}
 
 #pragma mark UITextFieldDelegate
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
@@ -282,6 +295,15 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField {
     [textField setBackground:[UIImage imageNamed:@"ver_phone_phone_text"]];
+}
+
+#pragma mark UIAlertViewDelegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://18814184180"]];
+    } else {
+        
+    }
 }
 @end
 

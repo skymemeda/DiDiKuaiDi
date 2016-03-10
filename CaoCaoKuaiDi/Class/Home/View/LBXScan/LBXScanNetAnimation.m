@@ -79,6 +79,7 @@
     
     isAnimationing = YES;
     
+    
     [self stepAnimation];
 }
 

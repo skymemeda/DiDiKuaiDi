@@ -32,11 +32,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *expressTypeImageView;
 
 /**
- *   打电话给快递员
- */
-@property (weak, nonatomic) IBOutlet UIButton *callCouierButton;
-
-/**
  *  快递员认证图片
  */
 @property (weak, nonatomic) IBOutlet UIImageView *couierAuthenticationImageView;
@@ -68,11 +63,13 @@
 -(instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor redColor];
     }
     return self;
 }
 
-
+-(void)layoutSubviews {
+//    self.backgroundColor = [UIColor redColor];
+}
 
 @end

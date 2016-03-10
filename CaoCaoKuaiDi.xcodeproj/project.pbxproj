@@ -26,7 +26,6 @@
 		FC0EC9371C85B00A00C3B666 /* UIImage+GFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0EC9361C85B00A00C3B666 /* UIImage+GFImage.m */; };
 		FC199B071C8E9E3E00E572DA /* ExpressOfUpDoorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC199B061C8E9E3E00E572DA /* ExpressOfUpDoorView.xib */; };
 		FC199B0A1C8EEE3F00E572DA /* PayPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC199B091C8EEE3F00E572DA /* PayPageViewController.m */; };
-		FC48E52E1C8E97E10027BECE /* UpTheDoorIngViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC48E52D1C8E97E10027BECE /* UpTheDoorIngViewController.m */; };
 		FC48E5311C8E9A2D0027BECE /* ExpressOfUpDoorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC48E5301C8E9A2D0027BECE /* ExpressOfUpDoorView.m */; };
 		FC591E7D1C852CEE001FEDE3 /* ZXAztecDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591C971C852CEE001FEDE3 /* ZXAztecDecoder.m */; };
 		FC591E7E1C852CEE001FEDE3 /* ZXAztecDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591C9A1C852CEE001FEDE3 /* ZXAztecDetector.m */; };
@@ -288,6 +287,9 @@
 		FC7953DD1C816E14007F55F5 /* RecentOrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953D91C816E14007F55F5 /* RecentOrdersViewController.m */; };
 		FC7953DE1C816E14007F55F5 /* ScanBarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953DB1C816E14007F55F5 /* ScanBarCodeViewController.m */; };
 		FC7953EC1C8171B3007F55F5 /* OftenAdressViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC7953EB1C8171B3007F55F5 /* OftenAdressViewController.m */; };
+		FC87D2E81C91071F007F4BA0 /* CouiserDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC87D2E71C91071F007F4BA0 /* CouiserDetailViewController.m */; };
+		FC87D2EB1C910BD8007F4BA0 /* CouierProfileDetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC87D2EA1C910BD8007F4BA0 /* CouierProfileDetailView.m */; };
+		FC87D2ED1C910BE8007F4BA0 /* CouierProfileDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC87D2EC1C910BE8007F4BA0 /* CouierProfileDetailView.xib */; };
 		FC9448071C900D2E00E6E30D /* CostTotalView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9448061C900D2E00E6E30D /* CostTotalView.m */; };
 		FC94480B1C900E8000E6E30D /* CostTotalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC94480A1C900E8000E6E30D /* CostTotalView.xib */; };
 		FC94480F1C9023A300E6E30D /* ExpressSimpleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC94480D1C9023A300E6E30D /* ExpressSimpleTableViewCell.m */; };
@@ -356,8 +358,6 @@
 		FC199B061C8E9E3E00E572DA /* ExpressOfUpDoorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpressOfUpDoorView.xib; sourceTree = "<group>"; };
 		FC199B081C8EEE3F00E572DA /* PayPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPageViewController.h; sourceTree = "<group>"; };
 		FC199B091C8EEE3F00E572DA /* PayPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPageViewController.m; sourceTree = "<group>"; };
-		FC48E52C1C8E97E10027BECE /* UpTheDoorIngViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpTheDoorIngViewController.h; sourceTree = "<group>"; };
-		FC48E52D1C8E97E10027BECE /* UpTheDoorIngViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpTheDoorIngViewController.m; sourceTree = "<group>"; };
 		FC48E52F1C8E9A2D0027BECE /* ExpressOfUpDoorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressOfUpDoorView.h; sourceTree = "<group>"; };
 		FC48E5301C8E9A2D0027BECE /* ExpressOfUpDoorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressOfUpDoorView.m; sourceTree = "<group>"; };
 		FC591C961C852CEE001FEDE3 /* ZXAztecDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAztecDecoder.h; sourceTree = "<group>"; };
@@ -899,6 +899,11 @@
 		FC7953DB1C816E14007F55F5 /* ScanBarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanBarCodeViewController.m; sourceTree = "<group>"; };
 		FC7953EA1C8171B3007F55F5 /* OftenAdressViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OftenAdressViewController.h; sourceTree = "<group>"; };
 		FC7953EB1C8171B3007F55F5 /* OftenAdressViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OftenAdressViewController.m; sourceTree = "<group>"; };
+		FC87D2E61C91071F007F4BA0 /* CouiserDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouiserDetailViewController.h; sourceTree = "<group>"; };
+		FC87D2E71C91071F007F4BA0 /* CouiserDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouiserDetailViewController.m; sourceTree = "<group>"; };
+		FC87D2E91C910BD8007F4BA0 /* CouierProfileDetailView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CouierProfileDetailView.h; sourceTree = "<group>"; };
+		FC87D2EA1C910BD8007F4BA0 /* CouierProfileDetailView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CouierProfileDetailView.m; sourceTree = "<group>"; };
+		FC87D2EC1C910BE8007F4BA0 /* CouierProfileDetailView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CouierProfileDetailView.xib; sourceTree = "<group>"; };
 		FC9448051C900D2E00E6E30D /* CostTotalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CostTotalView.h; sourceTree = "<group>"; };
 		FC9448061C900D2E00E6E30D /* CostTotalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CostTotalView.m; sourceTree = "<group>"; };
 		FC94480A1C900E8000E6E30D /* CostTotalView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CostTotalView.xib; sourceTree = "<group>"; };
@@ -1745,6 +1750,9 @@
 				FC94480C1C9023A300E6E30D /* ExpressSimpleTableViewCell.h */,
 				FC94480D1C9023A300E6E30D /* ExpressSimpleTableViewCell.m */,
 				FC94480E1C9023A300E6E30D /* ExpressSimpleTableViewCell.xib */,
+				FC87D2E91C910BD8007F4BA0 /* CouierProfileDetailView.h */,
+				FC87D2EA1C910BD8007F4BA0 /* CouierProfileDetailView.m */,
+				FC87D2EC1C910BE8007F4BA0 /* CouierProfileDetailView.xib */,
 				FC591F761C85355A001FEDE3 /* LBXScan */,
 				FC591F691C852E89001FEDE3 /* Class */,
 				FC591F621C852E4A001FEDE3 /* YCXMenu */,
@@ -1963,10 +1971,10 @@
 				FC00E93E1C8D7B2D007240AB /* AddNewAddressViewController.m */,
 				FC00E9401C8D8DF1007240AB /* SystemWorksheetProcessViewController.h */,
 				FC00E9411C8D8DF1007240AB /* SystemWorksheetProcessViewController.m */,
-				FC48E52C1C8E97E10027BECE /* UpTheDoorIngViewController.h */,
-				FC48E52D1C8E97E10027BECE /* UpTheDoorIngViewController.m */,
 				FC199B081C8EEE3F00E572DA /* PayPageViewController.h */,
 				FC199B091C8EEE3F00E572DA /* PayPageViewController.m */,
+				FC87D2E61C91071F007F4BA0 /* CouiserDetailViewController.h */,
+				FC87D2E71C91071F007F4BA0 /* CouiserDetailViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2464,6 +2472,7 @@
 				FC00E9201C8D3745007240AB /* touxiang.png in Resources */,
 				FC79534E1C816800007F55F5 /* Assets.xcassets in Resources */,
 				FC7898BC1C8ABBCB00309DDF /* CouierCollectionViewCell.xib in Resources */,
+				FC87D2ED1C910BE8007F4BA0 /* CouierProfileDetailView.xib in Resources */,
 				FC00E9391C8D6F3C007240AB /* location_no@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2562,10 +2571,12 @@
 				FC591F551C852CEE001FEDE3 /* ZXQRCodeReader.m in Sources */,
 				FC591E9A1C852CEE001FEDE3 /* ZXProductParsedResult.m in Sources */,
 				FC591EDF1C852CEE001FEDE3 /* ZXDataMatrixErrorCorrection.m in Sources */,
+				FC87D2E81C91071F007F4BA0 /* CouiserDetailViewController.m in Sources */,
 				FC591EAB1C852CEE001FEDE3 /* ZXWifiParsedResult.m in Sources */,
 				FC591F161C852CEE001FEDE3 /* ZXITFReader.m in Sources */,
 				FC7953DE1C816E14007F55F5 /* ScanBarCodeViewController.m in Sources */,
 				FC591F1D1C852CEE001FEDE3 /* ZXUPCAWriter.m in Sources */,
+				FC87D2EB1C910BD8007F4BA0 /* CouierProfileDetailView.m in Sources */,
 				FC591EB41C852CEE001FEDE3 /* ZXGenericGFPoly.m in Sources */,
 				FC591F541C852CEE001FEDE3 /* ZXQRCodeMultiReader.m in Sources */,
 				FC591F4E1C852CEE001FEDE3 /* ZXQRCodeBlockPair.m in Sources */,
@@ -2598,7 +2609,6 @@
 				FC591F571C852CEE001FEDE3 /* ZXMultiFormatReader.m in Sources */,
 				FC591F3F1C852CEE001FEDE3 /* ZXQRCodeDataMask.m in Sources */,
 				FCA7E9F01C899654002D613E /* CouponCollectionViewCell.m in Sources */,
-				FC48E52E1C8E97E10027BECE /* UpTheDoorIngViewController.m in Sources */,
 				FC591F581C852CEE001FEDE3 /* ZXMultiFormatWriter.m in Sources */,
 				FC591EF31C852CEE001FEDE3 /* ZXAI013x0xDecoder.m in Sources */,
 				FC591F681C852E4A001FEDE3 /* YCXMenuItem.m in Sources */,
