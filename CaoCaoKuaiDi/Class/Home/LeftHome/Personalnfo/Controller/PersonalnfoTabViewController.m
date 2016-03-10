@@ -28,7 +28,7 @@
 #pragma mark -initView
 - (void)initView {
     self.title = @"个人信息";
-    self.view.backgroundColor = [UIColor yellowColor];
+    self.view.backgroundColor = [UIColor colorWithRed:249.0/255.0 green:241.0/255.0 blue:235.0/255.0 alpha:1];
 }
 //250 244 239
 
@@ -79,14 +79,7 @@
             te.textAlignment = NSTextAlignmentRight;
             te.text = @"开心就好";
             persondetalcell.accessoryView = te;
-        } else if(indexPath.row == 1) {
-            persondetalcell.textLabel.text = @"星级评分";
-            UITextField *te = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, SCRE_WIDTH/2, 40)];
-            te.textAlignment = NSTextAlignmentRight;
-            te.text = @"5.0";
-            persondetalcell.accessoryView = te;
         }
-        
        
     }
     

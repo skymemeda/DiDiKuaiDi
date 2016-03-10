@@ -38,8 +38,15 @@
 @property (nonatomic,strong) UIButton *choooseExpressTypeButton;
 
 @property (nonatomic,strong) NSMutableArray *expressInfoArray;
-
+/**
+ *  更多快递选项button
+ */
 @property (nonatomic,strong) UIButton *expressMoreButton;
+
+/**
+ *  返回第一页快递选项button
+ */
+@property (nonatomic,strong) UIButton *expressLessButton;
 
 @property (nonatomic,strong) MAMapView *mapView;
 
@@ -48,6 +55,7 @@
 @property (nonatomic,strong) CLLocation *currentLocation;
 
 @property (nonatomic,strong) CustomAnnotationView *annotationView;
+
 
 @end
 
@@ -230,13 +238,14 @@
         [_chooseExpressMaskView addSubview:_choooseExpressTypeButton];
     }
     self.expressMoreButton = [[UIButton alloc]initWithFrame:CGRectMake(SCRE_WIDTH - 30, 10, 20, 20)];
-    _expressMoreButton.backgroundColor = [UIColor redColor];
+//    _expressMoreButton.backgroundColor = [UIColor redColor];
     [_expressMoreButton addTarget:self action:@selector(expressMoreAction) forControlEvents:UIControlEventTouchDown];
+    [_expressMoreButton setImage:[UIImage imageNamed:@"home_iconfont-shouqi"] forState:UIControlStateNormal];
     [_chooseExpressMaskView addSubview:_expressMoreButton];
     
     for (int i = 0; i < 5; i++) {
-       
-        _choooseExpressTypeButton.frame = CGRectMake( 15 * (i + 1) + i * (SCRE_WIDTH - 120)/5 + SCRE_WIDTH, 10, (SCRE_WIDTH - 120)/5, 20);
+        self.choooseExpressTypeButton = [[UIButton alloc]init];
+        _choooseExpressTypeButton.frame = CGRectMake( SCRE_WIDTH + 15 * (i + 1) + i * (SCRE_WIDTH - 120)/5, 10, (SCRE_WIDTH - 120)/5, 20);
         _choooseExpressTypeButton.backgroundColor = [UIColor whiteColor];
         _choooseExpressTypeButton.layer.cornerRadius = 5;
         _choooseExpressTypeButton.layer.masksToBounds = YES;
@@ -251,7 +260,11 @@
         _chooseExpressMaskView.backgroundColor = [UIColor greenColor];
         [_chooseExpressMaskView addSubview:_choooseExpressTypeButton];
     }
-
+    
+    self.expressLessButton = [[UIButton alloc]initWithFrame:CGRectMake(SCRE_WIDTH * 2 - 30 , 10, 20, 20)];
+    _expressLessButton.backgroundColor = [UIColor redColor];
+    [_expressLessButton addTarget:self action:@selector(expressLessAction) forControlEvents:UIControlEventTouchDown];
+    [_chooseExpressMaskView addSubview:_expressLessButton];
     
 }
 
@@ -281,10 +294,9 @@
 //    LoginHomeViewController *loginHome = [[LoginHomeViewController alloc]init];
 //    
 //    [self.navigationController pushViewController:loginHome animated:YES];
-    
     self.leftWindow = [[UIWindow alloc]initWithFrame:CGRectMake(-SCRE_WIDTH, 0, SCRE_WIDTH * 4/5, SCRE_HEIGHT)];
     
-    _leftWindow.backgroundColor = [UIColor colorWithWhite:1 alpha:0.8];
+    _leftWindow.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
     LeftHomeController *leftVC = [[LeftHomeController alloc]init];
     _leftWindow.rootViewController = leftVC;
     
@@ -313,6 +325,13 @@
 - (void)expressMoreAction {
     [UIView animateWithDuration:0.7 animations:^{
         _chooseExpressMaskView.x -= SCRE_WIDTH;
+    }];
+}
+
+//返回更少快递（第一页）
+- (void)expressLessAction {
+    [UIView animateWithDuration:0.7 animations:^{
+        _chooseExpressMaskView.x += SCRE_WIDTH;
     }];
 }
 
@@ -396,8 +415,6 @@
         annotation.subtitle = poi.address;
         [_mapView addAnnotation:annotation];
     }
-    
-    
 }
 
 @end

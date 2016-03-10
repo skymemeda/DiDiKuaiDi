@@ -99,10 +99,10 @@
 {
     if (!_LeftTableView) {
         _LeftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MOVE_X, SCRE_HEIGHT)];
+       _LeftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _LeftTableView.dataSource = self;
         _LeftTableView.delegate = self;
         _LeftTableView.scrollEnabled = NO;
-        _LeftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
     return _LeftTableView;
 }
@@ -136,7 +136,11 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 6;
+    return 3;
+}
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return 2;
 }
 // 设置数据
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -146,37 +150,42 @@
         Leftcell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"Leftcell"];
         
         UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, Leftcell.frame.size.height-1, MOVE_X, 1)];
-        line.backgroundColor = [UIColor orangeColor];
         [Leftcell.contentView addSubview:line];
         
     }
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             Leftcell.textLabel.text = @"我的钱包";
-            Leftcell.imageView.image = [UIImage imageNamed:@"4_cl_wallet"];
+            Leftcell.imageView.image = [UIImage imageNamed:@"leftHome_wallet"];
+            
+            UIImageView *accessImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 20, 40, 20)];
+            accessImageView.image = [UIImage imageNamed:@"left_home_cell_score"];
+            [accessImageView sizeToFit];
+            Leftcell.accessoryView = accessImageView;
             
         }else if (indexPath.row == 1)
         {
             Leftcell.textLabel.text = @"我的订单";
-            Leftcell.imageView.image = [UIImage imageNamed:@"4_cl_journey"];
-            Leftcell.textLabel.textColor = [UIColor purpleColor];
-        }else if (indexPath.row == 2)
+            Leftcell.imageView.image = [UIImage imageNamed:@"leftHome_orders"];
+        } else if (indexPath.row == 2)
         {
             Leftcell.textLabel.text = @"消息中心";
-            Leftcell.imageView.image = [UIImage imageNamed:@"4_cl_integral"];
-        }else if (indexPath.row == 3)
+            Leftcell.imageView.image = [UIImage imageNamed:@"leftHome_message"];
+        }
+    } else if(indexPath.section == 1)  {
+         if (indexPath.row == 0)
         {
             Leftcell.textLabel.text = @"推荐有奖";
-            Leftcell.imageView.image = [UIImage imageNamed:@"4_cl_information"];
-        }else if (indexPath.row == 4)
+            Leftcell.imageView.image = [UIImage imageNamed:@"leftHome_recommend"];
+        }else if (indexPath.row == 1)
         {
             Leftcell.textLabel.text = @"常用地址";
-            Leftcell.imageView.image = [UIImage imageNamed:@"4_cl_Birthday"];
-        }else if (indexPath.row == 5) {
+            Leftcell.imageView.image = [UIImage imageNamed:@"leftHome_usual_address"];
+        }else if (indexPath.row == 2) {
             Leftcell.textLabel.text = @"设置";
-            Leftcell.imageView.image = [UIImage imageNamed:@"4_cl_activity"];
+            Leftcell.imageView.image = [UIImage imageNamed:@"leftHome_setting"];
         }
-        
+
     }
     return Leftcell;
 }
@@ -186,7 +195,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
     UIViewController *vc = self.controllArr[indexPath.row];
-    
+    self.window = nil;
     self.window = [[UIWindow alloc]initWithFrame:CGRectMake(0, 0, SCRE_WIDTH, SCRE_HEIGHT)];
     _window.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
     HomeViewController *homeVC = [[HomeViewController alloc]init];
@@ -201,7 +210,39 @@
     //    [self pushViewController:vc animated:YES];
 }
 
-#pragma mark
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UIView *heightView = [[UIView alloc]initWithFrame:CGRectMake(20, 0, 200, 1)];
+//    if (section == 0) {
+    
+        heightView.backgroundColor = [UIColor grayColor];
+        return heightView;
+//    }
+//    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return 1;
+}
+#pragma mark touch代理
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    UITouch *touch = [touches anyObject];
+    
+    CGPoint touchPoint = [touch locationInView:self.view];
+    if (touchPoint.x > SCRE_WIDTH * 4/5) {
+//        self.window = [[UIWindow alloc]initWithFrame:CGRectMake(0, 0, SCRE_WIDTH, SCRE_HEIGHT)];
+//        _window.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
+//        HomeViewController *homeVC = [[HomeViewController alloc]init];
+//        GlobalNavigationController *gloNav = [[GlobalNavigationController alloc]initWithRootViewController:homeVC];
+//        
+//        
+//        _window.rootViewController = gloNav;
+//        [_window makeKeyAndVisible];
+//        [UIView animateWithDuration:0 animations:^{
+//            self.view.x = -SCRE_WIDTH;
+//        }];
+    }
+}
+
 
 @end
 
