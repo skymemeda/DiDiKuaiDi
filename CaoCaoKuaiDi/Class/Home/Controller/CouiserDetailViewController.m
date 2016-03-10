@@ -9,6 +9,7 @@
 #import "CouiserDetailViewController.h"
 #import "CouierProfileDetailView.h"
 
+
 @interface CouiserDetailViewController ()
 
 @property (nonatomic,strong) UIImageView *couierAvaterImageView;

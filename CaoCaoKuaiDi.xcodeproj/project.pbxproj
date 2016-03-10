@@ -294,6 +294,9 @@
 		FC94480B1C900E8000E6E30D /* CostTotalView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC94480A1C900E8000E6E30D /* CostTotalView.xib */; };
 		FC94480F1C9023A300E6E30D /* ExpressSimpleTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FC94480D1C9023A300E6E30D /* ExpressSimpleTableViewCell.m */; };
 		FC9448101C9023A300E6E30D /* ExpressSimpleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC94480E1C9023A300E6E30D /* ExpressSimpleTableViewCell.xib */; };
+		FC9D4EFB1C91758400D9196A /* EvaluateForCouieriewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4EFA1C91758400D9196A /* EvaluateForCouieriewController.m */; };
+		FC9D4EFE1C91778E00D9196A /* PaySuccessAndCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC9D4EFD1C91778E00D9196A /* PaySuccessAndCommentView.m */; };
+		FC9D4F001C91779900D9196A /* PaySuccessAndCommentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC9D4EFF1C91779900D9196A /* PaySuccessAndCommentView.xib */; };
 		FCA168E11C87C4230007588D /* LoginHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E01C87C4230007588D /* LoginHomeViewController.m */; };
 		FCA168E41C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E31C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.m */; };
 		FCA168E71C87D7260007588D /* UIView+Extend.m in Sources */ = {isa = PBXBuildFile; fileRef = FCA168E61C87D7260007588D /* UIView+Extend.m */; };
@@ -910,6 +913,11 @@
 		FC94480C1C9023A300E6E30D /* ExpressSimpleTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressSimpleTableViewCell.h; sourceTree = "<group>"; };
 		FC94480D1C9023A300E6E30D /* ExpressSimpleTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressSimpleTableViewCell.m; sourceTree = "<group>"; };
 		FC94480E1C9023A300E6E30D /* ExpressSimpleTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpressSimpleTableViewCell.xib; sourceTree = "<group>"; };
+		FC9D4EF91C91758400D9196A /* EvaluateForCouieriewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EvaluateForCouieriewController.h; sourceTree = "<group>"; };
+		FC9D4EFA1C91758400D9196A /* EvaluateForCouieriewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EvaluateForCouieriewController.m; sourceTree = "<group>"; };
+		FC9D4EFC1C91778E00D9196A /* PaySuccessAndCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaySuccessAndCommentView.h; sourceTree = "<group>"; };
+		FC9D4EFD1C91778E00D9196A /* PaySuccessAndCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaySuccessAndCommentView.m; sourceTree = "<group>"; };
+		FC9D4EFF1C91779900D9196A /* PaySuccessAndCommentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaySuccessAndCommentView.xib; sourceTree = "<group>"; };
 		FCA168DF1C87C4230007588D /* LoginHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginHomeViewController.h; sourceTree = "<group>"; };
 		FCA168E01C87C4230007588D /* LoginHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginHomeViewController.m; sourceTree = "<group>"; };
 		FCA168E21C87C6F80007588D /* UIBarButtonItem+GFBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+GFBarButtonItem.h"; sourceTree = "<group>"; };
@@ -1753,6 +1761,9 @@
 				FC87D2E91C910BD8007F4BA0 /* CouierProfileDetailView.h */,
 				FC87D2EA1C910BD8007F4BA0 /* CouierProfileDetailView.m */,
 				FC87D2EC1C910BE8007F4BA0 /* CouierProfileDetailView.xib */,
+				FC9D4EFC1C91778E00D9196A /* PaySuccessAndCommentView.h */,
+				FC9D4EFD1C91778E00D9196A /* PaySuccessAndCommentView.m */,
+				FC9D4EFF1C91779900D9196A /* PaySuccessAndCommentView.xib */,
 				FC591F761C85355A001FEDE3 /* LBXScan */,
 				FC591F691C852E89001FEDE3 /* Class */,
 				FC591F621C852E4A001FEDE3 /* YCXMenu */,
@@ -1975,6 +1986,8 @@
 				FC199B091C8EEE3F00E572DA /* PayPageViewController.m */,
 				FC87D2E61C91071F007F4BA0 /* CouiserDetailViewController.h */,
 				FC87D2E71C91071F007F4BA0 /* CouiserDetailViewController.m */,
+				FC9D4EF91C91758400D9196A /* EvaluateForCouieriewController.h */,
+				FC9D4EFA1C91758400D9196A /* EvaluateForCouieriewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2460,6 +2473,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC00E93C1C8D6F3C007240AB /* search@2x.png in Resources */,
+				FC9D4F001C91779900D9196A /* PaySuccessAndCommentView.xib in Resources */,
 				FC00E8FF1C8D1150007240AB /* AMap.bundle in Resources */,
 				FC00E93B1C8D6F3C007240AB /* restaurant.png in Resources */,
 				FC00E93A1C8D6F3C007240AB /* location_yes@2x.png in Resources */,
@@ -2516,6 +2530,7 @@
 				FC591F481C852CEE001FEDE3 /* ZXQRCodeAlignmentPatternFinder.m in Sources */,
 				FC591EF61C852CEE001FEDE3 /* ZXAI01weightDecoder.m in Sources */,
 				FC591E931C852CEE001FEDE3 /* ZXExpandedProductParsedResult.m in Sources */,
+				FC9D4EFB1C91758400D9196A /* EvaluateForCouieriewController.m in Sources */,
 				FC591EC21C852CEE001FEDE3 /* ZXHybridBinarizer.m in Sources */,
 				FC591F901C85355A001FEDE3 /* LBXScanView.m in Sources */,
 				FC591F291C852CEE001FEDE3 /* ZXPDF417BoundingBox.m in Sources */,
@@ -2682,6 +2697,7 @@
 				FC591F0B1C852CEE001FEDE3 /* ZXCodaBarWriter.m in Sources */,
 				FC591EA61C852CEE001FEDE3 /* ZXURLTOResultParser.m in Sources */,
 				FC591E811C852CEE001FEDE3 /* ZXAztecEncoder.m in Sources */,
+				FC9D4EFE1C91778E00D9196A /* PaySuccessAndCommentView.m in Sources */,
 				FC591F4F1C852CEE001FEDE3 /* ZXQRCodeEncoder.m in Sources */,
 				FC7953431C816800007F55F5 /* main.m in Sources */,
 				FC591F3C1C852CEE001FEDE3 /* ZXPDF417Writer.m in Sources */,

@@ -11,6 +11,7 @@
 #import "CostTotalView.h"
 #import "ExpressSimpleTableViewCell.h"
 #import "CouiserDetailViewController.h"
+#import "EvaluateForCouieriewController.h"
 
 @interface PayPageViewController () <UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 /**
@@ -154,8 +155,9 @@
     
 }
 
+#warning 此处暂定跳转 默认支付
 - (void)submitAction {
-    
+    [self.navigationController pushViewController:[EvaluateForCouieriewController new] animated:YES];
 }
 
 - (void)callCouierAction {
