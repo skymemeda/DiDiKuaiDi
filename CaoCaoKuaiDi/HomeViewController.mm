@@ -401,6 +401,7 @@
     {
         title = response.regeocode.addressComponent.province;
     }
+    NSLog(@"%@",response.regeocode.addressComponent.adcode);
 }
 
 
