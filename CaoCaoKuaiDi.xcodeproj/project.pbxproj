@@ -316,6 +316,8 @@
 		FCB9ACDE1C83D68C00FBEF9A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACDD1C83D68C00FBEF9A /* CoreTelephony.framework */; };
 		FCB9ACE01C83D69600FBEF9A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACDF1C83D69600FBEF9A /* libstdc++.6.0.9.tbd */; };
 		FCEFCD991C929551005B58D9 /* ComplaintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEFCD981C929551005B58D9 /* ComplaintViewController.m */; };
+		FCEFCD9D1C92A871005B58D9 /* ComplaintTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEFCD9B1C92A871005B58D9 /* ComplaintTableViewCell.m */; };
+		FCEFCD9E1C92A871005B58D9 /* ComplaintTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEFCD9C1C92A871005B58D9 /* ComplaintTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -946,6 +948,9 @@
 		FCB9ACDF1C83D69600FBEF9A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
 		FCEFCD971C929551005B58D9 /* ComplaintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplaintViewController.h; sourceTree = "<group>"; };
 		FCEFCD981C929551005B58D9 /* ComplaintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplaintViewController.m; sourceTree = "<group>"; };
+		FCEFCD9A1C92A871005B58D9 /* ComplaintTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplaintTableViewCell.h; sourceTree = "<group>"; };
+		FCEFCD9B1C92A871005B58D9 /* ComplaintTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplaintTableViewCell.m; sourceTree = "<group>"; };
+		FCEFCD9C1C92A871005B58D9 /* ComplaintTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ComplaintTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1767,6 +1772,9 @@
 				FC9D4EFC1C91778E00D9196A /* PaySuccessAndCommentView.h */,
 				FC9D4EFD1C91778E00D9196A /* PaySuccessAndCommentView.m */,
 				FC9D4EFF1C91779900D9196A /* PaySuccessAndCommentView.xib */,
+				FCEFCD9A1C92A871005B58D9 /* ComplaintTableViewCell.h */,
+				FCEFCD9B1C92A871005B58D9 /* ComplaintTableViewCell.m */,
+				FCEFCD9C1C92A871005B58D9 /* ComplaintTableViewCell.xib */,
 				FC591F761C85355A001FEDE3 /* LBXScan */,
 				FC591F691C852E89001FEDE3 /* Class */,
 				FC591F621C852E4A001FEDE3 /* YCXMenu */,
@@ -2481,6 +2489,7 @@
 				FC9D4F001C91779900D9196A /* PaySuccessAndCommentView.xib in Resources */,
 				FC00E8FF1C8D1150007240AB /* AMap.bundle in Resources */,
 				FC00E93B1C8D6F3C007240AB /* restaurant.png in Resources */,
+				FCEFCD9E1C92A871005B58D9 /* ComplaintTableViewCell.xib in Resources */,
 				FC00E93A1C8D6F3C007240AB /* location_yes@2x.png in Resources */,
 				FCA7E9F11C899654002D613E /* CouponCollectionViewCell.xib in Resources */,
 				FC9448101C9023A300E6E30D /* ExpressSimpleTableViewCell.xib in Resources */,
@@ -2524,6 +2533,7 @@
 				FC591F4D1C852CEE001FEDE3 /* ZXQRCode.m in Sources */,
 				FC591E921C852CEE001FEDE3 /* ZXEmailDoCoMoResultParser.m in Sources */,
 				FC591F1B1C852CEE001FEDE3 /* ZXOneDReader.m in Sources */,
+				FCEFCD9D1C92A871005B58D9 /* ComplaintTableViewCell.m in Sources */,
 				FC591E881C852CEE001FEDE3 /* ZXAztecWriter.m in Sources */,
 				FC591F911C85355A001FEDE3 /* LBXScanViewController.m in Sources */,
 				FC591EB01C852CEE001FEDE3 /* ZXMathUtils.m in Sources */,

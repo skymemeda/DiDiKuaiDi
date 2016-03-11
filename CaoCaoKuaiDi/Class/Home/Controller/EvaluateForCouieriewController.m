@@ -13,6 +13,7 @@
 #import "ExpressSimpleTableViewCell.h"
 #import "UIBarButtonItem+GFBarButtonItem.h"
 #import "ComplaintViewController.h"
+#import "CourierCollectionViewController.h"
 
 @interface EvaluateForCouieriewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -95,6 +96,15 @@
     [collectionCouierButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     [collectionCouierButton addTarget:self action:@selector(collectCouierAction) forControlEvents:UIControlEventTouchDown];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:collectionCouierButton];
+    
+    UIButton *cancleMainMenu = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 90, 30)];
+    cancleMainMenu.titleLabel.font =[UIFont systemFontOfSize:17];
+    [cancleMainMenu setTitle:@"返回主菜单" forState:UIControlStateNormal];
+    [cancleMainMenu setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [cancleMainMenu addTarget:self action:@selector(canleMainMenuAction) forControlEvents:UIControlEventTouchDown];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc]initWithCustomView:cancleMainMenu];
+
+    
     [self.view addSubview:self.expressOfUpDoorView];
     [self.view addSubview:self.paySuccessAndCommentView];
     [self.view addSubview:self.expressListTableView];
@@ -182,7 +192,12 @@
 }
 
 - (void)collectCouierAction {
-    
+    [self.navigationController pushViewController:[CourierCollectionViewController new] animated:YES];
+}
+
+//返回主菜单
+- (void)canleMainMenuAction {
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark UITableViewDataSource,UITableViewDelegate
