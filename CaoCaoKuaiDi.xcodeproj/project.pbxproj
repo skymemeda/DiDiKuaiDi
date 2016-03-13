@@ -26,6 +26,14 @@
 		FC0EC9371C85B00A00C3B666 /* UIImage+GFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0EC9361C85B00A00C3B666 /* UIImage+GFImage.m */; };
 		FC199B071C8E9E3E00E572DA /* ExpressOfUpDoorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC199B061C8E9E3E00E572DA /* ExpressOfUpDoorView.xib */; };
 		FC199B0A1C8EEE3F00E572DA /* PayPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC199B091C8EEE3F00E572DA /* PayPageViewController.m */; };
+		FC35A1251C95376B00EAB0BE /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A11A1C95376B00EAB0BE /* RECommonFunctions.m */; };
+		FC35A1261C95376B00EAB0BE /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A11C1C95376B00EAB0BE /* REFrostedContainerViewController.m */; };
+		FC35A1271C95376B00EAB0BE /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A11E1C95376B00EAB0BE /* REFrostedViewController.m */; };
+		FC35A1281C95376B00EAB0BE /* UIImage+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A1201C95376B00EAB0BE /* UIImage+REFrostedViewController.m */; };
+		FC35A1291C95376B00EAB0BE /* UIView+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A1221C95376B00EAB0BE /* UIView+REFrostedViewController.m */; };
+		FC35A12A1C95376B00EAB0BE /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A1241C95376B00EAB0BE /* UIViewController+REFrostedViewController.m */; };
+		FC35A12C1C95387400EAB0BE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC35A12B1C95387400EAB0BE /* Accelerate.framework */; };
+		FC35A12F1C953B8400EAB0BE /* GFHomeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A12E1C953B8300EAB0BE /* GFHomeNavViewController.m */; };
 		FC48E5311C8E9A2D0027BECE /* ExpressOfUpDoorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC48E5301C8E9A2D0027BECE /* ExpressOfUpDoorView.m */; };
 		FC591E7D1C852CEE001FEDE3 /* ZXAztecDecoder.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591C971C852CEE001FEDE3 /* ZXAztecDecoder.m */; };
 		FC591E7E1C852CEE001FEDE3 /* ZXAztecDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = FC591C9A1C852CEE001FEDE3 /* ZXAztecDetector.m */; };
@@ -364,6 +372,21 @@
 		FC199B061C8E9E3E00E572DA /* ExpressOfUpDoorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpressOfUpDoorView.xib; sourceTree = "<group>"; };
 		FC199B081C8EEE3F00E572DA /* PayPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPageViewController.h; sourceTree = "<group>"; };
 		FC199B091C8EEE3F00E572DA /* PayPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPageViewController.m; sourceTree = "<group>"; };
+		FC35A1191C95376B00EAB0BE /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		FC35A11A1C95376B00EAB0BE /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		FC35A11B1C95376B00EAB0BE /* REFrostedContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedContainerViewController.h; sourceTree = "<group>"; };
+		FC35A11C1C95376B00EAB0BE /* REFrostedContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedContainerViewController.m; sourceTree = "<group>"; };
+		FC35A11D1C95376B00EAB0BE /* REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedViewController.h; sourceTree = "<group>"; };
+		FC35A11E1C95376B00EAB0BE /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
+		FC35A11F1C95376B00EAB0BE /* UIImage+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrostedViewController.h"; sourceTree = "<group>"; };
+		FC35A1201C95376B00EAB0BE /* UIImage+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrostedViewController.m"; sourceTree = "<group>"; };
+		FC35A1211C95376B00EAB0BE /* UIView+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrostedViewController.h"; sourceTree = "<group>"; };
+		FC35A1221C95376B00EAB0BE /* UIView+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+REFrostedViewController.m"; sourceTree = "<group>"; };
+		FC35A1231C95376B00EAB0BE /* UIViewController+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+REFrostedViewController.h"; sourceTree = "<group>"; };
+		FC35A1241C95376B00EAB0BE /* UIViewController+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+REFrostedViewController.m"; sourceTree = "<group>"; };
+		FC35A12B1C95387400EAB0BE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		FC35A12D1C953B8300EAB0BE /* GFHomeNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFHomeNavViewController.h; sourceTree = "<group>"; };
+		FC35A12E1C953B8300EAB0BE /* GFHomeNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFHomeNavViewController.m; sourceTree = "<group>"; };
 		FC48E52F1C8E9A2D0027BECE /* ExpressOfUpDoorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpressOfUpDoorView.h; sourceTree = "<group>"; };
 		FC48E5301C8E9A2D0027BECE /* ExpressOfUpDoorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpressOfUpDoorView.m; sourceTree = "<group>"; };
 		FC591C961C852CEE001FEDE3 /* ZXAztecDecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAztecDecoder.h; sourceTree = "<group>"; };
@@ -958,6 +981,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC35A12C1C95387400EAB0BE /* Accelerate.framework in Frameworks */,
 				FC00E8FB1C8D0F49007240AB /* libz.tbd in Frameworks */,
 				FCB9ACDE1C83D68C00FBEF9A /* CoreTelephony.framework in Frameworks */,
 				FC00E8FD1C8D10EA007240AB /* MAMapKit.framework in Frameworks */,
@@ -1005,9 +1029,30 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		FC35A1181C95376B00EAB0BE /* REFrostedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FC35A1191C95376B00EAB0BE /* RECommonFunctions.h */,
+				FC35A11A1C95376B00EAB0BE /* RECommonFunctions.m */,
+				FC35A11B1C95376B00EAB0BE /* REFrostedContainerViewController.h */,
+				FC35A11C1C95376B00EAB0BE /* REFrostedContainerViewController.m */,
+				FC35A11D1C95376B00EAB0BE /* REFrostedViewController.h */,
+				FC35A11E1C95376B00EAB0BE /* REFrostedViewController.m */,
+				FC35A11F1C95376B00EAB0BE /* UIImage+REFrostedViewController.h */,
+				FC35A1201C95376B00EAB0BE /* UIImage+REFrostedViewController.m */,
+				FC35A1211C95376B00EAB0BE /* UIView+REFrostedViewController.h */,
+				FC35A1221C95376B00EAB0BE /* UIView+REFrostedViewController.m */,
+				FC35A1231C95376B00EAB0BE /* UIViewController+REFrostedViewController.h */,
+				FC35A1241C95376B00EAB0BE /* UIViewController+REFrostedViewController.m */,
+			);
+			name = REFrostedViewController;
+			path = ../REFrostedViewController;
+			sourceTree = "<group>";
+		};
 		FC591C921C852CB5001FEDE3 /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
+				FC35A1181C95376B00EAB0BE /* REFrostedViewController */,
 				FC0EC9341C85B00A00C3B666 /* Extension */,
 				FC591C931C852CEE001FEDE3 /* ZXingObjC */,
 			);
@@ -1835,6 +1880,7 @@
 		FC7953351C816800007F55F5 = {
 			isa = PBXGroup;
 			children = (
+				FC35A12B1C95387400EAB0BE /* Accelerate.framework */,
 				FC00E8FE1C8D1150007240AB /* AMap.bundle */,
 				FC00E8FA1C8D0F49007240AB /* libz.tbd */,
 				FC00E8F81C8D0CFA007240AB /* Foundation.framework */,
@@ -1940,6 +1986,8 @@
 			children = (
 				FC7953C51C816CF7007F55F5 /* GlobalNavigationController.h */,
 				FC7953C61C816CF7007F55F5 /* GlobalNavigationController.m */,
+				FC35A12D1C953B8300EAB0BE /* GFHomeNavViewController.h */,
+				FC35A12E1C953B8300EAB0BE /* GFHomeNavViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2641,6 +2689,7 @@
 				FCA7E9F01C899654002D613E /* CouponCollectionViewCell.m in Sources */,
 				FC591F581C852CEE001FEDE3 /* ZXMultiFormatWriter.m in Sources */,
 				FC591EF31C852CEE001FEDE3 /* ZXAI013x0xDecoder.m in Sources */,
+				FC35A1281C95376B00EAB0BE /* UIImage+REFrostedViewController.m in Sources */,
 				FC591F681C852E4A001FEDE3 /* YCXMenuItem.m in Sources */,
 				FC591F8E1C85355A001FEDE3 /* LBXScanNetAnimation.m in Sources */,
 				FC591F371C852CEE001FEDE3 /* ZXPDF417ErrorCorrection.m in Sources */,
@@ -2662,6 +2711,7 @@
 				FC591F021C852CEE001FEDE3 /* ZXRSSExpandedReader.m in Sources */,
 				FC591F501C852CEE001FEDE3 /* ZXQRCodeMaskUtil.m in Sources */,
 				FC591EA11C852CEE001FEDE3 /* ZXTelParsedResult.m in Sources */,
+				FC35A1251C95376B00EAB0BE /* RECommonFunctions.m in Sources */,
 				FC591E871C852CEE001FEDE3 /* ZXAztecReader.m in Sources */,
 				FC591F421C852CEE001FEDE3 /* ZXQRCodeDecoderMetaData.m in Sources */,
 				FC7953DD1C816E14007F55F5 /* RecentOrdersViewController.m in Sources */,
@@ -2715,6 +2765,7 @@
 				FC591E811C852CEE001FEDE3 /* ZXAztecEncoder.m in Sources */,
 				FC9D4EFE1C91778E00D9196A /* PaySuccessAndCommentView.m in Sources */,
 				FC591F4F1C852CEE001FEDE3 /* ZXQRCodeEncoder.m in Sources */,
+				FC35A1271C95376B00EAB0BE /* REFrostedViewController.m in Sources */,
 				FC7953431C816800007F55F5 /* main.m in Sources */,
 				FC591F3C1C852CEE001FEDE3 /* ZXPDF417Writer.m in Sources */,
 				FC591F271C852CEE001FEDE3 /* ZXPDF417BarcodeMetadata.m in Sources */,
@@ -2747,6 +2798,7 @@
 				FCA7E9E11C8977DE002D613E /* ChooseFactoryTableViewController.m in Sources */,
 				FC591F221C852CEE001FEDE3 /* ZXUPCEANWriter.m in Sources */,
 				FC7953EC1C8171B3007F55F5 /* OftenAdressViewController.m in Sources */,
+				FC35A12F1C953B8400EAB0BE /* GFHomeNavViewController.m in Sources */,
 				FC591F341C852CEE001FEDE3 /* ZXPDF417BarcodeMatrix.m in Sources */,
 				FC591EFE1C852CEE001FEDE3 /* ZXRSSExpandedFieldParser.m in Sources */,
 				FC591E831C852CEE001FEDE3 /* ZXAztecSimpleToken.m in Sources */,
@@ -2773,6 +2825,7 @@
 				FC591F141C852CEE001FEDE3 /* ZXEAN8Writer.m in Sources */,
 				FC591E9D1C852CEE001FEDE3 /* ZXSMSMMSResultParser.m in Sources */,
 				FC591EFD1C852CEE001FEDE3 /* ZXRSSExpandedDecodedObject.m in Sources */,
+				FC35A12A1C95376B00EAB0BE /* UIViewController+REFrostedViewController.m in Sources */,
 				FC591EAC1C852CEE001FEDE3 /* ZXWifiResultParser.m in Sources */,
 				FC9448071C900D2E00E6E30D /* CostTotalView.m in Sources */,
 				FC591F251C852CEE001FEDE3 /* ZXModulusPoly.m in Sources */,
@@ -2790,6 +2843,7 @@
 				FC591E961C852CEE001FEDE3 /* ZXGeoResultParser.m in Sources */,
 				FC7953B81C816C84007F55F5 /* MessageViewController.m in Sources */,
 				FC591F701C852E89001FEDE3 /* UIActionSheet+LBXAlertAction.m in Sources */,
+				FC35A1261C95376B00EAB0BE /* REFrostedContainerViewController.m in Sources */,
 				FC591EE81C852CEE001FEDE3 /* ZXMaxiCodeDecodedBitStreamParser.m in Sources */,
 				FC591E941C852CEE001FEDE3 /* ZXExpandedProductResultParser.m in Sources */,
 				FC591E8D1C852CEE001FEDE3 /* ZXBizcardResultParser.m in Sources */,
@@ -2798,6 +2852,7 @@
 				FC591F671C852E4A001FEDE3 /* YCXMenu.m in Sources */,
 				FC591F231C852CEE001FEDE3 /* ZXUPCEReader.m in Sources */,
 				FC591E8E1C852CEE001FEDE3 /* ZXBookmarkDoCoMoResultParser.m in Sources */,
+				FC35A1291C95376B00EAB0BE /* UIView+REFrostedViewController.m in Sources */,
 				FC591ED21C852CEE001FEDE3 /* ZXRGBLuminanceSource.m in Sources */,
 				FC591EC51C852CEE001FEDE3 /* ZXStringUtils.m in Sources */,
 				FC591F561C852CEE001FEDE3 /* ZXQRCodeWriter.m in Sources */,

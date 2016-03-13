@@ -8,6 +8,9 @@
 
 #import "MyOrdersViewController.h"
 #import "OrdersTableViewCell.h"
+#import "UIBarButtonItem+GFBarButtonItem.h"
+#import "HomeViewController.h"
+#import "GFHomeNavViewController.h"
 
 @interface MyOrdersViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -40,6 +43,8 @@
     _myOrdersTableView.delegate = self;
     _myOrdersTableView.dataSource = self;
     [self.view addSubview:_myOrdersTableView];
+
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] highImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] target:(GFHomeNavViewController *)self.navigationController action:@selector(popToRoot) forControlEvents:UIControlEventTouchDown];
     
     UIButton *rightButton = [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 40, 40)];
     [rightButton setTitle:@"编辑" forState:UIControlStateNormal];
@@ -54,6 +59,9 @@
 - (void)rightButtonAction {
     
 }
+
+
+
 
 #pragma mark UITableViewDataSource,UITableViewDelegate 
 

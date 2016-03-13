@@ -8,6 +8,8 @@
 
 #import "MyWalletViewController.h"
 #import "MyCouponCollectionViewController.h"
+#import "UIBarButtonItem+GFBarButtonItem.h"
+#import "GFHomeNavViewController.h"
 
 @interface MyWalletViewController ()
 
@@ -50,6 +52,8 @@
     [_myIntegral setImage:[UIImage imageNamed:@"myIntegral_button"] forState:UIControlStateNormal];
     [_myIntegral addTarget:self action:@selector(myIntegralAction) forControlEvents:UIControlEventTouchDown];
     [self.view addSubview:_myIntegral];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] highImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] target:(GFHomeNavViewController *)self.navigationController action:@selector(popToRoot) forControlEvents:UIControlEventTouchDown];
 }
 
 

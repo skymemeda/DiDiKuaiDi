@@ -7,13 +7,15 @@
 //
 
 #import "AppDelegate.h"
-#import "GlobalNavigationController.h"
+#import "GFHomeNavViewController.h"
 #import "HomeViewController.h"
+#import "LeftHomeController.h"
+#import "REFrostedViewController.h"
 #import <MAMapKit/MAMapKit.h>
 #import <AMapSearchKit/AMapSearchKit.h>
 
 
-@interface AppDelegate ()
+@interface AppDelegate ()<REFrostedViewControllerDelegate>
 
 @end
 
@@ -32,13 +34,46 @@
     
     HomeViewController *Home = [[HomeViewController alloc] init];
     
-    GlobalNavigationController *globalNav = [[GlobalNavigationController alloc]initWithRootViewController:Home];
+    GFHomeNavViewController *globalNav = [[GFHomeNavViewController alloc]initWithRootViewController:Home];
     
-    self.window.rootViewController = globalNav;
+    LeftHomeController *leftHome = [[LeftHomeController alloc]init];
+    
+    REFrostedViewController *frostedViewController = [[REFrostedViewController alloc] initWithContentViewController:globalNav menuViewController:leftHome];
+    frostedViewController.direction = REFrostedViewControllerDirectionLeft;
+    frostedViewController.liveBlurBackgroundStyle = REFrostedViewControllerLiveBackgroundStyleLight;
+    frostedViewController.liveBlur = YES;
+    frostedViewController.delegate = self;
+
+    self.window.rootViewController = frostedViewController;
     
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (void)frostedViewController:(REFrostedViewController *)frostedViewController didRecognizePanGesture:(UIPanGestureRecognizer *)recognizer
+{
+    
+}
+
+- (void)frostedViewController:(REFrostedViewController *)frostedViewController willShowMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"willShowMenuViewController");
+}
+
+- (void)frostedViewController:(REFrostedViewController *)frostedViewController didShowMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"didShowMenuViewController");
+}
+
+- (void)frostedViewController:(REFrostedViewController *)frostedViewController willHideMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"willHideMenuViewController");
+}
+
+- (void)frostedViewController:(REFrostedViewController *)frostedViewController didHideMenuViewController:(UIViewController *)menuViewController
+{
+    NSLog(@"didHideMenuViewController");
 }
 
 

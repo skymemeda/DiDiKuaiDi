@@ -6,6 +6,8 @@
 //  Copyright © 2016年 goofyy. All rights reserved.
 //
 #import "PersonalnfoTabViewController.h"
+#import "UIBarButtonItem+GFBarButtonItem.h"
+#import "GFHomeNavViewController.h"
 #import "UIView+Extend.h"
 
 @interface PersonalnfoTabViewController ()
@@ -29,7 +31,20 @@
 - (void)initView {
     self.title = @"个人信息";
     self.view.backgroundColor = [UIColor colorWithRed:249.0/255.0 green:241.0/255.0 blue:235.0/255.0 alpha:1];
+    [self.tableView setScrollEnabled:YES];
+    [self setExtraCellLineHidden:self.tableView];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] highImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] target:(GFHomeNavViewController *)self.navigationController action:@selector(popToRoot) forControlEvents:UIControlEventTouchDown];
 }
+
+#pragma customFunction 
+-(void)setExtraCellLineHidden: (UITableView *)tableView
+{
+    UIView *view = [UIView new];
+    view.backgroundColor = [UIColor clearColor];
+    [tableView setTableFooterView:view];
+}
+
 //250 244 239
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

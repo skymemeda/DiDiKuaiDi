@@ -22,6 +22,7 @@
 #import <AMapSearchKit/AMapSearchAPI.h>
 #import "CustomAnnotationView.h"
 #import "AddNewAddressViewController.h"
+#import "REFrostedViewController.h"
 #import "SystemWorksheetProcessViewController.h"
 
 
@@ -130,7 +131,7 @@
 
 -(MAMapView *)mapView {
     if (!_mapView) {
-        _mapView = [[MAMapView alloc]initWithFrame:CGRectMake(0, 64, SCRE_WIDTH, SCRE_HEIGHT - 64)];
+        _mapView = [[MAMapView alloc]initWithFrame:CGRectMake(1, 64, SCRE_WIDTH - 1, SCRE_HEIGHT - 64)];
         _mapView.delegate = self;
         _mapView.mapType = MAMapTypeStandard;
         _mapView.showsUserLocation = YES;
@@ -155,8 +156,17 @@
     _aMapSearch = [[AMapSearchAPI alloc]init];
     self.aMapSearch.delegate = self;
     
-    
+//    [self.view addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureRecognized:)]];
 }
+//手势
+//- (void)panGestureRecognized:(UIPanGestureRecognizer *)sender
+//{
+//    // Dismiss keyboard (optional)
+//    //
+//    [self.view endEditing:YES];
+//    [self.frostedViewController.view endEditing:YES];
+//    [self.frostedViewController panGestureRecognized:sender];
+//}
 
 - (void)viewWillAppear:(BOOL)animated
 {
@@ -290,22 +300,13 @@
 
 //左抽屉动画
 -(void)pushPerCenter {
-    
+    [self.view endEditing:YES];
+    [self.frostedViewController.view endEditing:YES];
+    [self.frostedViewController presentMenuViewController];
 //    LoginHomeViewController *loginHome = [[LoginHomeViewController alloc]init];
 //    
 //    [self.navigationController pushViewController:loginHome animated:YES];
-    self.leftWindow = [[UIWindow alloc]initWithFrame:CGRectMake(-SCRE_WIDTH, 0, SCRE_WIDTH * 4/5, SCRE_HEIGHT)];
     
-    _leftWindow.backgroundColor = [UIColor colorWithWhite:1 alpha:0];
-    LeftHomeController *leftVC = [[LeftHomeController alloc]init];
-    _leftWindow.rootViewController = leftVC;
-    
-    [UIView animateWithDuration:0.7 delay:0 usingSpringWithDamping:0.3 initialSpringVelocity:0.6 options:UIViewAnimationOptionCurveEaseInOut animations:^{
-        _leftWindow.frame = CGRectMake(0, 0, SCRE_WIDTH, SCRE_HEIGHT);
-    } completion:nil];
-    
-    
-    [_leftWindow makeKeyAndVisible];
     
 }
 

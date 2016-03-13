@@ -16,6 +16,8 @@
 #import "MessageViewController.h"
 #import "MyOrdersViewController.h"
 #import "OftenAdressViewController.h"
+#import "REFrostedViewController.h"
+#import "GFHomeNavViewController.h"
 #import "UIView+Extend.h"
 
 @interface LeftHomeController () <UITableViewDataSource,UITableViewDelegate>
@@ -60,8 +62,6 @@
     if (!_headView) {
         _headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MOVE_X, 140)];
         
-        
-        
         UIView *imageView = [[UIView alloc] initWithFrame:CGRectMake(0, 35, SCRE_WIDTH * 4/5, 100)];
         [_headView addSubview:imageView];
         UITapGestureRecognizer *headTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(headTapClick)];
@@ -100,6 +100,7 @@
     if (!_LeftTableView) {
         _LeftTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, MOVE_X, SCRE_HEIGHT)];
        _LeftTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _LeftTableView.backgroundColor = [UIColor clearColor];
         _LeftTableView.dataSource = self;
         _LeftTableView.delegate = self;
         _LeftTableView.scrollEnabled = NO;
@@ -119,17 +120,10 @@
 
 -(void)headTapClick {
     PersonalnfoTabViewController *persinalInfo = [[PersonalnfoTabViewController alloc]init];
-    self.window = [[UIWindow alloc]initWithFrame:CGRectMake(0, 0, SCRE_WIDTH, SCRE_HEIGHT)];
-    _window.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
-    HomeViewController *homeVC = [[HomeViewController alloc]init];
-    GlobalNavigationController *gloNav = [[GlobalNavigationController alloc]initWithRootViewController:homeVC];
-    
-    
-    _window.rootViewController = gloNav;
-    [_window makeKeyAndVisible];
-    
-    //    [self presentViewController:vc animated:YES completion:nil];
-    [homeVC.navigationController pushViewController:persinalInfo animated:YES];
+
+    GlobalNavigationController *navigationController = [[GlobalNavigationController alloc] initWithRootViewController:persinalInfo];
+    self.frostedViewController.contentViewController = navigationController;
+    [self.frostedViewController hideMenuViewController];
 }
 
 #pragma mark -tableview 设置数据源和代理
@@ -151,6 +145,8 @@
         
         UIView *line = [[UIView alloc] initWithFrame:CGRectMake(0, Leftcell.frame.size.height-1, MOVE_X, 1)];
         [Leftcell.contentView addSubview:line];
+        Leftcell.contentView.backgroundColor = [UIColor clearColor];
+        Leftcell.backgroundColor = [UIColor clearColor];
         
     }
     if (indexPath.section == 0) {
@@ -194,20 +190,19 @@
 {
     [tableView deselectRowAtIndexPath:indexPath animated:NO];
     
-    UIViewController *vc = self.controllArr[indexPath.row];
-    self.window = nil;
-    self.window = [[UIWindow alloc]initWithFrame:CGRectMake(0, 0, SCRE_WIDTH, SCRE_HEIGHT)];
-    _window.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
-    HomeViewController *homeVC = [[HomeViewController alloc]init];
-    GlobalNavigationController *gloNav = [[GlobalNavigationController alloc]initWithRootViewController:homeVC];
+    if (indexPath.section == 0) {
+         UIViewController *vc = self.controllArr[indexPath.row];
+        GlobalNavigationController *navigationController = [[GlobalNavigationController alloc] initWithRootViewController:vc];
+        self.frostedViewController.contentViewController = navigationController;
+        
+        [self.frostedViewController hideMenuViewController];
+    }else if (indexPath.section == 1) {
+        UIViewController *vc = self.controllArr[indexPath.row + 3];
+        GlobalNavigationController *navigationController = [[GlobalNavigationController alloc] initWithRootViewController:vc];
+        self.frostedViewController.contentViewController = navigationController;
+        [self.frostedViewController hideMenuViewController];
+    }
     
-    
-    _window.rootViewController = gloNav;
-    [_window makeKeyAndVisible];
-    
-    //    [self presentViewController:vc animated:YES completion:nil];
-    [homeVC.navigationController pushViewController:vc animated:YES];
-    //    [self pushViewController:vc animated:YES];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -224,24 +219,14 @@
     return 1;
 }
 #pragma mark touch代理
--(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    UITouch *touch = [touches anyObject];
-    
-    CGPoint touchPoint = [touch locationInView:self.view];
-    if (touchPoint.x > SCRE_WIDTH * 4/5) {
-//        self.window = [[UIWindow alloc]initWithFrame:CGRectMake(0, 0, SCRE_WIDTH, SCRE_HEIGHT)];
-//        _window.backgroundColor = [UIColor colorWithWhite:1 alpha:1];
-//        HomeViewController *homeVC = [[HomeViewController alloc]init];
-//        GlobalNavigationController *gloNav = [[GlobalNavigationController alloc]initWithRootViewController:homeVC];
-//        
-//        
-//        _window.rootViewController = gloNav;
-//        [_window makeKeyAndVisible];
-//        [UIView animateWithDuration:0 animations:^{
-//            self.view.x = -SCRE_WIDTH;
-//        }];
-    }
-}
+//-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+//    UITouch *touch = [touches anyObject];
+//    
+//    CGPoint touchPoint = [touch locationInView:self.view];
+//    if (touchPoint.x > SCRE_WIDTH * 4/5) {
+//
+//    }
+//}
 
 
 @end

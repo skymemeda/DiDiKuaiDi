@@ -7,6 +7,8 @@
 //
 
 #import "RecommendViewController.h"
+#import "GFHomeNavViewController.h"
+#import "UIBarButtonItem+GFBarButtonItem.h"
 #import "UIView+Extend.h"
 
 @interface RecommendViewController ()
@@ -67,6 +69,8 @@
     [_shareButton setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
     [_shareButton setTitle:@"分享到社交媒体" forState:UIControlStateNormal];
     [bottomBGImageView addSubview:_shareButton];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] highImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] target:(GFHomeNavViewController *)self.navigationController action:@selector(popToRoot) forControlEvents:UIControlEventTouchDown];
     
 }
 

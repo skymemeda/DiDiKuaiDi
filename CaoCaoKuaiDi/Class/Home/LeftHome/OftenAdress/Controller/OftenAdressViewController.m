@@ -7,6 +7,8 @@
 //
 
 #import "OftenAdressViewController.h"
+#import "GFHomeNavViewController.h"
+#import "UIBarButtonItem+GFBarButtonItem.h"
 
 @interface OftenAdressViewController ()
 
@@ -17,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor grayColor];
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] highImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] target:(GFHomeNavViewController *)self.navigationController action:@selector(popToRoot) forControlEvents:UIControlEventTouchDown];
     // Do any additional setup after loading the view.
 }
 

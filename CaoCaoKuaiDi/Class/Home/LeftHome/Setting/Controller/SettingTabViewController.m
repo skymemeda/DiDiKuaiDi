@@ -7,6 +7,8 @@
 //
 
 #import "SettingTabViewController.h"
+#import "UIBarButtonItem+GFBarButtonItem.h"
+#import "GFHomeNavViewController.h"
 
 @interface SettingTabViewController ()
 
@@ -26,6 +28,8 @@
     self.view.backgroundColor = [UIColor colorWithRed:250.0/255.0 green:244.0/255.0 blue:239.0/255.0 alpha:1];
     [self.tableView setScrollEnabled:YES];
     [self setExtraCellLineHidden:self.tableView];
+    
+    self.navigationItem.leftBarButtonItem = [UIBarButtonItem barButtonItemWithImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] highImage:[UIImage imageNamed:@"iconfont-dianjicichufanhui"] target:(GFHomeNavViewController *)self.navigationController action:@selector(popToRoot) forControlEvents:UIControlEventTouchDown];
 }
 
 
