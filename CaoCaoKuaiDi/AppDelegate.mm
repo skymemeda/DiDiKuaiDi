@@ -26,9 +26,9 @@
     // Override point for customization after application launch.
 
     
-    [MAMapServices sharedServices].apiKey = @"#";
+    [MAMapServices sharedServices].apiKey = @"d9408b814a25ea04565dc15434813c2a";
     
-    [AMapSearchServices sharedServices].apiKey = @"#";
+    [AMapSearchServices sharedServices].apiKey = @"d9408b814a25ea04565dc15434813c2a";
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
