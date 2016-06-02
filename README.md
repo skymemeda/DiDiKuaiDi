@@ -16,7 +16,7 @@ Barcode Scan  :	ZXingObjC <u can get it from github>
 ...
 ```
 ####APP Preview
-![GitHub set up](https://help.github.com/assets/images/site/set-up-git.gif)
+![GitHub set up](https://github.com/mgoofyy/DiDiKuaiDi/blob/kuaidi/demo.gif)
 ####Introductions
 ```
 First u can scan the barCode use the app.
