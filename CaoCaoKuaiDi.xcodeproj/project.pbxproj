@@ -12,7 +12,6 @@
 		FC00E8F91C8D0CFA007240AB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC00E8F81C8D0CFA007240AB /* Foundation.framework */; };
 		FC00E8FB1C8D0F49007240AB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FC00E8FA1C8D0F49007240AB /* libz.tbd */; };
 		FC00E8FD1C8D10EA007240AB /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC00E8FC1C8D10EA007240AB /* MAMapKit.framework */; };
-		FC00E8FF1C8D1150007240AB /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FC00E8FE1C8D1150007240AB /* AMap.bundle */; };
 		FC00E9201C8D3745007240AB /* touxiang.png in Resources */ = {isa = PBXBuildFile; fileRef = FC00E91F1C8D3745007240AB /* touxiang.png */; };
 		FC00E9311C8D6E68007240AB /* CustomAnnotationView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC00E92E1C8D6E68007240AB /* CustomAnnotationView.m */; };
 		FC00E9321C8D6E68007240AB /* CustomCalloutView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC00E9301C8D6E68007240AB /* CustomCalloutView.m */; };
@@ -26,12 +25,6 @@
 		FC0EC9371C85B00A00C3B666 /* UIImage+GFImage.m in Sources */ = {isa = PBXBuildFile; fileRef = FC0EC9361C85B00A00C3B666 /* UIImage+GFImage.m */; };
 		FC199B071C8E9E3E00E572DA /* ExpressOfUpDoorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC199B061C8E9E3E00E572DA /* ExpressOfUpDoorView.xib */; };
 		FC199B0A1C8EEE3F00E572DA /* PayPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC199B091C8EEE3F00E572DA /* PayPageViewController.m */; };
-		FC35A1251C95376B00EAB0BE /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A11A1C95376B00EAB0BE /* RECommonFunctions.m */; };
-		FC35A1261C95376B00EAB0BE /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A11C1C95376B00EAB0BE /* REFrostedContainerViewController.m */; };
-		FC35A1271C95376B00EAB0BE /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A11E1C95376B00EAB0BE /* REFrostedViewController.m */; };
-		FC35A1281C95376B00EAB0BE /* UIImage+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A1201C95376B00EAB0BE /* UIImage+REFrostedViewController.m */; };
-		FC35A1291C95376B00EAB0BE /* UIView+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A1221C95376B00EAB0BE /* UIView+REFrostedViewController.m */; };
-		FC35A12A1C95376B00EAB0BE /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A1241C95376B00EAB0BE /* UIViewController+REFrostedViewController.m */; };
 		FC35A12C1C95387400EAB0BE /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC35A12B1C95387400EAB0BE /* Accelerate.framework */; };
 		FC35A12F1C953B8400EAB0BE /* GFHomeNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FC35A12E1C953B8300EAB0BE /* GFHomeNavViewController.m */; };
 		FC48E5311C8E9A2D0027BECE /* ExpressOfUpDoorView.m in Sources */ = {isa = PBXBuildFile; fileRef = FC48E5301C8E9A2D0027BECE /* ExpressOfUpDoorView.m */; };
@@ -323,6 +316,15 @@
 		FCB9ACDC1C83D68500FBEF9A /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACDB1C83D68500FBEF9A /* libsqlite3.0.tbd */; };
 		FCB9ACDE1C83D68C00FBEF9A /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACDD1C83D68C00FBEF9A /* CoreTelephony.framework */; };
 		FCB9ACE01C83D69600FBEF9A /* libstdc++.6.0.9.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FCB9ACDF1C83D69600FBEF9A /* libstdc++.6.0.9.tbd */; };
+		FCE7DB7A1D009B4100C0510B /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7DB6F1D009B4100C0510B /* RECommonFunctions.m */; };
+		FCE7DB7B1D009B4100C0510B /* REFrostedContainerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7DB711D009B4100C0510B /* REFrostedContainerViewController.m */; };
+		FCE7DB7C1D009B4100C0510B /* REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7DB731D009B4100C0510B /* REFrostedViewController.m */; };
+		FCE7DB7D1D009B4100C0510B /* UIImage+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7DB751D009B4100C0510B /* UIImage+REFrostedViewController.m */; };
+		FCE7DB7E1D009B4100C0510B /* UIView+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7DB771D009B4100C0510B /* UIView+REFrostedViewController.m */; };
+		FCE7DB7F1D009B4100C0510B /* UIViewController+REFrostedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCE7DB791D009B4100C0510B /* UIViewController+REFrostedViewController.m */; };
+		FCE7DB831D009BC500C0510B /* AMap.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FCE7DB801D009BC500C0510B /* AMap.bundle */; };
+		FCE7DB841D009BC500C0510B /* AMapSearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE7DB811D009BC500C0510B /* AMapSearchKit.framework */; };
+		FCE7DB851D009BC500C0510B /* MAMapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FCE7DB821D009BC500C0510B /* MAMapKit.framework */; };
 		FCEFCD991C929551005B58D9 /* ComplaintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEFCD981C929551005B58D9 /* ComplaintViewController.m */; };
 		FCEFCD9D1C92A871005B58D9 /* ComplaintTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FCEFCD9B1C92A871005B58D9 /* ComplaintTableViewCell.m */; };
 		FCEFCD9E1C92A871005B58D9 /* ComplaintTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCEFCD9C1C92A871005B58D9 /* ComplaintTableViewCell.xib */; };
@@ -351,7 +353,6 @@
 		FC00E8F81C8D0CFA007240AB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FC00E8FA1C8D0F49007240AB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		FC00E8FC1C8D10EA007240AB /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
-		FC00E8FE1C8D1150007240AB /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
 		FC00E91F1C8D3745007240AB /* touxiang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = touxiang.png; sourceTree = "<group>"; };
 		FC00E92D1C8D6E68007240AB /* CustomAnnotationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomAnnotationView.h; sourceTree = "<group>"; };
 		FC00E92E1C8D6E68007240AB /* CustomAnnotationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomAnnotationView.m; sourceTree = "<group>"; };
@@ -372,18 +373,6 @@
 		FC199B061C8E9E3E00E572DA /* ExpressOfUpDoorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExpressOfUpDoorView.xib; sourceTree = "<group>"; };
 		FC199B081C8EEE3F00E572DA /* PayPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPageViewController.h; sourceTree = "<group>"; };
 		FC199B091C8EEE3F00E572DA /* PayPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayPageViewController.m; sourceTree = "<group>"; };
-		FC35A1191C95376B00EAB0BE /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
-		FC35A11A1C95376B00EAB0BE /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
-		FC35A11B1C95376B00EAB0BE /* REFrostedContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedContainerViewController.h; sourceTree = "<group>"; };
-		FC35A11C1C95376B00EAB0BE /* REFrostedContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedContainerViewController.m; sourceTree = "<group>"; };
-		FC35A11D1C95376B00EAB0BE /* REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedViewController.h; sourceTree = "<group>"; };
-		FC35A11E1C95376B00EAB0BE /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
-		FC35A11F1C95376B00EAB0BE /* UIImage+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrostedViewController.h"; sourceTree = "<group>"; };
-		FC35A1201C95376B00EAB0BE /* UIImage+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrostedViewController.m"; sourceTree = "<group>"; };
-		FC35A1211C95376B00EAB0BE /* UIView+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrostedViewController.h"; sourceTree = "<group>"; };
-		FC35A1221C95376B00EAB0BE /* UIView+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+REFrostedViewController.m"; sourceTree = "<group>"; };
-		FC35A1231C95376B00EAB0BE /* UIViewController+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+REFrostedViewController.h"; sourceTree = "<group>"; };
-		FC35A1241C95376B00EAB0BE /* UIViewController+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+REFrostedViewController.m"; sourceTree = "<group>"; };
 		FC35A12B1C95387400EAB0BE /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		FC35A12D1C953B8300EAB0BE /* GFHomeNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GFHomeNavViewController.h; sourceTree = "<group>"; };
 		FC35A12E1C953B8300EAB0BE /* GFHomeNavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GFHomeNavViewController.m; sourceTree = "<group>"; };
@@ -969,6 +958,21 @@
 		FCB9ACDB1C83D68500FBEF9A /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		FCB9ACDD1C83D68C00FBEF9A /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		FCB9ACDF1C83D69600FBEF9A /* libstdc++.6.0.9.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.6.0.9.tbd"; path = "usr/lib/libstdc++.6.0.9.tbd"; sourceTree = SDKROOT; };
+		FCE7DB6E1D009B4100C0510B /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		FCE7DB6F1D009B4100C0510B /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		FCE7DB701D009B4100C0510B /* REFrostedContainerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedContainerViewController.h; sourceTree = "<group>"; };
+		FCE7DB711D009B4100C0510B /* REFrostedContainerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedContainerViewController.m; sourceTree = "<group>"; };
+		FCE7DB721D009B4100C0510B /* REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = REFrostedViewController.h; sourceTree = "<group>"; };
+		FCE7DB731D009B4100C0510B /* REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = REFrostedViewController.m; sourceTree = "<group>"; };
+		FCE7DB741D009B4100C0510B /* UIImage+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+REFrostedViewController.h"; sourceTree = "<group>"; };
+		FCE7DB751D009B4100C0510B /* UIImage+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+REFrostedViewController.m"; sourceTree = "<group>"; };
+		FCE7DB761D009B4100C0510B /* UIView+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+REFrostedViewController.h"; sourceTree = "<group>"; };
+		FCE7DB771D009B4100C0510B /* UIView+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+REFrostedViewController.m"; sourceTree = "<group>"; };
+		FCE7DB781D009B4100C0510B /* UIViewController+REFrostedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+REFrostedViewController.h"; sourceTree = "<group>"; };
+		FCE7DB791D009B4100C0510B /* UIViewController+REFrostedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+REFrostedViewController.m"; sourceTree = "<group>"; };
+		FCE7DB801D009BC500C0510B /* AMap.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = AMap.bundle; sourceTree = "<group>"; };
+		FCE7DB811D009BC500C0510B /* AMapSearchKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AMapSearchKit.framework; sourceTree = "<group>"; };
+		FCE7DB821D009BC500C0510B /* MAMapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MAMapKit.framework; sourceTree = "<group>"; };
 		FCEFCD971C929551005B58D9 /* ComplaintViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplaintViewController.h; sourceTree = "<group>"; };
 		FCEFCD981C929551005B58D9 /* ComplaintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComplaintViewController.m; sourceTree = "<group>"; };
 		FCEFCD9A1C92A871005B58D9 /* ComplaintTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ComplaintTableViewCell.h; sourceTree = "<group>"; };
@@ -981,6 +985,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE7DB841D009BC500C0510B /* AMapSearchKit.framework in Frameworks */,
 				FC35A12C1C95387400EAB0BE /* Accelerate.framework in Frameworks */,
 				FC00E8FB1C8D0F49007240AB /* libz.tbd in Frameworks */,
 				FCB9ACDE1C83D68C00FBEF9A /* CoreTelephony.framework in Frameworks */,
@@ -992,6 +997,7 @@
 				FCB9ACDA1C83D67D00FBEF9A /* Security.framework in Frameworks */,
 				FCB9ACD81C83D67600FBEF9A /* CoreGraphics.framework in Frameworks */,
 				FCB9ACD61C83D66F00FBEF9A /* SystemConfiguration.framework in Frameworks */,
+				FCE7DB851D009BC500C0510B /* MAMapKit.framework in Frameworks */,
 				FC00E8F31C8D0CC5007240AB /* AMapSearchKit.framework in Frameworks */,
 				FCB9ACD41C83D66800FBEF9A /* OpenGLES.framework in Frameworks */,
 				FCB9ACD21C83D66000FBEF9A /* QuartzCore.framework in Frameworks */,
@@ -1029,30 +1035,10 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
-		FC35A1181C95376B00EAB0BE /* REFrostedViewController */ = {
-			isa = PBXGroup;
-			children = (
-				FC35A1191C95376B00EAB0BE /* RECommonFunctions.h */,
-				FC35A11A1C95376B00EAB0BE /* RECommonFunctions.m */,
-				FC35A11B1C95376B00EAB0BE /* REFrostedContainerViewController.h */,
-				FC35A11C1C95376B00EAB0BE /* REFrostedContainerViewController.m */,
-				FC35A11D1C95376B00EAB0BE /* REFrostedViewController.h */,
-				FC35A11E1C95376B00EAB0BE /* REFrostedViewController.m */,
-				FC35A11F1C95376B00EAB0BE /* UIImage+REFrostedViewController.h */,
-				FC35A1201C95376B00EAB0BE /* UIImage+REFrostedViewController.m */,
-				FC35A1211C95376B00EAB0BE /* UIView+REFrostedViewController.h */,
-				FC35A1221C95376B00EAB0BE /* UIView+REFrostedViewController.m */,
-				FC35A1231C95376B00EAB0BE /* UIViewController+REFrostedViewController.h */,
-				FC35A1241C95376B00EAB0BE /* UIViewController+REFrostedViewController.m */,
-			);
-			name = REFrostedViewController;
-			path = ../REFrostedViewController;
-			sourceTree = "<group>";
-		};
 		FC591C921C852CB5001FEDE3 /* FrameWork */ = {
 			isa = PBXGroup;
 			children = (
-				FC35A1181C95376B00EAB0BE /* REFrostedViewController */,
+				FCE7DB6D1D009B3600C0510B /* REFrostedViewController */,
 				FC0EC9341C85B00A00C3B666 /* Extension */,
 				FC591C931C852CEE001FEDE3 /* ZXingObjC */,
 			);
@@ -1881,7 +1867,9 @@
 			isa = PBXGroup;
 			children = (
 				FC35A12B1C95387400EAB0BE /* Accelerate.framework */,
-				FC00E8FE1C8D1150007240AB /* AMap.bundle */,
+				FCE7DB801D009BC500C0510B /* AMap.bundle */,
+				FCE7DB811D009BC500C0510B /* AMapSearchKit.framework */,
+				FCE7DB821D009BC500C0510B /* MAMapKit.framework */,
 				FC00E8FA1C8D0F49007240AB /* libz.tbd */,
 				FC00E8F81C8D0CFA007240AB /* Foundation.framework */,
 				FC00E8F61C8D0CF3007240AB /* UIKit.framework */,
@@ -2427,6 +2415,25 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		FCE7DB6D1D009B3600C0510B /* REFrostedViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FCE7DB6E1D009B4100C0510B /* RECommonFunctions.h */,
+				FCE7DB6F1D009B4100C0510B /* RECommonFunctions.m */,
+				FCE7DB701D009B4100C0510B /* REFrostedContainerViewController.h */,
+				FCE7DB711D009B4100C0510B /* REFrostedContainerViewController.m */,
+				FCE7DB721D009B4100C0510B /* REFrostedViewController.h */,
+				FCE7DB731D009B4100C0510B /* REFrostedViewController.m */,
+				FCE7DB741D009B4100C0510B /* UIImage+REFrostedViewController.h */,
+				FCE7DB751D009B4100C0510B /* UIImage+REFrostedViewController.m */,
+				FCE7DB761D009B4100C0510B /* UIView+REFrostedViewController.h */,
+				FCE7DB771D009B4100C0510B /* UIView+REFrostedViewController.m */,
+				FCE7DB781D009B4100C0510B /* UIViewController+REFrostedViewController.h */,
+				FCE7DB791D009B4100C0510B /* UIViewController+REFrostedViewController.m */,
+			);
+			name = REFrostedViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2533,9 +2540,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE7DB831D009BC500C0510B /* AMap.bundle in Resources */,
 				FC00E93C1C8D6F3C007240AB /* search@2x.png in Resources */,
 				FC9D4F001C91779900D9196A /* PaySuccessAndCommentView.xib in Resources */,
-				FC00E8FF1C8D1150007240AB /* AMap.bundle in Resources */,
 				FC00E93B1C8D6F3C007240AB /* restaurant.png in Resources */,
 				FCEFCD9E1C92A871005B58D9 /* ComplaintTableViewCell.xib in Resources */,
 				FC00E93A1C8D6F3C007240AB /* location_yes@2x.png in Resources */,
@@ -2609,6 +2616,7 @@
 				FC591F131C852CEE001FEDE3 /* ZXEAN8Reader.m in Sources */,
 				FC591EE91C852CEE001FEDE3 /* ZXMaxiCodeDecoder.m in Sources */,
 				FC591F2F1C852CEE001FEDE3 /* ZXPDF417DetectionResultRowIndicatorColumn.m in Sources */,
+				FCE7DB7C1D009B4100C0510B /* REFrostedViewController.m in Sources */,
 				FC00E93F1C8D7B2D007240AB /* AddNewAddressViewController.m in Sources */,
 				FC591F1A1C852CEE001FEDE3 /* ZXOneDimensionalCodeWriter.m in Sources */,
 				FC591E8B1C852CEE001FEDE3 /* ZXAddressBookDoCoMoResultParser.m in Sources */,
@@ -2685,11 +2693,11 @@
 				FC591F931C85355A001FEDE3 /* LBXScanWrapper.m in Sources */,
 				FC591F121C852CEE001FEDE3 /* ZXEAN13Writer.m in Sources */,
 				FC591F571C852CEE001FEDE3 /* ZXMultiFormatReader.m in Sources */,
+				FCE7DB7A1D009B4100C0510B /* RECommonFunctions.m in Sources */,
 				FC591F3F1C852CEE001FEDE3 /* ZXQRCodeDataMask.m in Sources */,
 				FCA7E9F01C899654002D613E /* CouponCollectionViewCell.m in Sources */,
 				FC591F581C852CEE001FEDE3 /* ZXMultiFormatWriter.m in Sources */,
 				FC591EF31C852CEE001FEDE3 /* ZXAI013x0xDecoder.m in Sources */,
-				FC35A1281C95376B00EAB0BE /* UIImage+REFrostedViewController.m in Sources */,
 				FC591F681C852E4A001FEDE3 /* YCXMenuItem.m in Sources */,
 				FC591F8E1C85355A001FEDE3 /* LBXScanNetAnimation.m in Sources */,
 				FC591F371C852CEE001FEDE3 /* ZXPDF417ErrorCorrection.m in Sources */,
@@ -2711,7 +2719,6 @@
 				FC591F021C852CEE001FEDE3 /* ZXRSSExpandedReader.m in Sources */,
 				FC591F501C852CEE001FEDE3 /* ZXQRCodeMaskUtil.m in Sources */,
 				FC591EA11C852CEE001FEDE3 /* ZXTelParsedResult.m in Sources */,
-				FC35A1251C95376B00EAB0BE /* RECommonFunctions.m in Sources */,
 				FC591E871C852CEE001FEDE3 /* ZXAztecReader.m in Sources */,
 				FC591F421C852CEE001FEDE3 /* ZXQRCodeDecoderMetaData.m in Sources */,
 				FC7953DD1C816E14007F55F5 /* RecentOrdersViewController.m in Sources */,
@@ -2736,8 +2743,10 @@
 				FC7953DC1C816E14007F55F5 /* CourierCollectionViewController.m in Sources */,
 				FC591F361C852CEE001FEDE3 /* ZXPDF417Dimensions.m in Sources */,
 				FC591ED91C852CEE001FEDE3 /* ZXDataMatrixASCIIEncoder.m in Sources */,
+				FCE7DB7B1D009B4100C0510B /* REFrostedContainerViewController.m in Sources */,
 				FC591F281C852CEE001FEDE3 /* ZXPDF417BarcodeValue.m in Sources */,
 				FC591F051C852CEE001FEDE3 /* ZXRSS14Reader.m in Sources */,
+				FCE7DB7F1D009B4100C0510B /* UIViewController+REFrostedViewController.m in Sources */,
 				FC591E9F1C852CEE001FEDE3 /* ZXSMSTOMMSTOResultParser.m in Sources */,
 				FC591EBF1C852CEE001FEDE3 /* ZXDetectorResult.m in Sources */,
 				FC591E971C852CEE001FEDE3 /* ZXISBNParsedResult.m in Sources */,
@@ -2765,7 +2774,6 @@
 				FC591E811C852CEE001FEDE3 /* ZXAztecEncoder.m in Sources */,
 				FC9D4EFE1C91778E00D9196A /* PaySuccessAndCommentView.m in Sources */,
 				FC591F4F1C852CEE001FEDE3 /* ZXQRCodeEncoder.m in Sources */,
-				FC35A1271C95376B00EAB0BE /* REFrostedViewController.m in Sources */,
 				FC7953431C816800007F55F5 /* main.m in Sources */,
 				FC591F3C1C852CEE001FEDE3 /* ZXPDF417Writer.m in Sources */,
 				FC591F271C852CEE001FEDE3 /* ZXPDF417BarcodeMetadata.m in Sources */,
@@ -2778,6 +2786,7 @@
 				FCA168E71C87D7260007588D /* UIView+Extend.m in Sources */,
 				FC591ED61C852CEE001FEDE3 /* ZXDataMatrixDecoder.m in Sources */,
 				FC591F0D1C852CEE001FEDE3 /* ZXCode128Writer.m in Sources */,
+				FCE7DB7D1D009B4100C0510B /* UIImage+REFrostedViewController.m in Sources */,
 				FC591F311C852CEE001FEDE3 /* ZXPDF417Detector.m in Sources */,
 				FC591EC41C852CEE001FEDE3 /* ZXPerspectiveTransform.m in Sources */,
 				FC591ECE1C852CEE001FEDE3 /* ZXLuminanceSource.m in Sources */,
@@ -2789,6 +2798,7 @@
 				FC591E9B1C852CEE001FEDE3 /* ZXProductResultParser.m in Sources */,
 				FC591E981C852CEE001FEDE3 /* ZXISBNResultParser.m in Sources */,
 				FC591ED31C852CEE001FEDE3 /* ZXDataMatrixBitMatrixParser.m in Sources */,
+				FCE7DB7E1D009B4100C0510B /* UIView+REFrostedViewController.m in Sources */,
 				FC591F081C852CEE001FEDE3 /* ZXRSSPair.m in Sources */,
 				FC591EC71C852CEE001FEDE3 /* ZXBinaryBitmap.m in Sources */,
 				FC591EA91C852CEE001FEDE3 /* ZXVINParsedResult.m in Sources */,
@@ -2825,7 +2835,6 @@
 				FC591F141C852CEE001FEDE3 /* ZXEAN8Writer.m in Sources */,
 				FC591E9D1C852CEE001FEDE3 /* ZXSMSMMSResultParser.m in Sources */,
 				FC591EFD1C852CEE001FEDE3 /* ZXRSSExpandedDecodedObject.m in Sources */,
-				FC35A12A1C95376B00EAB0BE /* UIViewController+REFrostedViewController.m in Sources */,
 				FC591EAC1C852CEE001FEDE3 /* ZXWifiResultParser.m in Sources */,
 				FC9448071C900D2E00E6E30D /* CostTotalView.m in Sources */,
 				FC591F251C852CEE001FEDE3 /* ZXModulusPoly.m in Sources */,
@@ -2843,7 +2852,6 @@
 				FC591E961C852CEE001FEDE3 /* ZXGeoResultParser.m in Sources */,
 				FC7953B81C816C84007F55F5 /* MessageViewController.m in Sources */,
 				FC591F701C852E89001FEDE3 /* UIActionSheet+LBXAlertAction.m in Sources */,
-				FC35A1261C95376B00EAB0BE /* REFrostedContainerViewController.m in Sources */,
 				FC591EE81C852CEE001FEDE3 /* ZXMaxiCodeDecodedBitStreamParser.m in Sources */,
 				FC591E941C852CEE001FEDE3 /* ZXExpandedProductResultParser.m in Sources */,
 				FC591E8D1C852CEE001FEDE3 /* ZXBizcardResultParser.m in Sources */,
@@ -2852,7 +2860,6 @@
 				FC591F671C852E4A001FEDE3 /* YCXMenu.m in Sources */,
 				FC591F231C852CEE001FEDE3 /* ZXUPCEReader.m in Sources */,
 				FC591E8E1C852CEE001FEDE3 /* ZXBookmarkDoCoMoResultParser.m in Sources */,
-				FC35A1291C95376B00EAB0BE /* UIView+REFrostedViewController.m in Sources */,
 				FC591ED21C852CEE001FEDE3 /* ZXRGBLuminanceSource.m in Sources */,
 				FC591EC51C852CEE001FEDE3 /* ZXStringUtils.m in Sources */,
 				FC591F561C852CEE001FEDE3 /* ZXQRCodeWriter.m in Sources */,
