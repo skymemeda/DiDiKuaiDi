@@ -187,7 +187,7 @@
  */
 //初始化NAVIGATION BAR
 -(void)initNavigationBar {
-    self.title = @"曹操快递";
+    self.title = @"快递";
     UIButton *personalCenter = [[UIButton alloc]initWithFrame:CGRectMake(20, 0, 30, 40)];
     [personalCenter setImage:[UIImage imageNamed:@"home_navigation_left"] forState:UIControlStateNormal];
     [personalCenter addTarget:self action:@selector(pushPerCenter) forControlEvents:UIControlEventTouchDown];

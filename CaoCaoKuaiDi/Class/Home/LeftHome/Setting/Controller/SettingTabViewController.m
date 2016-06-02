@@ -64,9 +64,9 @@
         } else if (indexPath.row == 1) {
             setttingCell.textLabel.text = @"意见与反馈";
         } else if (indexPath.row == 2) {
-            setttingCell.textLabel.text = @"关于曹操快递";
+            setttingCell.textLabel.text = @"关于快递";
         } else if (indexPath.row == 3) {
-            setttingCell.textLabel.text = @"给曹操好评";
+            setttingCell.textLabel.text = @"给好评";
         }
     }
     return setttingCell;

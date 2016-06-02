@@ -7,7 +7,7 @@
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>提示</string>
 	<key>CFBundleDisplayName</key>
-	<string>曹操快递</string>
+	<string>快递</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>zh_CN</string>
 	<key>CFBundleExecutable</key>
